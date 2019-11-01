@@ -10,9 +10,9 @@
     "knockout": "#ffffff",
     "button-primary": "#009ad6",
     "button-primary-highlight": "#009ad6",
-    "notice-success": "#00ab1c",
-    "notice-warning": "#eb6a38",
-    "notice-error": "#eb6a38"
+    "success": "#00ab1c",
+    "warning": "#F3EEAB",
+    "error": "#eb6a38"
   },
   "backgrounds": {
     "app": "#f1f1ee",
@@ -21,7 +21,7 @@
     "button-secondary": "",
     "button-secondary-highlight": "",
     "notice-success": "#00ab1c",
-    "notice-warning": "#eb6a38",
+    "notice-warning": "#F3EEAB",
     "notice-error": "#eb6a38"
   },
   "borders": {

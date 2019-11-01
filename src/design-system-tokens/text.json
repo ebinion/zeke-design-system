@@ -4,7 +4,7 @@
     "weightBold": "700",
     "weightNormal": "300"
   },
-  "body": {
+  "normal": {
     "fontFamily": "'Open Sans', 'Helvetica Neue', Helvetica, sans-serif",
     "weightBold": "700",
     "weightNormal": "400"
