@@ -7,7 +7,7 @@ import textTokens from '../design-system-tokens/text'
 
 const StyledP = styled.p`
   color: ${props => props.color};
-  font-weight: ${textTokens.normal.fontWeightNormal};
+  font-weight: ${props => props.weight};
   font-family: ${textTokens.normal.fontFamily};
   font-size: ${props => props.size};
   line-height: ${props => props.lineHeight};
@@ -23,44 +23,62 @@ const StyledP = styled.p`
   }
 `
 
-export class Text extends React.PureComponent {
+export default class Text extends React.PureComponent {
   static propTypes = {
-    element: PropTypes.oneOf(['p', 'div']),
     align: PropTypes.oneOf(['left', 'center', 'right']),
+    bold: PropTypes.bool,
+    color: PropTypes.oneOf([
+      'normal',
+      'light',
+      'bold',
+      'knockout',
+      'success',
+      'error',
+      'warning',
+    ]),
+    element: PropTypes.oneOf(['p', 'div']),
     lineHeight: PropTypes.oneOf(['normal', 'tight']),
     size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
-    color: PropTypes.oneOf(['bold', 'normal', 'light', 'knockout', 'success', 'warning', 'error'])
   }
 
   static defaultProps = {
+    align: 'left',
+    bold: false,
+    color: 'normal',
     element: 'p',
     lineHeight: 'normal',
     size: 'm',
-    align: 'left',
-    color: 'normal'
+  }
+
+  getColor() {
+    return this.props.bold && this.props.color === 'normal'
+      ? colorTokens.text.bold
+      : colorTokens.text[this.props.color]
+  }
+
+  getLineHeight() {
+    return this.props.lineHeight === 'normal'
+      ? textTokens.sizes[this.props.size].lineHeightNormal
+      : textTokens.sizes[this.props.size].lineHeightTight
   }
 
   render() {
-    const { color, element, children, lineHeight, size } = this.props
-
-    const Component = StyledP
-    const lineHeightSize =
-      lineHeight === 'normal'
-        ? textTokens.sizes[size].lineHeightNormal
-        : textTokens.sizes[size].lineHeightTight
+    const { bold, element, children, size } = this.props
 
     return (
-      <Component
+      <StyledP
         {...this.props}
         as={element}
-        color={colorTokens.text[color]}
-        lineHeight={lineHeightSize}
+        color={this.getColor()}
+        lineHeight={this.getLineHeight()}
         size={textTokens.sizes[size].size}
-        spacing={textTokens.sizes[size].spacing}>
+        spacing={textTokens.sizes[size].spacing}
+        weight={
+          bold ? textTokens.normal.weightBold : textTokens.normal.weightNormal
+        }
+      >
         {children}
-      </Component>
+      </StyledP>
     )
   }
 }
-
-export const P = props => <Text {...props} element="p" />
