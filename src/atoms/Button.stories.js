@@ -4,7 +4,7 @@ import { select, boolean } from '@storybook/addon-knobs'
 import Button from './Button'
 
 export default {
-  title: 'Components|Atoms/Button',
+  title: 'Atoms|Links & Buttons/Button',
   component: Button,
 }
 
