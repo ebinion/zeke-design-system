@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@storybook/addon-knobs": "^5.2.5",
+    "lorem-ipsum": "^2.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -32,6 +33,13 @@
       "no-console": "error"
     }
   },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "endOfLine": "lf",
+    "jsxBracketSameLine": false
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -49,6 +57,7 @@
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-docs": "^5.2.5",
     "@storybook/addon-links": "^5.2.5",
+    "@storybook/addon-viewport": "^5.2.5",
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
     "prettier": "^1.18.2",
