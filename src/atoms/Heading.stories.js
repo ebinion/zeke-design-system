@@ -12,11 +12,12 @@ const elementKnob = () => select('Element', hLevels, 'h1')
 const sizeKnob = () => select('Size', [...hLevels, false], false)
 
 export default {
-  title: 'Components|Atoms/Heading',
+  title: 'Atoms|Text/Heading',
   component: Heading,
   parameters: {
-    componentSubtitle: 'This is a highly configurable base for all heading components.'
-  }
+    componentSubtitle:
+      'This is a highly configurable base for all heading components.',
+  },
 }
 
 export const component = () => (
@@ -25,7 +26,8 @@ export const component = () => (
     size={sizeKnob()}
     align={alignKnob()}
     color={colorKnob()}
-    bold={boldKnob()}>
+    bold={boldKnob()}
+  >
     This is the default heading component
   </Heading>
 )
@@ -37,18 +39,26 @@ export const asH4Element = () => <Heading element="h4">This is a h4</Heading>
 export const asH5Element = () => <Heading element="h5">This is a h5</Heading>
 export const asH6Element = () => <Heading element="h5">This is a h6</Heading>
 
-export const asLightColor = () => <Heading color="light">This is a light colored heading</Heading>
+export const asLightColor = () => (
+  <Heading color="light">This is a light colored heading</Heading>
+)
 export const asKnockoutColor = () => (
   <Heading color="knockout">This is a knocked out color heading</Heading>
 )
 
-export const alignedCenter = () => <Heading align="center">This is a centered heading</Heading>
-export const alignedRight = () => <Heading align="right">This is a right aligned heading</Heading>
+export const alignedCenter = () => (
+  <Heading align="center">This is a centered heading</Heading>
+)
+export const alignedRight = () => (
+  <Heading align="right">This is a right aligned heading</Heading>
+)
 
 export const asNormalWieght = () => (
   <Heading bold={false}>This is a heading at normal weight</Heading>
 )
-export const asBoldWieght = () => <Heading bold={true}>This is a heading at bold weight</Heading>
+export const asBoldWieght = () => (
+  <Heading bold={true}>This is a heading at bold weight</Heading>
+)
 
 export const h2SizedAsH1 = () => (
   <Heading element="h2" size="h1">

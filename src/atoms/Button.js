@@ -20,7 +20,7 @@ const StyledButton = styled.button`
   padding: ${props =>
     `${props.paddingTop} ${props.paddingRight} ${props.paddingBottom} ${props.paddingLeft}`};
   transition-property: background-color, box-shadow, color;
-  transition-duration: ${props => props.transitionDuration}
+  transition-duration: ${props => props.transitionDuration};
   transition-timing-function: ${props => props.easing};
   width: ${props => props.width};
 

@@ -4,7 +4,7 @@ import lorem from '../helpers/lorem'
 import P from './P'
 
 export default {
-  title: 'Components|Atoms/P',
+  title: 'Atoms|Text/P',
   component: P,
   parameters: {
     componentSubtitle:
