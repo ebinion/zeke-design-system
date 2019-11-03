@@ -7,19 +7,21 @@
     "light": "#88888d",
     "link": "#009ad6",
     "link-highlight": "#00a6e8",
-    "knockout": "#ffffff",
-    "button-primary": "#009ad6",
-    "button-primary-highlight": "#009ad6",
+    "knockout": "#fff",
+    "button-primary": "#fff",
+    "button-primary-highlight": "#fff",
+    "button-secondary": "#009ad6",
+    "button-secondary-highlight": "#fff",
     "success": "#00ab1c",
     "warning": "#F3EEAB",
     "error": "#eb6a38"
   },
   "backgrounds": {
     "app": "#f1f1ee",
-    "button-primary": "rgba(255,255,255,0)",
+    "button-primary": "#009ad6",
     "button-primary-highlight": "#00a6e8",
-    "button-secondary": "",
-    "button-secondary-highlight": "",
+    "button-secondary": "transparent",
+    "button-secondary-highlight": "#00a6e8",
     "notice-success": "#00ab1c",
     "notice-warning": "#F3EEAB",
     "notice-error": "#eb6a38"
@@ -27,6 +29,8 @@
   "borders": {
     "rule": "#f1f1ee",
     "input": "#c1c1bb",
-    "input-highlight": "#88888d"
+    "input-highlight": "#88888d",
+    "button-primary": "#009ad6",
+    "button-primary-highlight": "#00a6e8"
   }
 }
