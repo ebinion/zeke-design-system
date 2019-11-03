@@ -19,7 +19,18 @@
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "no-console": "error"
+    }
   },
   "browserslist": {
     "production": [
