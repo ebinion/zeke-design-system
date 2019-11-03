@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean } from '@storybook/addon-knobs'
+import { select, boolean } from '@storybook/addon-knobs'
 
 import Button from './Button'
 
@@ -9,7 +9,10 @@ export default {
 }
 
 const fullWidthKnob = () => boolean('Full Width', false)
+const kindKnob = () => select('Kind', ['primary', 'secondary'], 'primary')
 
 export const componentPlayground = () => (
-  <Button fullWidth={fullWidthKnob()}>Button example</Button>
+  <Button fullWidth={fullWidthKnob()} kind={kindKnob()}>
+    Button example
+  </Button>
 )

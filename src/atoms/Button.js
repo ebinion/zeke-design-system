@@ -33,7 +33,7 @@ const StyledButton = styled.button`
 
 export default class Button extends React.Component {
   static propTypes = {
-    kind: PropTypes.oneOf(['primary']),
+    kind: PropTypes.oneOf(['primary', 'secondary']),
     fullWidth: PropTypes.bool,
   }
 
@@ -64,6 +64,18 @@ export default class Button extends React.Component {
     }
 
     switch (this.props.kind) {
+      case 'secondary':
+        return Object.assign(primaryStyles, {
+          color: colorTokens.text['button-secondary'],
+          backgroundColor: colorTokens.backgrounds['button-secondary'],
+          borderColor: colorTokens.borders['button-secondary'],
+          hover: {
+            color: colorTokens.text['button-secondary-highlight'],
+            backgroundColor:
+              colorTokens.backgrounds['button-secondary-highlight'],
+            borderColor: colorTokens.borders['button-secondary-highlight'],
+          },
+        })
       default:
         return primaryStyles
     }

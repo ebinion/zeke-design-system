@@ -10,6 +10,8 @@
     "knockout": "#fff",
     "button-primary": "#fff",
     "button-primary-highlight": "#fff",
+    "button-secondary": "#009ad6",
+    "button-secondary-highlight": "#fff",
     "success": "#00ab1c",
     "warning": "#F3EEAB",
     "error": "#eb6a38"
@@ -18,8 +20,8 @@
     "app": "#f1f1ee",
     "button-primary": "#009ad6",
     "button-primary-highlight": "#00a6e8",
-    "button-secondary": "",
-    "button-secondary-highlight": "",
+    "button-secondary": "transparent",
+    "button-secondary-highlight": "#00a6e8",
     "notice-success": "#00ab1c",
     "notice-warning": "#F3EEAB",
     "notice-error": "#eb6a38"
