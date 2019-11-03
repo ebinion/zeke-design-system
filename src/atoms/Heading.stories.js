@@ -30,14 +30,53 @@ export const component = () => (
   </Heading>
 )
 
-export const asH1Element = () => <Heading element="h1">This is an h1</Heading>
-export const asH2Element = () => <Heading element="h2">This is an h2</Heading>
-export const asH3Element = () => <Heading element="h3">This is an h3</Heading>
-export const asH4Element = () => <Heading element="h4">This is an h4</Heading>
-export const asH5Element = () => <Heading element="h5">This is an h5</Heading>
-export const asH6Element = () => <Heading element="h5">This is an h6</Heading>
+export const asH1Element = () => <Heading element="h1">This is a h1</Heading>
+export const asH2Element = () => <Heading element="h2">This is a h2</Heading>
+export const asH3Element = () => <Heading element="h3">This is a h3</Heading>
+export const asH4Element = () => <Heading element="h4">This is a h4</Heading>
+export const asH5Element = () => <Heading element="h5">This is a h5</Heading>
+export const asH6Element = () => <Heading element="h5">This is a h6</Heading>
 
 export const asLightColor = () => <Heading color="light">This is a light colored heading</Heading>
 export const asKnockoutColor = () => (
   <Heading color="knockout">This is a knocked out color heading</Heading>
+)
+
+export const alignedCenter = () => <Heading align="center">This is a centered heading</Heading>
+export const alignedRight = () => <Heading align="right">This is a right aligned heading</Heading>
+
+export const asNormalWieght = () => (
+  <Heading bold={false}>This is a heading at normal weight</Heading>
+)
+export const asBoldWieght = () => <Heading bold={true}>This is a heading at bold weight</Heading>
+
+export const h2SizedAsH1 = () => (
+  <Heading element="h2" size="h1">
+    This is a h2 sized as a h1
+  </Heading>
+)
+export const h1SizedAsH2 = () => (
+  <Heading element="h1" size="h2">
+    This is a h1 sized as a h2
+  </Heading>
+)
+export const h1SizedAsH3 = () => (
+  <Heading element="h1" size="h3">
+    This is a h1 sized as a h3
+  </Heading>
+)
+export const h1SizedAsH4 = () => (
+  <Heading element="h1" size="h4">
+    This is a h1 sized as a h4
+  </Heading>
+)
+export const h1SizedAsH5 = () => (
+  <Heading element="h1" size="h5">
+    This is a h1 sized as a h5
+  </Heading>
+)
+export const h1SizedAsH6 = () => (
+  <Heading element="h1" size="h5">
+    This is a h1 sized as a h6
+  </Heading>
 )
