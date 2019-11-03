@@ -16,3 +16,12 @@ export const componentPlayground = () => (
     Button example
   </Button>
 )
+
+export const primaryButton = () => (
+  <Button kind="primary">Primary button example</Button>
+)
+export const secondaryButton = () => (
+  <Button kind="secondary">Secondary button example</Button>
+)
+
+export const fullWidth = () => <Button fullWidth>Full width button</Button>
