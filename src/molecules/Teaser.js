@@ -35,7 +35,7 @@ export default class Teaser extends React.Component {
       return (
         <>
           <Strong uppercase color="knockout">{this.props.category}</Strong>
-          {" "}/{" "}
+          {' '}/{' '}
         </>
       )
     }
