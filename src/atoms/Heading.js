@@ -30,21 +30,22 @@ export default class Heading extends React.PureComponent {
     bold: PropTypes.bool,
     color: PropTypes.oneOf(['dark', 'light', 'knockout']),
     element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
-    size: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', false])
+    noMargin: PropTypes.bool,
+    size: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', false]),
   }
 
   static defaultProps = {
     align: 'left',
     bold: true,
     color: 'dark',
-    element: 'h1'
+    element: 'h1',
   }
 
   getColor() {
     const colorMap = {
       dark: colorTokens.text.heading,
       light: colorTokens.text['heading-light'],
-      knockout: colorTokens.text.knockout
+      knockout: colorTokens.text.knockout,
     }
     return colorMap[this.props.color]
   }
@@ -56,16 +57,25 @@ export default class Heading extends React.PureComponent {
       h3: 'l',
       h4: 'm',
       h5: 's',
-      h6: 'xs'
+      h6: 'xs',
     }
 
-    return textTokens.sizes[elementSizeMap[this.props.size ? this.props.size : this.props.element]]
+    const dimensions =
+      textTokens.sizes[
+        elementSizeMap[this.props.size ? this.props.size : this.props.element]
+      ]
+
+    return Object.assign(dimensions, {
+      spacing: this.props.noMargin ? 0 : dimensions.spacing,
+    })
   }
 
   render() {
     const { align, bold, children, element } = this.props
 
-    const fontWeight = bold ? textTokens.heading.weightBold : textTokens.heading.weightNormal
+    const fontWeight = bold
+      ? textTokens.heading.weightBold
+      : textTokens.heading.weightNormal
 
     return (
       <StyledHeading
@@ -73,7 +83,8 @@ export default class Heading extends React.PureComponent {
         as={element}
         weight={fontWeight}
         color={this.getColor()}
-        {...this.getFontSizing()}>
+        {...this.getFontSizing()}
+      >
         {children}
       </StyledHeading>
     )

@@ -4,5 +4,6 @@
   "button-padding-top": "8px",
   "button-padding-right": "24px",
   "button-padding-bottom": "8px",
-  "button-padding-left": "24px"
+  "button-padding-left": "24px",
+  "component-padding": "16px"
 }

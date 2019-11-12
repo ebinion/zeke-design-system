@@ -38,6 +38,7 @@ export default class Text extends React.PureComponent {
     ]),
     element: PropTypes.oneOf(['p', 'div']),
     lineHeight: PropTypes.oneOf(['normal', 'tight']),
+    noMargin: PropTypes.bool,
     size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
   }
 
@@ -63,7 +64,7 @@ export default class Text extends React.PureComponent {
   }
 
   render() {
-    const { bold, element, children, size } = this.props
+    const { bold, element, children, noMargin, size } = this.props
 
     return (
       <StyledP
@@ -72,7 +73,7 @@ export default class Text extends React.PureComponent {
         color={this.getColor()}
         lineHeight={this.getLineHeight()}
         size={textTokens.sizes[size].size}
-        spacing={textTokens.sizes[size].spacing}
+        spacing={noMargin ? 0 : textTokens.sizes[size].spacing}
         weight={
           bold ? textTokens.normal.weightBold : textTokens.normal.weightNormal
         }
