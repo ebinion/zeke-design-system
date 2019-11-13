@@ -24,7 +24,9 @@
     "button-secondary-highlight": "#333",
     "notice-success": "#00ab1c",
     "notice-warning": "#F3EEAB",
-    "notice-error": "#eb6a38"
+    "notice-error": "#eb6a38",
+    "teaser": "#007BAB",
+    "teaser-highlight": "#009ad6"
   },
   "borders": {
     "rule": "#f1f1ee",
