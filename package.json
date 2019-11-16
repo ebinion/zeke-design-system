@@ -19,7 +19,8 @@
     "build": "BABEL_ENV=production babel src -d dist --copy-files",
     "test": "react-scripts test",
     "build-storybook": "build-storybook -s public",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "release": "auto release"
   },
   "babel": {
     "presets": [
