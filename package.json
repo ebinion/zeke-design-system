@@ -21,7 +21,7 @@
     "build-storybook": "build-storybook -s public",
     "lint": "eslint ./src",
     "release": "auto release",
-    "postinstall": "npm run build"
+    "preinstall": "npm run build"
   },
   "babel": {
     "presets": [
