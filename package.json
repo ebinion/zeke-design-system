@@ -3,7 +3,7 @@
   "author": "Zeke Binion <zeke@binion.io> (https://zekebinion.io)",
   "description": "This repo is the home of the design system for Zeke Binion. It drives things like Zeke's website, portfolio and experimental sites.",
   "main": "dist/index.js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "dependencies": {
     "@storybook/addon-knobs": "^5.2.5",
