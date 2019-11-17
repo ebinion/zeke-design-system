@@ -2,10 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import animationTokens from '../design-system-tokens/animation'
-import colorTokens from '../design-system-tokens/colors'
-import textTokens from '../design-system-tokens/text'
-import sizeTokens from '../design-system-tokens/sizes'
+import { animationTokens, colorTokens, textTokens, sizeTokens } from '../'
 
 const StyledButton = styled.button`
   appearance: none;
@@ -71,8 +68,7 @@ export default class Button extends React.Component {
           borderColor: colorTokens.borders['button-secondary'],
           hover: {
             color: colorTokens.text['button-secondary-highlight'],
-            backgroundColor:
-              colorTokens.backgrounds['button-secondary-highlight'],
+            backgroundColor: colorTokens.backgrounds['button-secondary-highlight'],
             borderColor: colorTokens.borders['button-secondary-highlight'],
           },
         })

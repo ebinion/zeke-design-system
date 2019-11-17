@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import colorTokens from '../design-system-tokens/colors'
-import textTokens from '../design-system-tokens/text'
+import { colorTokens, textTokens } from '../'
 
 const StyledHeading = styled.h1`
   color: ${props => props.color};
@@ -61,9 +60,7 @@ export default class Heading extends React.PureComponent {
     }
 
     const dimensions =
-      textTokens.sizes[
-        elementSizeMap[this.props.size ? this.props.size : this.props.element]
-      ]
+      textTokens.sizes[elementSizeMap[this.props.size ? this.props.size : this.props.element]]
 
     return Object.assign(dimensions, {
       spacing: this.props.noMargin ? 0 : dimensions.spacing,
@@ -73,9 +70,7 @@ export default class Heading extends React.PureComponent {
   render() {
     const { align, bold, children, element } = this.props
 
-    const fontWeight = bold
-      ? textTokens.heading.weightBold
-      : textTokens.heading.weightNormal
+    const fontWeight = bold ? textTokens.heading.weightBold : textTokens.heading.weightNormal
 
     return (
       <StyledHeading

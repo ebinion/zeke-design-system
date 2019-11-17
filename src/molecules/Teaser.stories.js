@@ -1,7 +1,7 @@
 import React from 'react'
 
 import lorem from '../helpers/lorem'
-import Teaser from './Teaser'
+import { Teaser } from '../'
 
 export default {
   title: 'Molecules|Teaser',

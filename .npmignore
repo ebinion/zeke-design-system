@@ -1,3 +1,13 @@
 /public
 /.storybook
-/.circlci
+/.circleci
+/src
+
+.env
+.autorc
+.nvmrc
+
+README-Create-React-App.md
+
+*.stories.js
+*.test.js

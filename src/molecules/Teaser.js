@@ -2,13 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import colorTokens from '../design-system-tokens/colors'
-import sizeTokens from '../design-system-tokens/sizes'
-import animationTokens from '../design-system-tokens/animation'
-import H2 from '../atoms/H2'
-import Strong from '../atoms/Strong'
-import Text from '../atoms/Text'
-import Time from '../atoms/Time'
+import { colorTokens, sizeTokens, animationTokens, H2, Strong, Text, Time } from '../'
 
 const StyledContainer = styled.a`
   display: block;
@@ -31,18 +25,20 @@ export default class Teaser extends React.Component {
   }
 
   renderCategory() {
-    if(this.props.category) {
+    if (this.props.category) {
       return (
         <>
-          <Strong uppercase color="knockout">{this.props.category}</Strong>
-          {' '}/{' '}
+          <Strong uppercase color="knockout">
+            {this.props.category}
+          </Strong>{' '}
+          /{' '}
         </>
       )
     }
   }
 
   renderDate() {
-    if(this.props.date) {
+    if (this.props.date) {
       return <Time date={this.props.date} />
     }
   }

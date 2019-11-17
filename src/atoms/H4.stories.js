@@ -1,6 +1,6 @@
 import React from 'react'
 
-import H4 from './H4'
+import { H4 } from '../'
 
 export default {
   title: 'Atoms|Text/H4',
