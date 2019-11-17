@@ -1,6 +1,6 @@
 import React from 'react'
 
-import H1 from './H1'
+import { H1 } from '../'
 
 export default {
   title: 'Atoms|Text/H1',

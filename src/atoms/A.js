@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import colorTokens from '../design-system-tokens/colors'
-import textTokens from '../design-system-tokens/text'
+import { colorTokens, textTokens } from '../'
 
 const StyledA = styled.a`
   font-family: ${textTokens.normal.fontFamily};

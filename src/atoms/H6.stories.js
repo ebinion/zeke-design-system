@@ -1,6 +1,6 @@
 import React from 'react'
 
-import H6 from './H6'
+import { H6 } from '../'
 
 export default {
   title: 'Atoms|Text/H6',

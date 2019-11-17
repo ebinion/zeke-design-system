@@ -1,7 +1,7 @@
 import React from 'react'
 
 import lorem from '../helpers/lorem'
-import P from './P'
+import { P } from '../'
 
 export default {
   title: 'Atoms|Text/P',

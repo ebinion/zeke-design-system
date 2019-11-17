@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import {addLeadingZero} from '../helpers/numbers'
+import { addLeadingZero } from '../helpers/numbers'
 
 const StyledTime = styled.time`
   font: inherit;
@@ -11,7 +11,7 @@ const StyledTime = styled.time`
 
 export default class Time extends React.Component {
   static propTypes = {
-    date: PropTypes.instanceOf(Date)
+    date: PropTypes.instanceOf(Date),
   }
 
   getUTCFullYear() {
@@ -52,7 +52,9 @@ export default class Time extends React.Component {
 
   render() {
     const dateAttrString = `${this.getUTCFullYear()}-${this.getUTCMonth()}-${this.getUTCDate()}T${this.getUTCHour()}:${this.getUTCMinute()}:${this.getUTCSecond()}.000Z`
-    const dateDisplay = this.props.children ? this.props.children : `${this.getMonth()}.${this.getDate()}.${this.getFullYear()}`
+    const dateDisplay = this.props.children
+      ? this.props.children
+      : `${this.getMonth()}.${this.getDate()}.${this.getFullYear()}`
 
     return <StyledTime dateTime={dateAttrString}>{dateDisplay}</StyledTime>
   }

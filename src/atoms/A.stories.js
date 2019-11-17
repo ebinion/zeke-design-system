@@ -2,7 +2,7 @@ import React from 'react'
 import { select } from '@storybook/addon-knobs'
 
 import lorem from '../helpers/lorem'
-import A from './A'
+import { A } from '../'
 
 export default {
   title: 'Atoms|Links & Buttons/A',
@@ -15,11 +15,7 @@ export default {
 
 const kindKnob = () => select('Kind', ['normal', 'incognito'], 'normal')
 
-export const componentPlayground = () => (
-  <A kind={kindKnob()}>{lorem.generateWords(2)}</A>
-)
+export const componentPlayground = () => <A kind={kindKnob()}>{lorem.generateWords(2)}</A>
 
 export const asNormal = () => <A kind="normal">{lorem.generateWords(2)}</A>
-export const asIncognito = () => (
-  <A kind="incognito">{lorem.generateWords(2)}</A>
-)
+export const asIncognito = () => <A kind="incognito">{lorem.generateWords(2)}</A>

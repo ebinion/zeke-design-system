@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import colorTokens from '../design-system-tokens/colors'
-import textTokens from '../design-system-tokens/text'
+import { colorTokens, textTokens } from '../'
 
 const StyledP = styled.p`
   color: ${props => props.color};
@@ -27,15 +26,7 @@ export default class Text extends React.PureComponent {
   static propTypes = {
     align: PropTypes.oneOf(['left', 'center', 'right']),
     bold: PropTypes.bool,
-    color: PropTypes.oneOf([
-      'normal',
-      'light',
-      'bold',
-      'knockout',
-      'success',
-      'error',
-      'warning',
-    ]),
+    color: PropTypes.oneOf(['normal', 'light', 'bold', 'knockout', 'success', 'error', 'warning']),
     element: PropTypes.oneOf(['p', 'div']),
     lineHeight: PropTypes.oneOf(['normal', 'tight']),
     noMargin: PropTypes.bool,
@@ -74,9 +65,7 @@ export default class Text extends React.PureComponent {
         lineHeight={this.getLineHeight()}
         size={textTokens.sizes[size].size}
         spacing={noMargin ? 0 : textTokens.sizes[size].spacing}
-        weight={
-          bold ? textTokens.normal.weightBold : textTokens.normal.weightNormal
-        }
+        weight={bold ? textTokens.normal.weightBold : textTokens.normal.weightNormal}
       >
         {children}
       </StyledP>
