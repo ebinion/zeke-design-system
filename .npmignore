@@ -1,7 +1,7 @@
 /public
 /.storybook
 /.circleci
-/src
+# /src
 
 .env
 .autorc
