@@ -7,6 +7,7 @@
   "dependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
@@ -23,8 +24,11 @@
     "postinstall": "npm run build"
   },
   "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ],
     "presets": [
-      "react-app"
+      "@babel/preset-react"
     ]
   },
   "eslintConfig": {
