@@ -13,6 +13,7 @@ const StyledP = styled.p`
     line-height: ${props.lineHeight};
     text-align: ${props.align};
     margin: ${props.marginSpacing} 0;
+    text-transform: ${props.isUppercased ? 'uppercase' : 'none'};
   `}
 
   ${props =>
@@ -68,7 +69,7 @@ const Text = ({
   const getColor = () => {
     if (kind === 'heading' && color === 'light') {
       return colorTokens.text.headingLight
-    } else if (kind === 'heading') {
+    } else if (kind === 'heading' && color === 'normal') {
       return colorTokens.text.heading
     } else if (bold && kind === 'normal' && color === 'normal') {
       return colorTokens.text.bold
@@ -126,6 +127,7 @@ Text.propTypes = {
     'error',
     'warning',
   ]),
+  isUppercased: PropTypes.bool,
   kind: PropTypes.oneOf(['normal', 'heading']),
   lineHeight: PropTypes.oneOf(['normal', 'tight']),
   noMargin: PropTypes.bool,

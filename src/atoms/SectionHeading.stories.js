@@ -1,4 +1,5 @@
 import React from 'react'
+import { boolean } from '@storybook/addon-knobs'
 
 import { SectionHeading } from '../'
 
@@ -7,4 +8,10 @@ export default {
   component: SectionHeading,
 }
 
-export const component = () => <SectionHeading>Example Content</SectionHeading>
+const isKnockedoutKnob = () => boolean('Is knocked out?', false)
+
+export const component = () => (
+  <SectionHeading isKnockedOut={isKnockedoutKnob()}>
+    Example Content
+  </SectionHeading>
+)

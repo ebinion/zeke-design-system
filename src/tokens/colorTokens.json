@@ -27,7 +27,8 @@
     },
     "block": {
       "transparent": "transparent",
-      "white": "#fff"
+      "white": "#fff",
+      "dark": "rgb(32, 37, 56)"
     },
     "button-primary": "#000",
     "button-primary-highlight": "#333",

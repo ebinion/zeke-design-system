@@ -1,32 +1,40 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import textTokens from '../tokens/textTokens'
-import colorTokens from '../tokens/colorTokens'
+import { colorTokens, H4 } from '../'
 
-const StyledComponent = styled.h3`
-  color: ${colorTokens.text.heading};
-  font-family: ${textTokens.heading.fontFamily};
-  font-size: ${textTokens.sizes.s.size};
-  font-weight: ${textTokens.heading.weightBold};
-  line-height: ${textTokens.sizes.s.lineHeightTight};
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
-
+const StyledComponent = styled.div`
   &::after {
     content: '';
     display: block;
-    border-bottom: 5px solid currentColor;
+    border-bottom: 5px solid
+      ${props =>
+        props.isKnockedOut
+          ? colorTokens.text.knockout
+          : colorTokens.text.heading};
     margin: 0.5em auto 20px;
     width: 100px;
   }
 `
 
-export default class SectionHeading extends React.Component {
-  render() {
-    return <StyledComponent>{this.props.children}</StyledComponent>
-  }
+const SectionHeading = ({ as, children, isKnockedOut }) => {
+  return (
+    <StyledComponent isKnockedOut={isKnockedOut}>
+      <H4 as={as} align="center" color={isKnockedOut ? 'knockout' : 'normal'}>
+        {children}
+      </H4>
+    </StyledComponent>
+  )
 }
+
+SectionHeading.defaultProps = {
+  as: 'h2',
+}
+
+SectionHeading.propTypes = {
+  isKnockedOut: PropTypes.bool,
+  as: PropTypes.string,
+}
+
+export default SectionHeading

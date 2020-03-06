@@ -14,6 +14,8 @@ const colorKnobs = () =>
   )
 const asKnobs = () =>
   select('As', ['p', 'div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+const kindKnobs = () => select('Kind', ['normal', 'heading'], 'normal')
+const isUppercasedKnob = () => boolean('Is uppercased?', false)
 const sizeKnobs = () => select('Size', ['xxl', 'xl', 'l', 'm', 's', 'xs'], 'm')
 const lineHeightKnobs = () => select('Line Height', ['normal', 'tight'])
 
@@ -28,6 +30,8 @@ export const componentPlayground = () => (
     as={asKnobs()}
     bold={boldKnobs()}
     color={colorKnobs()}
+    isUppercased={isUppercasedKnob()}
+    kind={kindKnobs()}
     lineHeight={lineHeightKnobs()}
     size={sizeKnobs()}
   >

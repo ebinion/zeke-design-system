@@ -27,6 +27,7 @@ import Time from './atoms/Time'
 
 // MOLECULES
 import Badge from './molecules/Badge'
+import Embed from './molecules/Embed'
 import IconButton from './molecules/IconButton'
 
 // ORGANISIMS
@@ -34,8 +35,9 @@ import Block from './organisms/Block'
 import FlyoutMenu from './organisms/FlyoutMenu'
 import Header from './organisms/Header'
 import Matrix from './organisms/Matrix'
-import MarkdownContent from './organisms/MarkdownContent'
 import Notebook from './organisms/Notebook'
+import Section from './organisms/Section'
+import SectionHeader from './organisms/SectionHeader'
 import Rows from './organisms/Rows'
 import Teaser from './organisms/Teaser'
 
@@ -72,16 +74,18 @@ export {
   Time,
   // MOLECULES
   Badge,
+  Embed,
   IconButton,
   Teaser,
   // ORGANISMS
   Block,
   FlyoutMenu,
   Header,
-  MarkdownContent,
   Matrix,
   Notebook,
   Rows,
+  Section,
+  SectionHeader,
   // TEMPLATES
   SiteLayout,
   GlobalStyles,

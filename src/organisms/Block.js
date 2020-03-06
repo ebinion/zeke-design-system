@@ -46,6 +46,7 @@ const StyledContrain = styled.div`
 `
 
 const Block = ({
+  as,
   children,
   color,
   constrain,
@@ -56,6 +57,7 @@ const Block = ({
 }) => {
   return (
     <StyledComponent
+      as={as}
       padding={measurementTokens.componentPadding[padding]}
       bgColor={colorTokens.backgrounds.block[color]}
       isPositioned={isPositioned}
@@ -81,6 +83,7 @@ const getMaxWidth = constrain => {
 }
 
 Block.propTypes = {
+  as: PropType.string,
   color: PropType.oneOf(Object.keys(colorTokens.backgrounds.block)),
   constrain: PropType.oneOf(['none', 'text', 'site']),
   padding: PropType.oneOf(Object.keys(measurementTokens.componentPadding)),
@@ -90,6 +93,7 @@ Block.propTypes = {
 }
 
 Block.defaultProps = {
+  as: 'div',
   color: 'transparent',
   constrain: 'site',
   padding: 'm',
