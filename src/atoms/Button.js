@@ -2,7 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { animationTokens, colorTokens, textTokens, sizeTokens } from '../'
+import {
+  animationTokens,
+  colorTokens,
+  textTokens,
+  measurementTokens,
+} from '../'
 
 const StyledButton = styled.button`
   appearance: none;
@@ -32,27 +37,29 @@ export default class Button extends React.Component {
   static propTypes = {
     kind: PropTypes.oneOf(['primary', 'secondary']),
     fullWidth: PropTypes.bool,
+    type: PropTypes.oneOf(['button', 'submit', 'reset']),
   }
 
   static defaultProps = {
     kind: 'primary',
     fullWidth: false,
+    type: 'button',
   }
 
   getStyles() {
     const primaryStyles = {
       backgroundColor: colorTokens.backgrounds['button-primary'],
-      borderSize: sizeTokens['button-border'],
+      borderSize: measurementTokens['button-border'],
       borderColor: colorTokens.borders['button-primary'],
       transitionDuration: animationTokens['transition-duration'],
       easing: animationTokens['transition-easing'],
       color: colorTokens.text['button-primary'],
       fontSize: textTokens.sizes.m.size,
-      height: sizeTokens['touch-target'],
-      paddingTop: sizeTokens['button-padding-top'],
-      paddingRight: sizeTokens['button-padding-right'],
-      paddingBottom: sizeTokens['button-padding-bottom'],
-      paddingLeft: sizeTokens['button-padding-left'],
+      height: measurementTokens['touchTarget'],
+      paddingTop: measurementTokens['button-padding-top'],
+      paddingRight: measurementTokens['button-padding-right'],
+      paddingBottom: measurementTokens['button-padding-bottom'],
+      paddingLeft: measurementTokens['button-padding-left'],
       hover: {
         color: colorTokens.text['button-primary-highlight'],
         backgroundColor: colorTokens.backgrounds['button-primary-highlight'],
@@ -68,7 +75,8 @@ export default class Button extends React.Component {
           borderColor: colorTokens.borders['button-secondary'],
           hover: {
             color: colorTokens.text['button-secondary-highlight'],
-            backgroundColor: colorTokens.backgrounds['button-secondary-highlight'],
+            backgroundColor:
+              colorTokens.backgrounds['button-secondary-highlight'],
             borderColor: colorTokens.borders['button-secondary-highlight'],
           },
         })

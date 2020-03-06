@@ -1,19 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Heading from './Heading'
+import Text from './Text'
 
-const H4 = props => (
-  <Heading {...props} element="h4">
-    {props.children}
-  </Heading>
-)
+const H4 = props => <Text {...props} kind="heading" />
 
 H4.propTypes = {
-  align: PropTypes.oneOf(['left', 'center', 'right']),
   bold: PropTypes.bool,
-  color: PropTypes.oneOf(['dark', 'light', 'knockout']),
-  size: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+  size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
+  as: PropTypes.string,
+}
+
+H4.defaultProps = {
+  bold: true,
+  size: 'm',
+  as: 'h4',
 }
 
 export default H4

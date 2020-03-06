@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 
-import Heading from './Heading'
+import { Rows } from '../'
 
 let container = null
 
@@ -16,8 +16,8 @@ afterEach(() => {
   container = null
 })
 
-describe('<Heading />', () => {
+describe('<A />', () => {
   it('renders without crashing', () => {
-    expect(render(<Heading />, container))
+    expect(render(<Rows />, container))
   })
 })

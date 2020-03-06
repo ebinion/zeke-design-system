@@ -1,12 +1,14 @@
 {
   "text": {
     "heading": "#131623",
-    "heading-light": "#aaaaaf",
+    "headingLight": "#aaaaaf",
     "normal": "#4a4a4a",
+    "nav": "#4a4a4a",
+    "navHighlight": "#009ad6",
     "bold": "#131623",
     "light": "#88888d",
-    "link": "#007BAB",
-    "link-highlight": "#009ad6",
+    "link": "inherit",
+    "linkHighlight": "#009ad6",
     "knockout": "#fff",
     "button-primary": "#fff",
     "button-primary-highlight": "#fff",
@@ -14,10 +16,19 @@
     "button-secondary-highlight": "#fff",
     "success": "#00ab1c",
     "warning": "#F3EEAB",
-    "error": "#eb6a38"
+    "error": "#eb6a38",
+    "code": "#d25265"
   },
   "backgrounds": {
-    "app": "#f1f1ee",
+    "site": "#f1f1ee",
+    "light": "#fff",
+    "badge": {
+      "white": "#fafafa"
+    },
+    "block": {
+      "transparent": "transparent",
+      "white": "#fff"
+    },
     "button-primary": "#000",
     "button-primary-highlight": "#333",
     "button-secondary": "transparent",
@@ -25,8 +36,10 @@
     "notice-success": "#00ab1c",
     "notice-warning": "#F3EEAB",
     "notice-error": "#eb6a38",
-    "teaser": "#007BAB",
-    "teaser-highlight": "#009ad6"
+    "teaser": "#fff",
+    "teaser-highlight": "#009ad6",
+    "flyout": "#ffffff",
+    "overlay": "linear-gradient(270deg, rgba(0,0,0,.05), rgba(0,0,0,.2))"
   },
   "borders": {
     "rule": "#f1f1ee",
@@ -36,5 +49,9 @@
     "button-primary-highlight": "#333",
     "button-secondary": "#4a4a4a",
     "button-secondary-highlight": "#333"
+  },
+  "shadows": {
+    "light": "rgba(0,0,0,.15)",
+    "normal": "rgba(0,0,0,.3)"
   }
 }
