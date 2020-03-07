@@ -135,8 +135,8 @@ Note.propTypes = {
   href: PropTypes.string,
   title: PropTypes.string,
   summary: PropTypes.string,
-  image: PropTypes.oneOf([PropTypes.node, PropTypes.element]),
-  linkElement: PropTypes.oneOf([PropTypes.element, PropTypes.string])
+  image: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
+  linkElement: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
     .isRequired,
   headingLevel: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
     .isRequired,
@@ -145,6 +145,7 @@ Note.propTypes = {
 Note.defaultProps = {
   linkElement: 'a',
   headingLevel: 'h2',
+  date: new Date(),
 }
 
 export default Note

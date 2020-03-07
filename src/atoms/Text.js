@@ -116,7 +116,7 @@ const Text = ({
 }
 
 Text.propTypes = {
-  as: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   align: PropTypes.oneOf(['left', 'center', 'right']),
   bold: PropTypes.bool,
   color: PropTypes.oneOf([

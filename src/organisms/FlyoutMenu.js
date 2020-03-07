@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
-import anime from 'animejs/lib/anime.es.js'
+import anime from 'animejs'
 
 import {
   animationTokens,
