@@ -41,7 +41,7 @@ import Notebook from './organisms/Notebook'
 import Section from './organisms/Section'
 import SectionHeader from './organisms/SectionHeader'
 import Rows from './organisms/Rows'
-import Teaser from './organisms/Teaser'
+import Note from './organisms/Note'
 
 // TEMPLATES
 import SiteLayout from './templates/SiteLayout'
@@ -79,7 +79,7 @@ export {
   Badge,
   Embed,
   IconButton,
-  Teaser,
+  Note,
   // ORGANISMS
   Block,
   Figure,

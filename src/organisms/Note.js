@@ -10,10 +10,10 @@ import {
   P,
   Text,
   Time,
-} from '../'
+} from '..'
 
 const StyledContainer = styled.a`
-  background-color: ${colorTokens.backgrounds.teaser};
+  background-color: ${colorTokens.backgrounds.Note};
   border-radius: 8px;
   box-shadow: 0 2px 8px ${colorTokens.shadows.light};
   box-sizing: border-box;
@@ -29,12 +29,14 @@ const StyledContainer = styled.a`
   &:active,
   &:hover {
     box-shadow: 0 2px 12px 0 ${colorTokens.shadows.light},
-      0 0 0 3px ${colorTokens.backgrounds['teaser-highlight']};
+      0 0 0 3px ${colorTokens.backgrounds['Note-highlight']};
   }
 `
 
 const StyledArticle = styled.article`
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -47,7 +49,7 @@ const StyledArticle = styled.article`
       css`
         background: linear-gradient(
           0deg,
-          ${colorTokens.backgrounds.teaser},
+          ${colorTokens.backgrounds.Note},
           rgba(255, 255, 255, 0)
         );
         content: '';
@@ -63,21 +65,32 @@ const StyledArticle = styled.article`
 `
 
 const StyledHeader = styled.div`
+  flex: 0 0 auto;
   padding: ${measurementTokens.componentPadding.m};
   padding-bottom: 0;
 `
 
 const StyledContent = styled.div`
+  flex: 0 0 auto;
   padding: ${measurementTokens.componentPadding.m};
-  padding-top: ${measurementTokens.componentPadding.s};
+  padding-top: 0;
+  margin-top: ${measurementTokens.componentPadding.s};
+`
 
-  ${props =>
-    props.noPad &&
-    css`
-      padding-left: 0;
-      padding-right: 0;
-      padding-bottom: 0;
-    `}
+const StyledImageWrapper = styled.div`
+  flex: 1 1 auto;
+  margin-top: ${measurementTokens.componentPadding.s};
+  padding: 0;
+  overflow: hidden;
+
+  > * {
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+  }
 `
 
 const Summary = props => {
@@ -88,13 +101,13 @@ const Summary = props => {
       </StyledContent>
     )
   } else if (props.image) {
-    return <StyledContent noPad>{props.image}</StyledContent>
+    return <StyledImageWrapper>{props.image}</StyledImageWrapper>
   } else {
-    return <div></div>
+    return null
   }
 }
 
-const Teaser = props => {
+const Note = props => {
   return (
     <StyledContainer
       as={props.linkElement}
@@ -106,12 +119,7 @@ const Teaser = props => {
           <Text noMargin color="light" size="s">
             <Time date={props.date} />
           </Text>
-          <H3
-            color="knockout"
-            lineHeight="tight"
-            noMargin
-            as={props.headingLevel}
-          >
+          <H3 lineHeight="tight" noMargin as={props.headingLevel}>
             {props.title}
           </H3>
         </StyledHeader>
@@ -121,7 +129,7 @@ const Teaser = props => {
   )
 }
 
-Teaser.propTypes = {
+Note.propTypes = {
   date: PropTypes.instanceOf(Date),
   to: PropTypes.string,
   href: PropTypes.string,
@@ -134,9 +142,9 @@ Teaser.propTypes = {
     .isRequired,
 }
 
-Teaser.defaultProps = {
+Note.defaultProps = {
   linkElement: 'a',
   headingLevel: 'h2',
 }
 
-export default Teaser
+export default Note
