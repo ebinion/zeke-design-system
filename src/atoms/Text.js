@@ -1,17 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { colorTokens, textTokens } from '../'
 
 const StyledP = styled.p`
-  color: ${props => props.color};
-  font-weight: ${props => props.weight};
-  font-family: ${textTokens.normal.fontFamily};
-  font-size: ${props => props.size};
-  line-height: ${props => props.lineHeight};
-  text-align: ${props => props.align};
-  margin: ${props => props.spacing} 0;
+  ${props => css`
+    color: ${props.textColor};
+    font-weight: ${props.weight};
+    font-family: ${props.fontList};
+    font-size: ${props.size};
+    line-height: ${props.lineHeight};
+    text-align: ${props.align};
+    margin: ${props.marginSpacing} 0;
+    text-transform: ${props.isUppercased ? 'uppercase' : 'none'};
+  `}
+
+  ${props =>
+    props.truncate &&
+    css`
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-overflow: fade;
+      white-space: nowrap;
+    `}
 
   &:last-child {
     margin-bottom: 0;
@@ -20,55 +32,120 @@ const StyledP = styled.p`
   &:first-child {
     margin-top: 0;
   }
+
+  ${props =>
+    props.visuallyHidden &&
+    `
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+  `}
+
+  ${props =>
+    props.respondToLinkHover &&
+    css`
+      a:active &,
+      a:hover & {
+        color: ${colorTokens.text.linkHighlight};
+      }
+    `}
 `
 
-export default class Text extends React.PureComponent {
-  static propTypes = {
-    align: PropTypes.oneOf(['left', 'center', 'right']),
-    bold: PropTypes.bool,
-    color: PropTypes.oneOf(['normal', 'light', 'bold', 'knockout', 'success', 'error', 'warning']),
-    element: PropTypes.oneOf(['p', 'div']),
-    lineHeight: PropTypes.oneOf(['normal', 'tight']),
-    noMargin: PropTypes.bool,
-    size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
+const Text = ({
+  bold,
+  color,
+  children,
+  kind,
+  lineHeight,
+  noMargin,
+  size,
+  ...props
+}) => {
+  const getColor = () => {
+    if (kind === 'heading' && color === 'light') {
+      return colorTokens.text.headingLight
+    } else if (kind === 'heading' && color === 'normal') {
+      return colorTokens.text.heading
+    } else if (bold && kind === 'normal' && color === 'normal') {
+      return colorTokens.text.bold
+    } else {
+      return colorTokens.text[color]
+    }
   }
 
-  static defaultProps = {
-    align: 'left',
-    bold: false,
-    color: 'normal',
-    element: 'p',
-    lineHeight: 'normal',
-    size: 'm',
+  const getLineHeight = () => {
+    return lineHeight === 'normal'
+      ? textTokens.sizes[size].lineHeightNormal
+      : textTokens.sizes[size].lineHeightTight
   }
 
-  getColor() {
-    return this.props.bold && this.props.color === 'normal'
-      ? colorTokens.text.bold
-      : colorTokens.text[this.props.color]
+  const getSize = () => {
+    return textTokens.sizes[size].size
   }
 
-  getLineHeight() {
-    return this.props.lineHeight === 'normal'
-      ? textTokens.sizes[this.props.size].lineHeightNormal
-      : textTokens.sizes[this.props.size].lineHeightTight
+  const getSpacing = () => {
+    return noMargin ? 0 : textTokens.sizes[size].spacing
   }
 
-  render() {
-    const { bold, element, children, noMargin, size } = this.props
-
-    return (
-      <StyledP
-        {...this.props}
-        as={element}
-        color={this.getColor()}
-        lineHeight={this.getLineHeight()}
-        size={textTokens.sizes[size].size}
-        spacing={noMargin ? 0 : textTokens.sizes[size].spacing}
-        weight={bold ? textTokens.normal.weightBold : textTokens.normal.weightNormal}
-      >
-        {children}
-      </StyledP>
-    )
+  const getWeight = () => {
+    return bold ? textTokens[kind].weightBold : textTokens[kind].weightNormal
   }
+
+  const getFontFamily = () => {
+    return textTokens[kind].fontFamily
+  }
+
+  return (
+    <StyledP
+      {...props}
+      textColor={getColor()}
+      fontList={getFontFamily()}
+      lineHeight={getLineHeight()}
+      size={getSize()}
+      marginSpacing={getSpacing()}
+      weight={getWeight()}
+    >
+      {children}
+    </StyledP>
+  )
 }
+
+Text.propTypes = {
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  align: PropTypes.oneOf(['left', 'center', 'right']),
+  bold: PropTypes.bool,
+  color: PropTypes.oneOf([
+    'normal',
+    'light',
+    'knockout',
+    'success',
+    'error',
+    'warning',
+  ]),
+  isUppercased: PropTypes.bool,
+  kind: PropTypes.oneOf(['normal', 'heading']),
+  lineHeight: PropTypes.oneOf(['normal', 'tight']),
+  noMargin: PropTypes.bool,
+  respondToLinkHover: PropTypes.bool,
+  size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
+  truncate: PropTypes.bool,
+  visuallyHidden: PropTypes.bool,
+}
+
+Text.defaultProps = {
+  as: 'p',
+  align: 'left',
+  bold: false,
+  color: 'normal',
+  kind: 'normal',
+  lineHeight: 'normal',
+  respondToLinkHover: false,
+  size: 'm',
+}
+
+export default Text

@@ -1,5 +1,5 @@
 import React from 'react'
-import { select } from '@storybook/addon-knobs'
+import { select, boolean } from '@storybook/addon-knobs'
 
 import lorem from '../helpers/lorem'
 import { A } from '../'
@@ -13,9 +13,18 @@ export default {
   },
 }
 
-const kindKnob = () => select('Kind', ['normal', 'incognito'], 'normal')
+const kindKnob = () => select('Kind', ['normal', 'incognito', 'nav'], 'normal')
+const keyboardOnlyKnob = () => boolean('Visible to keyboards only', false)
 
-export const componentPlayground = () => <A kind={kindKnob()}>{lorem.generateWords(2)}</A>
+export const componentPlayground = () => (
+  <A kind={kindKnob()} keyboardOnly={keyboardOnlyKnob()}>
+    {lorem.generateWords(2)}
+  </A>
+)
 
-export const asNormal = () => <A kind="normal">{lorem.generateWords(2)}</A>
-export const asIncognito = () => <A kind="incognito">{lorem.generateWords(2)}</A>
+export const asNormal = () => <A>{lorem.generateWords(2)}</A>
+export const asNav = () => <A kind="nav">{lorem.generateWords(2)}</A>
+export const asIncognito = () => (
+  <A kind="incognito">{lorem.generateWords(2)}</A>
+)
+export const asKeyboardOnly = () => <A keyboardOnly>{lorem.generateWords(2)}</A>

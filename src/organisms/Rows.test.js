@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 
-import Teaser from './Teaser'
+import { Rows } from '../'
 
 let container = null
 
@@ -16,8 +16,8 @@ afterEach(() => {
   container = null
 })
 
-describe('<Teaser />', () => {
+describe('<A />', () => {
   it('renders without crashing', () => {
-    expect(render(<Teaser />, container))
+    expect(render(<Rows />, container))
   })
 })
