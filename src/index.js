@@ -19,6 +19,7 @@ import IconLinkedin from './atoms/IconLinkedin'
 import IconMenu from './atoms/IconMenu'
 import IconTwitter from './atoms/IconTwitter'
 import IconX from './atoms/IconX'
+import Img from './atoms/Img'
 import P from './atoms/P'
 import SectionHeading from './atoms/SectionHeading'
 import Strong from './atoms/Strong'
@@ -32,6 +33,7 @@ import IconButton from './molecules/IconButton'
 
 // ORGANISIMS
 import Block from './organisms/Block'
+import Figure from './organisms/Figure'
 import FlyoutMenu from './organisms/FlyoutMenu'
 import Header from './organisms/Header'
 import Matrix from './organisms/Matrix'
@@ -67,6 +69,7 @@ export {
   IconMenu,
   IconTwitter,
   IconX,
+  Img,
   P,
   SectionHeading,
   Strong,
@@ -79,6 +82,7 @@ export {
   Teaser,
   // ORGANISMS
   Block,
+  Figure,
   FlyoutMenu,
   Header,
   Matrix,
