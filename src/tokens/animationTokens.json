@@ -1,0 +1,5 @@
+{
+  "duration": 300,
+  "durationShort": 100,
+  "easing": "cubic-bezier(.4, 0, .2, 1)"
+}

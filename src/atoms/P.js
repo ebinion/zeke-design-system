@@ -3,13 +3,9 @@ import PropTypes from 'prop-types'
 
 import Text from './Text'
 
-const H1 = props => (
-  <Text {...props} element="p">
-    {props.children}
-  </Text>
-)
+const P = props => <Text {...props}>{props.children}</Text>
 
-H1.propTypes = {
+P.propTypes = {
   align: PropTypes.oneOf(['left', 'center', 'right']),
   bold: PropTypes.bool,
   color: PropTypes.oneOf([
@@ -23,6 +19,11 @@ H1.propTypes = {
   ]),
   lineHeight: PropTypes.oneOf(['normal', 'tight']),
   size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
+  as: PropTypes.string,
 }
 
-export default H1
+P.defaultProps = {
+  as: 'p',
+}
+
+export default P
