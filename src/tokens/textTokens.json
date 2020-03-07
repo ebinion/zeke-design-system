@@ -11,40 +11,43 @@
   },
   "sizes": {
     "xxl": {
-      "size": "48px",
-      "lineHeightNormal": "60px",
-      "lineHeightTight": "50px",
-      "spacing": "60px"
+      "size": "36px",
+      "lineHeightNormal": "45px",
+      "lineHeightTight": "40px",
+      "spacing": "35px"
     },
     "xl": {
-      "size": "32px",
+      "size": "28px",
       "lineHeightNormal": "40px",
       "lineHeightTight": "35px",
-      "spacing": "40px"
+      "spacing": "30px"
     },
     "l": {
-      "size": "24px",
-      "lineHeightNormal": "35px",
-      "lineHeightTight": "30px",
-      "spacing": "35px"
+      "size": "20px",
+      "lineHeightNormal": "30px",
+      "lineHeightTight": "25px",
+      "spacing": "25px"
     },
     "m": {
       "size": "16px",
       "lineHeightNormal": "25px",
       "lineHeightTight": "20px",
-      "spacing": "25px"
+      "spacing": "15px"
     },
     "s": {
       "size": "14px",
       "lineHeightNormal": "25px",
       "lineHeightTight": "20px",
-      "spacing": "25px"
+      "spacing": "15px"
     },
     "xs": {
       "size": "12px",
       "lineHeightNormal": "20px",
       "lineHeightTight": "15px",
-      "spacing": "25px"
+      "spacing": "15px"
     }
+  },
+  "listItem": {
+    "spacing": "10px"
   }
 }

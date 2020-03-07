@@ -1,0 +1,43 @@
+{
+  "touchTarget": "44px",
+  "button-border": "1px",
+  "button-padding-top": "8px",
+  "button-padding-right": "24px",
+  "button-padding-bottom": "8px",
+  "button-padding-left": "24px",
+  "componentPadding": {
+    "none": "0",
+    "s": "12px",
+    "m": "16px",
+    "l": "24px",
+    "xl": "48px"
+  },
+  "icons": {
+    "s": "16px",
+    "m": "24px"
+  },
+  "maxSiteWidth": "1200px",
+  "maxTextWidth": "700px",
+  "menuWidth": "320px",
+  "navButtonOffset": "24px",
+  "navButtonOffsetSmall": "12px",
+  "componentMargin": {
+    "s": "8px",
+    "m": "16px",
+    "l": "32px",
+    "xl": "48px"
+  },
+  "breakpoints": {
+    "horizontal": {
+      "s": "600px",
+      "m": "800px",
+      "l": "1200px"
+    }
+  },
+  "shadowDistance": {
+    "large": "40px"
+  },
+  "zIndex": {
+    "nav": "99"
+  }
+}
