@@ -14,7 +14,8 @@ const colorKnobs = () =>
   )
 const asKnobs = () =>
   select('As', ['p', 'div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
-const kindKnobs = () => select('Kind', ['normal', 'heading'], 'normal')
+const kindKnobs = () =>
+  select('Kind', ['normal', 'heading', 'decorative'], 'normal')
 const isUppercasedKnob = () => boolean('Is uppercased?', false)
 const sizeKnobs = () => select('Size', ['xxl', 'xl', 'l', 'm', 's', 'xs'], 'm')
 const lineHeightKnobs = () => select('Line Height', ['normal', 'tight'])
@@ -81,4 +82,14 @@ export const coloredError = () => (
 )
 export const coloredWarning = () => (
   <Text color="warning">{lorem.generateParagraphs(1)}</Text>
+)
+
+export const kindDecorative = () => (
+  <Text kind="decorative">{lorem.generateParagraphs(1)}</Text>
+)
+export const kindHeading = () => (
+  <Text kind="heading">{lorem.generateParagraphs(1)}</Text>
+)
+export const kindNormal = () => (
+  <Text kind="normal">{lorem.generateParagraphs(1)}</Text>
 )

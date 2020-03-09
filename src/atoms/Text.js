@@ -93,7 +93,16 @@ const Text = ({
   }
 
   const getWeight = () => {
-    return bold ? textTokens[kind].weightBold : textTokens[kind].weightNormal
+    switch (textTokens[kind]) {
+      case 'decorative':
+        return textTokens.decorative.weightNormal
+      case 'heading':
+        return textTokens.heading.weightBold
+      default:
+        return bold
+          ? textTokens.normal.weightBold
+          : textTokens.normal.weightNormal
+    }
   }
 
   const getFontFamily = () => {
@@ -128,7 +137,7 @@ Text.propTypes = {
     'warning',
   ]),
   isUppercased: PropTypes.bool,
-  kind: PropTypes.oneOf(['normal', 'heading']),
+  kind: PropTypes.oneOf(['normal', 'heading', 'decorative']),
   lineHeight: PropTypes.oneOf(['normal', 'tight']),
   noMargin: PropTypes.bool,
   respondToLinkHover: PropTypes.bool,
