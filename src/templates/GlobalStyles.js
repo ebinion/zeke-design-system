@@ -4,6 +4,8 @@ import { createGlobalStyle } from 'styled-components'
 import { colorTokens, textTokens } from '..'
 
 const GlobalWrapper = createGlobalStyle`
+  @import url('${textTokens.fontImportUrl}');
+
   body {
     background-color: ${colorTokens.backgrounds.site};
     font-family: ${textTokens.normal.fontFamily};
