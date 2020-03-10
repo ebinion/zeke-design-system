@@ -75,7 +75,7 @@ const Text = ({
       return colorTokens.text.heading
     } else if (bold && kind === 'normal' && color === 'normal') {
       return colorTokens.text.bold
-    } else if (kind === 'decorative') {
+    } else if (kind === 'decorative' && color === 'normal') {
       return colorTokens.text.bold
     } else {
       return colorTokens.text[color]
