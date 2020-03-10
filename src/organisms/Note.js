@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 import { colorTokens, measurementTokens, animationTokens, H3, Text } from '..'
 
 const StyledContainer = styled.a`
-  background-color: ${colorTokens.backgrounds.Note};
+  background-color: ${colorTokens.backgrounds.light};
   border-radius: 8px;
   box-shadow: 0 2px 8px ${colorTokens.shadows.light};
   box-sizing: border-box;
