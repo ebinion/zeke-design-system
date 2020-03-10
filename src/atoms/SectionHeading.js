@@ -21,7 +21,12 @@ const StyledComponent = styled.div`
 const SectionHeading = ({ as, children, isKnockedOut }) => {
   return (
     <StyledComponent isKnockedOut={isKnockedOut}>
-      <H4 as={as} align="center" color={isKnockedOut ? 'knockout' : 'normal'}>
+      <H4
+        as={as}
+        align="center"
+        color={isKnockedOut ? 'knockout' : 'normal'}
+        isUppercased
+      >
         {children}
       </H4>
     </StyledComponent>
