@@ -5,7 +5,6 @@ import styled, { css } from 'styled-components'
 import { colorTokens, textTokens, measurementTokens } from '../'
 
 const StyledP = styled.p`
-  background: ${colorTokens.backgrounds.light};
   max-width: ${measurementTokens.maxTextWidth};
 
   ${props => css`
@@ -76,7 +75,7 @@ const Text = ({
       return colorTokens.text.heading
     } else if (bold && kind === 'normal' && color === 'normal') {
       return colorTokens.text.bold
-    } else if (kind === 'decorative') {
+    } else if (kind === 'decorative' && color === 'normal') {
       return colorTokens.text.bold
     } else {
       return colorTokens.text[color]

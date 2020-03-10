@@ -44,6 +44,12 @@ const StyledComponent = styled.div`
       css`
         padding-top: ${props.paddingTop};
       `}
+      ${props =>
+        props.isInset &&
+        css`
+          padding-left: 0;
+          padding-right: 0;
+        `}
   }
 `
 const StyledContrain = styled.div`
