@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Block, SectionHeader } from '../'
+import { Block, SectionHeader, measurementTokens } from '../'
 
 const Section = ({ superTitle, title, lead, children, isDark }) => {
   return (
-    <Block as="section" color={isDark ? 'dark' : 'white'} padding="none">
+    <Block
+      as="section"
+      color={isDark ? 'dark' : 'white'}
+      padding="none"
+      paddingBottom={measurementTokens.componentPadding.xl}
+    >
       <SectionHeader
         title={title}
         superTitle={superTitle}

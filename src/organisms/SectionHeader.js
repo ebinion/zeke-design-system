@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Block, SectionHeading, H2, P } from '../'
+import { Block, SectionHeading, H2, Text } from '../'
 
 const SectionHeader = ({
   as,
@@ -20,9 +20,15 @@ const SectionHeader = ({
   const renderLead = () => {
     if (typeof composedLead === 'string') {
       return (
-        <P align="center" size="l" color={getColor()}>
+        <Text
+          align="center"
+          size="l"
+          color={getColor()}
+          kind="decorative"
+          noMargin
+        >
           {composedLead}
-        </P>
+        </Text>
       )
     } else {
       return composedLead
@@ -37,7 +43,7 @@ const SectionHeader = ({
         </SectionHeading>
       )}
       {title && (
-        <H2 as="h3" align="center" color={getColor()}>
+        <H2 as="h3" align="center" color={getColor()} noMargin>
           {title}
         </H2>
       )}

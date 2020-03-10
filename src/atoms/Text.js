@@ -2,9 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { colorTokens, textTokens } from '../'
+import { colorTokens, textTokens, measurementTokens } from '../'
 
 const StyledP = styled.p`
+  background: ${colorTokens.backgrounds.light};
+  max-width: ${measurementTokens.maxTextWidth};
+
   ${props => css`
     color: ${props.textColor};
     font-weight: ${props.weight};
@@ -12,7 +15,7 @@ const StyledP = styled.p`
     font-size: ${props.size};
     line-height: ${props.lineHeight};
     text-align: ${props.align};
-    margin: ${props.marginSpacing} 0;
+    margin: ${props.marginSpacing};
     text-transform: ${props.isUppercased ? 'uppercase' : 'none'};
   `}
 
@@ -73,6 +76,8 @@ const Text = ({
       return colorTokens.text.heading
     } else if (bold && kind === 'normal' && color === 'normal') {
       return colorTokens.text.bold
+    } else if (kind === 'decorative') {
+      return colorTokens.text.bold
     } else {
       return colorTokens.text[color]
     }
@@ -89,7 +94,9 @@ const Text = ({
   }
 
   const getSpacing = () => {
-    return noMargin ? 0 : textTokens.sizes[size].spacing
+    return noMargin
+      ? '0 auto'
+      : `${textTokens.sizes[size].spacing} auto ${textTokens.sizes.m.spacing} auto`
   }
 
   const getWeight = () => {

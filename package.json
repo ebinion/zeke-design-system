@@ -3,18 +3,34 @@
   "author": "Zeke Binion <zeke@binion.io> (https://zekebinion.io)",
   "description": "This repo is the home of the design system for Zeke Binion. It drives things like Zeke's website, portfolio and experimental sites.",
   "main": "dist/index.js",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "dependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
+    "@storybook/preset-create-react-app": "^2.0.0",
     "animejs": "^3.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-scripts": "^3.4.0",
     "styled-components": "^4.4.1",
     "underscore": "^1.9.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^5.3.14",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-docs": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addon-viewport": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/react": "^5.3.14",
+    "auto": "^7.17.0",
+    "lorem-ipsum": "^2.0.3",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.13.0"
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
@@ -65,21 +81,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@storybook/addon-a11y": "^5.3.14",
-    "@storybook/addon-actions": "^5.3.14",
-    "@storybook/addon-docs": "^5.3.14",
-    "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/addon-links": "^5.3.14",
-    "@storybook/addon-viewport": "^5.3.14",
-    "@storybook/addons": "^5.3.14",
-    "@storybook/react": "^5.3.14",
-    "auto": "^7.17.0",
-    "lorem-ipsum": "^2.0.3",
-    "prettier": "^1.19.1",
-    "react-scripts": "3.2.0",
-    "react-test-renderer": "^16.13.0"
   },
   "repository": {
     "type": "git",

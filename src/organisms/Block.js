@@ -25,6 +25,12 @@ const StyledComponent = styled.div`
     css`
       position: relative;
     `}
+  ${props =>
+    props.isInset &&
+    css`
+      padding-left: 0;
+      padding-right: 0;
+    `}
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
     padding: ${props => props.padding};
@@ -51,6 +57,7 @@ const Block = ({
   color,
   constrain,
   isPositioned,
+  isInset,
   padding,
   paddingBottom,
   paddingTop,
@@ -63,6 +70,7 @@ const Block = ({
       isPositioned={isPositioned}
       paddingBottom={paddingBottom}
       paddingTop={paddingTop}
+      isInset={isInset}
     >
       <StyledContrain maxWidth={getMaxWidth(constrain)}>
         {children}
@@ -88,6 +96,7 @@ Block.propTypes = {
   constrain: PropType.oneOf(['none', 'text', 'site']),
   padding: PropType.oneOf(Object.keys(measurementTokens.componentPadding)),
   isPositioned: PropType.bool,
+  isInset: PropType.bool,
   paddingBottom: PropType.string,
   paddingTop: PropType.string,
 }
@@ -98,6 +107,7 @@ Block.defaultProps = {
   constrain: 'site',
   padding: 'm',
   isPositioned: false,
+  isInset: false,
 }
 
 export default Block
