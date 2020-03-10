@@ -27,10 +27,10 @@
       "spacing": "40px"
     },
     "l": {
-      "size": "30px",
+      "size": "24px",
       "lineHeightNormal": "35px",
       "lineHeightTight": "30px",
-      "spacing": "25px"
+      "spacing": "35px"
     },
     "m": {
       "size": "16px",
