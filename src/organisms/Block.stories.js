@@ -1,5 +1,5 @@
 import React from 'react'
-import { select } from '@storybook/addon-knobs'
+import { select, boolean } from '@storybook/addon-knobs'
 
 import { Block, colorTokens, measurementTokens } from '../'
 
@@ -9,6 +9,8 @@ const colorKnobs = () =>
   select('Color', Object.keys(colorTokens.backgrounds.block), 'transparent')
 const paddingKnobs = () =>
   select('Padding', Object.keys(measurementTokens.componentPadding), 'm')
+const isInsetKnob = () => boolean('Is inset?', false)
+const isPositioned = () => boolean('Is positioned?', false)
 
 export default {
   title: 'Organisms|Layout/Block',
@@ -21,6 +23,8 @@ export const componentPlayground = () => {
       constain={constrainKnobs()}
       color={colorKnobs()}
       padding={paddingKnobs()}
+      isInset={isInsetKnob()}
+      isPositioned={isPositioned()}
     >
       Testing
     </Block>

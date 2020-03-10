@@ -9,53 +9,53 @@ const StyledTime = styled.time`
   color: inherit;
 `
 
-export default class Time extends React.Component {
-  static propTypes = {
-    date: PropTypes.instanceOf(Date),
+const Time = props => {
+  const getUTCFullYear = () => {
+    return props.date.getUTCFullYear().toString()
   }
 
-  getUTCFullYear() {
-    return this.props.date.getUTCFullYear().toString()
+  const getFullYear = () => {
+    return props.date.getFullYear().toString()
   }
 
-  getFullYear() {
-    return this.props.date.getFullYear().toString()
+  const getUTCMonth = () => {
+    return addLeadingZero(props.date.getUTCMonth() + 1)
   }
 
-  getUTCMonth() {
-    return addLeadingZero(this.props.date.getUTCMonth() + 1)
+  const getMonth = () => {
+    return addLeadingZero(props.date.getMonth() + 1)
   }
 
-  getMonth() {
-    return addLeadingZero(this.props.date.getMonth() + 1)
+  const getUTCDate = () => {
+    return addLeadingZero(props.date.getUTCDate())
   }
 
-  getUTCDate() {
-    return addLeadingZero(this.props.date.getUTCDate())
+  const getDate = () => {
+    return addLeadingZero(props.date.getDate())
   }
 
-  getDate() {
-    return addLeadingZero(this.props.date.getDate())
+  const getUTCHour = () => {
+    return addLeadingZero(props.date.getUTCHours())
   }
 
-  getUTCHour() {
-    return addLeadingZero(this.props.date.getUTCHours())
+  const getUTCMinute = () => {
+    return addLeadingZero(props.date.getUTCMinutes())
   }
 
-  getUTCMinute() {
-    return addLeadingZero(this.props.date.getUTCMinutes())
+  const getUTCSecond = () => {
+    return addLeadingZero(props.date.getUTCSeconds())
   }
 
-  getUTCSecond() {
-    return addLeadingZero(this.props.date.getUTCSeconds())
-  }
+  const dateAttrString = `${getUTCFullYear()}-${getUTCMonth()}-${getUTCDate()}T${getUTCHour()}:${getUTCMinute()}:${getUTCSecond()}.000Z`
+  const dateDisplay = props.children
+    ? props.children
+    : `${getMonth()}.${getDate()}.${getFullYear()}`
 
-  render() {
-    const dateAttrString = `${this.getUTCFullYear()}-${this.getUTCMonth()}-${this.getUTCDate()}T${this.getUTCHour()}:${this.getUTCMinute()}:${this.getUTCSecond()}.000Z`
-    const dateDisplay = this.props.children
-      ? this.props.children
-      : `${this.getMonth()}.${this.getDate()}.${this.getFullYear()}`
-
-    return <StyledTime dateTime={dateAttrString}>{dateDisplay}</StyledTime>
-  }
+  return <StyledTime dateTime={dateAttrString}>{dateDisplay}</StyledTime>
 }
+
+Time.propTypes = {
+  date: PropTypes.instanceOf(Date),
+}
+
+export default Time

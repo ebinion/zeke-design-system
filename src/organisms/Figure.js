@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { measurementTokens } from '../'
 
 const StyledComponent = styled.figure`
+  align-items: center;
   display: grid;
   grid-gap: ${measurementTokens.componentMargin.m};
   grid-template-areas:

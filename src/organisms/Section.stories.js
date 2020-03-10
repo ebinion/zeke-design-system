@@ -21,6 +21,8 @@ export const ComponentPlayground = () => {
       title={titleKnob()}
       lead={leadKnob()}
       isDark={isDarkKnob()}
-    ></Section>
+    >
+      Section Content
+    </Section>
   )
 }

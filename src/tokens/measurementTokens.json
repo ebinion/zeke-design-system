@@ -22,10 +22,10 @@
   "navButtonOffset": "24px",
   "navButtonOffsetSmall": "12px",
   "componentMargin": {
-    "s": "8px",
-    "m": "16px",
-    "l": "32px",
-    "xl": "48px"
+    "s": "12px",
+    "m": "24px",
+    "l": "40px",
+    "xl": "56px"
   },
   "breakpoints": {
     "horizontal": {

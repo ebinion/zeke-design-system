@@ -2,15 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import {
-  colorTokens,
-  measurementTokens,
-  animationTokens,
-  H3,
-  P,
-  Text,
-  Time,
-} from '..'
+import { colorTokens, measurementTokens, animationTokens, H3, Text } from '..'
 
 const StyledContainer = styled.a`
   background-color: ${colorTokens.backgrounds.Note};
@@ -29,7 +21,7 @@ const StyledContainer = styled.a`
   &:active,
   &:hover {
     box-shadow: 0 2px 12px 0 ${colorTokens.shadows.light},
-      0 0 0 3px ${colorTokens.backgrounds['Note-highlight']};
+      0 0 0 3px ${colorTokens.text.linkHighlight};
   }
 `
 
@@ -97,7 +89,7 @@ const Summary = props => {
   if (props.text && !props.image) {
     return (
       <StyledContent>
-        <P noMargin>{props.text}</P>
+        <Text noMargin>{props.text}</Text>
       </StyledContent>
     )
   } else if (props.image) {
@@ -117,7 +109,7 @@ const Note = props => {
       <StyledArticle showFade={!props.image}>
         <StyledHeader>
           <Text noMargin color="light" size="s">
-            <Time date={props.date} />
+            {props.superTitle}
           </Text>
           <H3 lineHeight="tight" noMargin as={props.headingLevel}>
             {props.title}
@@ -130,7 +122,7 @@ const Note = props => {
 }
 
 Note.propTypes = {
-  date: PropTypes.instanceOf(Date),
+  superTitle: PropTypes.node,
   to: PropTypes.string,
   href: PropTypes.string,
   title: PropTypes.string,
