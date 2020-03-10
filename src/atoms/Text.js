@@ -5,7 +5,6 @@ import styled, { css } from 'styled-components'
 import { colorTokens, textTokens, measurementTokens } from '../'
 
 const StyledP = styled.p`
-  background: ${colorTokens.backgrounds.light};
   max-width: ${measurementTokens.maxTextWidth};
 
   ${props => css`
