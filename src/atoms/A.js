@@ -11,7 +11,7 @@ const StyledA = styled.a`
   font-weight: ${textTokens.normal.weightNormal};
   text-decoration: ${props => props.static.textDecoration};
   ${props =>
-    props.inheritFont &&
+    (props.inheritFont || props.useInheritedFont) &&
     css`
       font: inherit;
     `}
@@ -105,7 +105,8 @@ A.propTypes = {
   kind: PropTypes.oneOf(['normal', 'incognito', 'nav']),
   keyboardOnly: PropTypes.bool,
   href: PropTypes.string,
-  inheritFont: PropTypes.bool,
+  inheritFont: PropTypes.bool, // will depreacate because of React warnings in 1.0
+  useInheritedFont: PropTypes.bool,
   to: PropTypes.string,
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 }

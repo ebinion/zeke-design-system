@@ -66,7 +66,7 @@ const Header = props => {
     <StyledComponent role="banner">
       <StyledButton>
         <IconButton
-          icon={IconMenu}
+          icon={<IconMenu />}
           title="Menu"
           clickHandler={props.menuClickHandler}
         />

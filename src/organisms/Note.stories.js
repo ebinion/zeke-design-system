@@ -13,6 +13,7 @@ export const ComponentPlayground = () => (
     superTitle={<Time date={new Date()} />}
     title={lorem.generateWords(10)}
     summary={lorem.generateWords(90)}
+    to="#"
   />
 )
 
@@ -22,5 +23,6 @@ export const withImage = () => (
     title={lorem.generateWords(10)}
     summary={lorem.generateWords(90)}
     image={<Img src="https://via.placeholder.com/1200x700" />}
+    to="#"
   />
 )

@@ -25,6 +25,11 @@ export const componentPlayground = () => {
 
 export const withoutImage = () => {
   return (
-    <Teaser summary={summaryKnob()} title={titleKnob()} date={new Date()} />
+    <Teaser
+      summary={summaryKnob()}
+      title={titleKnob()}
+      date={new Date()}
+      to="#"
+    />
   )
 }

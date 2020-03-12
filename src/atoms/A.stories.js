@@ -15,9 +15,14 @@ export default {
 
 const kindKnob = () => select('Kind', ['normal', 'incognito', 'nav'], 'normal')
 const keyboardOnlyKnob = () => boolean('Visible to keyboards only', false)
+const inheritedFontKnob = () => boolean('Use inherited font?', false)
 
 export const componentPlayground = () => (
-  <A kind={kindKnob()} keyboardOnly={keyboardOnlyKnob()}>
+  <A
+    kind={kindKnob()}
+    keyboardOnly={keyboardOnlyKnob()}
+    useInheritedFont={inheritedFontKnob()}
+  >
     {lorem.generateWords(2)}
   </A>
 )

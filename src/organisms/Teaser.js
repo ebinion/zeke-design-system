@@ -44,7 +44,7 @@ const Note = ({
 
 Note.propTypes = {
   date: PropTypes.instanceOf(Date),
-  to: PropTypes.string,
+  to: PropTypes.string.isRequired,
   title: PropTypes.string,
   summary: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
