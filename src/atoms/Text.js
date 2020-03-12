@@ -2,10 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { colorTokens, textTokens, measurementTokens } from '../'
+import {
+  animationTokens,
+  colorTokens,
+  textTokens,
+  measurementTokens,
+} from '../'
 
 const StyledP = styled.p`
   max-width: ${measurementTokens.maxTextWidth};
+  transition: color ${animationTokens.duration}ms ${animationTokens.easing};
 
   ${props => css`
     color: ${props.textColor};
