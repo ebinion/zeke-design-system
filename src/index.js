@@ -37,11 +37,12 @@ import Figure from './organisms/Figure'
 import FlyoutMenu from './organisms/FlyoutMenu'
 import Header from './organisms/Header'
 import Matrix from './organisms/Matrix'
+import Note from './organisms/Note'
 import Notebook from './organisms/Notebook'
 import Section from './organisms/Section'
 import SectionHeader from './organisms/SectionHeader'
 import Rows from './organisms/Rows'
-import Note from './organisms/Note'
+import Teaser from './organisms/Teaser'
 
 // TEMPLATES
 import SiteLayout from './templates/SiteLayout'
@@ -79,17 +80,18 @@ export {
   Badge,
   Embed,
   IconButton,
-  Note,
   // ORGANISMS
   Block,
   Figure,
   FlyoutMenu,
   Header,
   Matrix,
+  Note,
   Notebook,
   Rows,
   Section,
   SectionHeader,
+  Teaser,
   // TEMPLATES
   SiteLayout,
   GlobalStyles,

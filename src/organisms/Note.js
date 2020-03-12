@@ -123,12 +123,12 @@ const Note = props => {
 
 Note.propTypes = {
   superTitle: PropTypes.node,
-  to: PropTypes.string,
+  to: PropTypes.string.isRequired,
   href: PropTypes.string,
   title: PropTypes.string,
   summary: PropTypes.string,
-  image: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
-  linkElement: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
+  image: PropTypes.node,
+  linkElement: PropTypes.oneOfType([PropTypes.node, PropTypes.string])
     .isRequired,
   headingLevel: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
     .isRequired,

@@ -24,7 +24,6 @@ const StyledComponent = styled.button`
 `
 
 const IconButton = props => {
-  const Icon = props.icon
   const buttonRef = React.createRef()
 
   const clickHandler = event => {
@@ -37,15 +36,14 @@ const IconButton = props => {
       <Text element="span" visuallyHidden>
         {props.title}
       </Text>
-      <Icon size={props.size} />
+      {props.icon}
     </StyledComponent>
   )
 }
 
 IconButton.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.element.isRequired,
-  size: PropTypes.oneOf(['s', 'm']),
+  icon: PropTypes.node.isRequired,
   clickHandler: PropTypes.func,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
 }
@@ -53,7 +51,6 @@ IconButton.propTypes = {
 IconButton.defaultProps = {
   clickHandler: () => {},
   type: 'button',
-  size: 'm',
 }
 
 export default IconButton
