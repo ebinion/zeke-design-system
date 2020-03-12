@@ -43,7 +43,7 @@ const StyledP = styled.p`
 
   ${props =>
     props.visuallyHidden &&
-    `
+    css`
       border: 0;
       clip: rect(0 0 0 0);
       height: 1px;
@@ -52,7 +52,7 @@ const StyledP = styled.p`
       padding: 0;
       position: absolute;
       width: 1px;
-  `}
+    `}
 
   ${props =>
     props.respondToLinkHover &&
@@ -62,6 +62,61 @@ const StyledP = styled.p`
         color: ${colorTokens.text.linkHighlight};
       }
     `}
+
+  
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
+    ${props =>
+      props.alignSmallUp &&
+      css`
+        text-align: ${props.alignSmallUp};
+      `}
+    ${props =>
+      props.sizeSmallUp &&
+      css`
+        font-size: ${props.sizeSmallUp};
+      `}
+    ${props =>
+      props.lineHeightSmallUp &&
+      css`
+        line-height: ${props.lineHeightSmallUp};
+      `}
+  }
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+    ${props =>
+      props.alignMediumUp &&
+      css`
+        text-align: ${props.alignMediumUp};
+      `}
+    ${props =>
+      props.sizeMediumUp &&
+      css`
+        font-size: ${props.sizeMediumUp};
+      `}
+    ${props =>
+      props.lineHeightMediumUp &&
+      css`
+        line-height: ${props.lineHeightMediumUp};
+      `}
+  }
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
+    ${props =>
+      props.alignLargeUp &&
+      css`
+        text-align: ${props.alignLargeUp};
+      `}
+    ${props =>
+      props.sizeLargeUp &&
+      css`
+        font-size: ${props.sizeLargeUp};
+      `}
+    ${props =>
+      props.lineHeightLargeUp &&
+      css`
+        line-height: ${props.lineHeightLargeUp};
+      `}
+  }
 `
 
 const Text = ({
@@ -70,8 +125,14 @@ const Text = ({
   children,
   kind,
   lineHeight,
+  lineHeightSmallUp,
+  lineHeightMediumUp,
+  lineHeightLargeUp,
   noMargin,
   size,
+  sizeSmallUp,
+  sizeMediumUp,
+  sizeLargeUp,
   ...props
 }) => {
   const getColor = () => {
@@ -88,14 +149,14 @@ const Text = ({
     }
   }
 
-  const getLineHeight = () => {
+  const getLineHeight = (sizeToken, lineHeight) => {
     return lineHeight === 'normal'
-      ? textTokens.sizes[size].lineHeightNormal
-      : textTokens.sizes[size].lineHeightTight
+      ? textTokens.sizes[sizeToken].lineHeightNormal
+      : textTokens.sizes[sizeToken].lineHeightTight
   }
 
-  const getSize = () => {
-    return textTokens.sizes[size].size
+  const getSize = sizeKey => {
+    return textTokens.sizes[sizeKey].size
   }
 
   const getSpacing = () => {
@@ -121,13 +182,97 @@ const Text = ({
     return textTokens[kind].fontFamily
   }
 
+  const getSizes = () => {
+    return {
+      size: getSize(size),
+      sizeSmallUp: sizeSmallUp ? getSize(sizeSmallUp) : false,
+      sizeMediumUp: sizeMediumUp ? getSize(sizeMediumUp) : false,
+      sizeLargeUp: sizeLargeUp ? getSize(sizeLargeUp) : false,
+    }
+  }
+
+  const getLineHeights = () => {
+    const lineHeights = {
+      lineHeight: getLineHeight(size, lineHeight),
+      lineHeightSmallUp: false,
+      lineHeightMediumUp: false,
+      lineHeightLargeUp: false,
+    }
+
+    // Small
+    if (lineHeightSmallUp && sizeSmallUp) {
+      lineHeights.lineHeightSmallUp = getLineHeight(
+        sizeSmallUp,
+        lineHeightSmallUp
+      )
+    } else if (lineHeightSmallUp) {
+      lineHeights.lineHeightSmallUp = getLineHeight(size, lineHeightSmallUp)
+    }
+
+    // Medium
+    if (lineHeightMediumUp && sizeMediumUp) {
+      lineHeights.lineHeightMediumUp = getLineHeight(
+        sizeMediumUp,
+        lineHeightMediumUp
+      )
+    } else if (lineHeightMediumUp && sizeSmallUp) {
+      lineHeights.lineHeightMediumUp = getLineHeight(
+        sizeSmallUp,
+        lineHeightMediumUp
+      )
+    } else if (lineHeightMediumUp) {
+      lineHeights.lineHeightMediumUp = getLineHeight(size, lineHeightMediumUp)
+    } else if (lineHeightSmallUp && sizeMediumUp) {
+      lineHeights.lineHeightMediumUp = getLineHeight(
+        sizeMediumUp,
+        lineHeightSmallUp
+      )
+    } else if (sizeMediumUp) {
+      lineHeights.lineHeightMediumUp = getLineHeight(sizeMediumUp, lineHeight)
+    }
+
+    // Large
+    if (lineHeightLargeUp && sizeLargeUp) {
+      lineHeights.lineHeightLargeUp = getLineHeight(
+        sizeLargeUp,
+        lineHeightLargeUp
+      )
+    } else if (lineHeightLargeUp && sizeMediumUp) {
+      lineHeights.lineHeightLargeUp = getLineHeight(
+        sizeMediumUp,
+        lineHeightLargeUp
+      )
+    } else if (lineHeightLargeUp && sizeSmallUp) {
+      lineHeights.lineHeightLargeUp = getLineHeight(
+        sizeSmallUp,
+        lineHeightLargeUp
+      )
+    } else if (lineHeightLargeUp) {
+      lineHeights.lineHeightLargeUp = getLineHeight(size, lineHeightLargeUp)
+    } else if (sizeLargeUp && lineHeightMediumUp) {
+      lineHeights.lineHeightLargeUp = getLineHeight(
+        sizeLargeUp,
+        lineHeightMediumUp
+      )
+    } else if (sizeLargeUp && lineHeightSmallUp) {
+      lineHeights.lineHeightLargeUp = getLineHeight(
+        sizeLargeUp,
+        lineHeightSmallUp
+      )
+    } else if (sizeLargeUp) {
+      lineHeights.lineHeightLargeUp = getLineHeight(sizeLargeUp, lineHeight)
+    }
+
+    return lineHeights
+  }
+
   return (
     <StyledP
       {...props}
       textColor={getColor()}
       fontList={getFontFamily()}
-      lineHeight={getLineHeight()}
-      size={getSize()}
+      {...getSizes()}
+      {...getLineHeights()}
       marginSpacing={getSpacing()}
       weight={getWeight()}
     >
@@ -139,6 +284,9 @@ const Text = ({
 Text.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   align: PropTypes.oneOf(['left', 'center', 'right']),
+  alignSmallUp: PropTypes.oneOf(['left', 'center', 'right']),
+  alignMediumUp: PropTypes.oneOf(['left', 'center', 'right']),
+  alignLargeUp: PropTypes.oneOf(['left', 'center', 'right']),
   bold: PropTypes.bool,
   color: PropTypes.oneOf([
     'normal',
@@ -149,11 +297,17 @@ Text.propTypes = {
     'warning',
   ]),
   isUppercased: PropTypes.bool,
-  kind: PropTypes.oneOf(['normal', 'heading', 'decorative']),
+  kind: PropTypes.oneOf(['normal', 'heading', 'decorative', 'code']),
   lineHeight: PropTypes.oneOf(['normal', 'tight']),
+  lineHeightSmallUp: PropTypes.oneOf(['normal', 'tight']),
+  lineHeightMediumUp: PropTypes.oneOf(['normal', 'tight']),
+  lineHeightLargeUp: PropTypes.oneOf(['normal', 'tight']),
   noMargin: PropTypes.bool,
   respondToLinkHover: PropTypes.bool,
   size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
+  sizeSmallUp: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
+  sizeMediumUp: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
+  sizeLargeUp: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
   truncate: PropTypes.bool,
   visuallyHidden: PropTypes.bool,
 }
