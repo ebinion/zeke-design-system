@@ -32,6 +32,7 @@ import Embed from './molecules/Embed'
 import IconButton from './molecules/IconButton'
 
 // ORGANISIMS
+import BigTeaser from './organisms/BigTeaser'
 import Block from './organisms/Block'
 import Figure from './organisms/Figure'
 import FlyoutMenu from './organisms/FlyoutMenu'
@@ -81,6 +82,7 @@ export {
   Embed,
   IconButton,
   // ORGANISMS
+  BigTeaser,
   Block,
   Figure,
   FlyoutMenu,
