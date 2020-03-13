@@ -10,7 +10,8 @@ import {
 } from '../'
 
 const StyledP = styled.p`
-  max-width: ${measurementTokens.maxTextWidth};
+  max-width: ${props =>
+    props.constrain ? measurementTokens.maxTextWidth : '100%'};
   transition: color ${animationTokens.duration}ms ${animationTokens.easing};
 
   ${props => css`
@@ -296,6 +297,7 @@ Text.propTypes = {
     'error',
     'warning',
   ]),
+  constrain: PropTypes.bool,
   isUppercased: PropTypes.bool,
   kind: PropTypes.oneOf(['normal', 'heading', 'decorative', 'code']),
   lineHeight: PropTypes.oneOf(['normal', 'tight']),
@@ -317,6 +319,7 @@ Text.defaultProps = {
   align: 'left',
   bold: false,
   color: 'normal',
+  constrain: true,
   kind: 'normal',
   lineHeight: 'normal',
   respondToLinkHover: false,
