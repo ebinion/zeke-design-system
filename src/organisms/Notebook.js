@@ -96,19 +96,15 @@ Notebook.propTypes = {
   count: PropTypes.number,
   description: PropTypes.string,
   headingAs: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
-  image: PropTypes.element.isRequired,
-  linkAs: PropTypes.oneOf([
-    PropTypes.string,
-    PropTypes.element,
-    PropTypes.node,
-  ]),
-  title: PropTypes.string,
+  image: PropTypes.node,
+  linkAs: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  title: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
 }
 
 Notebook.defaultProps = {
   linkAs: 'a',
-  headingAs: 'h4',
+  headingAs: 'h3',
 }
 
 export default Notebook
