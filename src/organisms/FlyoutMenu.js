@@ -215,7 +215,7 @@ class FlyoutMenu extends React.Component {
         <StyledMenu ref={this.menuRef}>
           <StyledClose>
             <IconButton
-              icon={IconX}
+              icon={<IconX />}
               title="Close"
               clickHandler={this.props.closeHandler}
             />
