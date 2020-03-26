@@ -3,7 +3,7 @@
   "author": "Zeke Binion <zeke@binion.io> (https://zekebinion.io)",
   "description": "This repo is the home of the design system for Zeke Binion. It drives things like Zeke's website, portfolio and experimental sites.",
   "main": "dist/index.js",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "dependencies": {
     "@babel/cli": "7.x",
     "@babel/core": "7.x",
@@ -14,6 +14,7 @@
     "react": "16.x",
     "react-dom": "16.x",
     "react-scripts": "3.x",
+    "react-waypoint": "9.x",
     "styled-components": "4.x",
     "underscore": "1.x"
   },
@@ -27,6 +28,7 @@
     "react": "16.x",
     "react-dom": "16.x",
     "react-scripts": "3.x",
+    "react-waypoint": "9.x",
     "styled-components": "4.x",
     "underscore": "1.x"
   },
