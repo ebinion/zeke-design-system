@@ -44,6 +44,7 @@ import Header from './organisms/Header'
 import Matrix from './organisms/Matrix'
 import Note from './organisms/Note'
 import Notebook from './organisms/Notebook'
+import OffsetGrid from './organisms/OffsetGrid'
 import PhotoOverlayed from './organisms/PhotoOverlayed'
 import Section from './organisms/Section'
 import SectionHeader from './organisms/SectionHeader'
@@ -99,6 +100,7 @@ export {
   Matrix,
   Note,
   Notebook,
+  OffsetGrid,
   PhotoOverlayed,
   Rows,
   Section,
