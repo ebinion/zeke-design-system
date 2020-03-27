@@ -4,7 +4,6 @@ import styled, { keyframes } from 'styled-components'
 
 import { animationTokens } from '..'
 
-const slideDistance = '100px'
 const animationNames = {
   FADE_IN: 'fadeIn',
   FADE_IN_FROM_LEFT: 'fadeInFromLeft',
@@ -26,7 +25,7 @@ const animationKeyframes = {
   fadeInFromLeft: keyframes`
     0% {
       opacity: 0;
-      transform: translateX(-${slideDistance})
+      transform: translateX(-${animationTokens.slideDistance})
     }
 
     100% {
@@ -37,7 +36,7 @@ const animationKeyframes = {
   fadeInFromRight: keyframes`
     0% {
       opacity: 0;
-      transform: translateX(${slideDistance})
+      transform: translateX(${animationTokens.slideDistance})
     }
 
     100% {
@@ -48,7 +47,7 @@ const animationKeyframes = {
   fadeInFromTop: keyframes`
     0% {
       opacity: 0;
-      transform: translateY(-${slideDistance})
+      transform: translateY(-${animationTokens.slideDistance})
     }
 
     100% {
@@ -59,7 +58,7 @@ const animationKeyframes = {
   fadeInFromBottom: keyframes`
     0% {
       opacity: 0;
-      transform: translateY(${slideDistance})
+      transform: translateY(${animationTokens.slideDistance})
     }
 
     100% {

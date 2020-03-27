@@ -1,36 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
-import anime from 'animejs'
 
 import {
+  A,
+  IconButton,
+  IconX,
   animationTokens,
   colorTokens,
   measurementTokens,
-  IconButton,
-  IconX,
-  A,
 } from '../'
 
 const StyledComponent = styled.div`
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
   top: 0;
   left: 0;
+  transition: opacity ${animationTokens.duration}ms ${animationTokens.easing};
   z-index: ${measurementTokens.zIndex.nav};
 
   ${props =>
-    props.initialState &&
+    props.isOpen &&
     css`
-      opacity: 0;
-      pointer-events: none;
-    `}
-  ${props =>
-    !props.isOpen &&
-    css`
-      pointer-events: none;
+      opacity: 1;
+      pointer-events: auto;
     `}
 `
 
@@ -41,11 +38,25 @@ const StyledMenu = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  transform: translate(0, ${animationTokens.slideDistance});
+  transition: transform ${animationTokens.duration}ms ${animationTokens.easing};
   z-index: 2;
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
     max-width: ${measurementTokens.menuWidth};
+    transform: translate(-${animationTokens.slideDistance}, 0);
   }
+
+  ${props =>
+    props.isOpen &&
+    css`
+      transform: translate(0, 0);
+
+      @media screen and (min-width: ${measurementTokens.breakpoints.horizontal
+          .s}) {
+        transform: translate(0, 0);
+      }
+    `}
 `
 
 const StyledMask = styled.div`
@@ -89,107 +100,29 @@ const StyleNavItem = styled.div`
   min-height: ${measurementTokens.touchTarget};
 `
 
-class FlyoutMenu extends React.Component {
-  constructor(props) {
-    super(props)
-
-    // State
-    this.state = {
-      initialState: true,
-    }
-
-    // Refs
-    this.closeRef = React.createRef()
-    this.menuRef = React.createRef()
-    this.navRef = React.createRef()
-    this.wrapperRef = React.createRef()
-
-    this.createAnimation = this.createAnimation.bind(this)
-    this.handleKeyPress = this.handleKeyPress.bind(this)
-  }
-
-  createAnimation() {
-    this.timeline = anime
-      .timeline({
-        autoplay: false,
-        easing: 'easeInOutCubic',
-        duration: animationTokens.duration,
-      })
-      .add({
-        targets: this.wrapperRef.current,
-        opacity: [0, 1],
-      })
-      .add(
-        {
-          targets: this.menuRef.current,
-          translateX: [-150, 0],
-        },
-        `-=${animationTokens.duration}`
-      )
-      .add(
-        {
-          targets: this.navRef.current.querySelectorAll('[data-nav-item]'),
-          translateX: [-150, 0],
-          delay: anime.stagger(30),
-        },
-        `-=${animationTokens.duration}`
-      )
-      .add(
-        {
-          targets: this.closeRef.current,
-          opacity: [0, 1],
-          duration: animationTokens.durationShort,
-          translateY: [-10, 0],
-        },
-        `-=${animationTokens.duration / 2}`
-      )
-  }
-
-  animate() {
-    if (this.props.isOpen) {
-      if (this.timeline.direction !== 'normal') {
-        this.timeline.reverse()
-      }
-    } else {
-      if (this.timeline.direction !== 'reverse') {
-        this.timeline.reverse()
-        this.timeline.completed = false
-      }
-    }
-
-    this.timeline.play()
-  }
-
-  handleKeyPress(event) {
-    if (event.keyCode === 27 && this.props.isOpen) {
-      this.props.closeHandler()
+const FlyoutMenu = props => {
+  const handleKeyPress = event => {
+    if (event.keyCode === 27 && props.isOpen) {
+      props.closeHandler()
     }
   }
 
-  componentDidMount() {
-    this.createAnimation()
-    this.animate()
-    document.addEventListener('keyup', this.handleKeyPress)
-    this.setState({
-      initialState: false,
-    })
-  }
+  useEffect(() => {
+    document.addEventListener('keyup', handleKeyPress)
 
-  componentDidUpdate() {
-    this.animate()
-  }
+    return () => {
+      document.removeEventListener('keyup', handleKeyPress)
+    }
+  }, [])
 
-  componentWillUnmount() {
-    document.removeEventListener('keyup', this.handleKeyPress)
-  }
+  const renderItems = () => {
+    const LinkElement = props.Link
 
-  renderItems() {
-    const LinkElement = this.props.Link
     return (
-      <StyledNav ref={this.navRef} role="navigation" aria-label="Main">
-        {this.props.items &&
-          this.props.items.map((item, i) => (
-            <StyleNavItem key={`navItem${i}`} data-nav-item>
+      <StyledNav role="navigation" aria-label="Main">
+        {props.items &&
+          props.items.map((item, i) => (
+            <StyleNavItem key={`navItem${i}`}>
               <A
                 to={item.to}
                 kind="nav"
@@ -204,39 +137,35 @@ class FlyoutMenu extends React.Component {
     )
   }
 
-  render() {
-    return (
-      <StyledComponent
-        ref={this.wrapperRef}
-        isOpen={this.props.isOpen}
-        initialState={this.state.initialState}
-      >
-        <StyledMask onClick={this.props.closeHandler} />
-        <StyledMenu ref={this.menuRef}>
-          <StyledClose>
-            <IconButton
-              icon={<IconX />}
-              title="Close"
-              clickHandler={this.props.closeHandler}
-            />
-          </StyledClose>
-          {this.renderItems()}
-        </StyledMenu>
-      </StyledComponent>
-    )
-  }
+  return (
+    <StyledComponent isOpen={props.isOpen}>
+      <StyledMask onClick={props.closeHandler} />
+      <StyledMenu isOpen={props.isOpen}>
+        <StyledClose>
+          <IconButton
+            icon={<IconX />}
+            title="Close"
+            clickHandler={props.closeHandler}
+          />
+        </StyledClose>
+        {renderItems()}
+        {props.children}
+      </StyledMenu>
+    </StyledComponent>
+  )
 }
 
 FlyoutMenu.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      to: PropTypes.string,
-      label: PropTypes.string,
+      to: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      linkElement: PropTypes.element,
     })
   ).isRequired,
-  Link: PropTypes.element,
   isOpen: PropTypes.bool,
   closeHandler: PropTypes.func.isRequired,
+  children: PropTypes.node,
 }
 
 FlyoutMenu.defaultProps = {

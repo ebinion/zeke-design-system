@@ -1,4 +1,4 @@
-import React, { useState } from 'react' // eslint-disable-line no-unused-vars
+import React, { useState, useEffect } from 'react' // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types'
 import styled, { css, createGlobalStyle } from 'styled-components'
 
@@ -69,6 +69,19 @@ const Modal = props => {
       return true
     } else {
       return false
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keyup', handleKeyPress)
+
+    return () => document.removeEventListener('keyup', handleKeyPress)
+  }, [])
+
+  const handleKeyPress = event => {
+    console.log(props.isOpen)
+    if (event.keyCode === 27 && props.isOpen) {
+      props.handleClose()
     }
   }
 
