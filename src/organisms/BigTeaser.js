@@ -2,16 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import {
-  A,
-  H3,
-  Text,
-  Time,
-  P,
-  SectionHeading,
-  measurementTokens,
-  colorTokens,
-} from '..'
+import { A, H3, P, SectionHeading, measurementTokens, colorTokens } from '..'
 
 const ArticleComponent = styled.article`
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {

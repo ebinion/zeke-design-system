@@ -58,14 +58,14 @@ const BodyStyle = createGlobalStyle`
   }
 `
 
-const Modal = props => {
+const Modal = ({ handleClose, isOpen, ...props }) => {
   const [hasPlayed, setHasPlayed] = useState(false)
 
   const getModelIsOpen = () => {
-    if (props.isOpen && !hasPlayed) {
+    if (isOpen && !hasPlayed) {
       setHasPlayed(true)
       return true
-    } else if (props.isOpen) {
+    } else if (isOpen) {
       return true
     } else {
       return false
@@ -73,17 +73,16 @@ const Modal = props => {
   }
 
   useEffect(() => {
+    const handleKeyPress = event => {
+      if (event.keyCode === 27 && isOpen) {
+        handleClose()
+      }
+    }
+
     document.addEventListener('keyup', handleKeyPress)
 
     return () => document.removeEventListener('keyup', handleKeyPress)
-  }, [])
-
-  const handleKeyPress = event => {
-    console.log(props.isOpen)
-    if (event.keyCode === 27 && props.isOpen) {
-      props.handleClose()
-    }
-  }
+  }, [handleClose, isOpen])
 
   return (
     <StyledWrapper isOpen={getModelIsOpen()}>

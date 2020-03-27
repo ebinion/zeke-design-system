@@ -100,20 +100,20 @@ const StyleNavItem = styled.div`
   min-height: ${measurementTokens.touchTarget};
 `
 
-const FlyoutMenu = props => {
-  const handleKeyPress = event => {
-    if (event.keyCode === 27 && props.isOpen) {
-      props.closeHandler()
-    }
-  }
-
+const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
   useEffect(() => {
+    const handleKeyPress = event => {
+      if (event.keyCode === 27 && isOpen) {
+        closeHandler()
+      }
+    }
+
     document.addEventListener('keyup', handleKeyPress)
 
     return () => {
       document.removeEventListener('keyup', handleKeyPress)
     }
-  }, [])
+  }, [closeHandler, isOpen])
 
   const renderItems = () => {
     const LinkElement = props.Link
@@ -138,14 +138,14 @@ const FlyoutMenu = props => {
   }
 
   return (
-    <StyledComponent isOpen={props.isOpen}>
-      <StyledMask onClick={props.closeHandler} />
-      <StyledMenu isOpen={props.isOpen}>
+    <StyledComponent isOpen={isOpen}>
+      <StyledMask onClick={closeHandler} />
+      <StyledMenu isOpen={isOpen}>
         <StyledClose>
           <IconButton
             icon={<IconX />}
             title="Close"
-            clickHandler={props.closeHandler}
+            clickHandler={closeHandler}
           />
         </StyledClose>
         {renderItems()}
