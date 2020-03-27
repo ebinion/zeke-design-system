@@ -27,8 +27,12 @@ import Text from './atoms/Text'
 import Time from './atoms/Time'
 
 // MOLECULES
+import Animate from './molecules/Animate'
+import AnimateOnEnter from './molecules/AnimateOnEnter'
 import Badge from './molecules/Badge'
+import Decorated from './molecules/Decorated'
 import Embed from './molecules/Embed'
+import Hidden from './molecules/Hidden'
 import IconButton from './molecules/IconButton'
 
 // ORGANISIMS
@@ -36,10 +40,14 @@ import BigTeaser from './organisms/BigTeaser'
 import Block from './organisms/Block'
 import Figure from './organisms/Figure'
 import FlyoutMenu from './organisms/FlyoutMenu'
+import Gallery from './organisms/Gallery'
 import Header from './organisms/Header'
 import Matrix from './organisms/Matrix'
+import Modal from './organisms/Modal'
 import Note from './organisms/Note'
 import Notebook from './organisms/Notebook'
+import OffsetGrid from './organisms/OffsetGrid'
+import PhotoOverlayed from './organisms/PhotoOverlayed'
 import Section from './organisms/Section'
 import SectionHeader from './organisms/SectionHeader'
 import Rows from './organisms/Rows'
@@ -78,18 +86,26 @@ export {
   Text,
   Time,
   // MOLECULES
+  Animate,
+  AnimateOnEnter,
   Badge,
+  Decorated,
   Embed,
+  Hidden,
   IconButton,
   // ORGANISMS
   BigTeaser,
   Block,
   Figure,
   FlyoutMenu,
+  Gallery,
   Header,
   Matrix,
+  Modal,
   Note,
   Notebook,
+  OffsetGrid,
+  PhotoOverlayed,
   Rows,
   Section,
   SectionHeader,
