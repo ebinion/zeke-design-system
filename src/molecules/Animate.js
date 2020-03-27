@@ -4,7 +4,6 @@ import styled, { keyframes } from 'styled-components'
 
 import { animationTokens } from '..'
 
-const slideDistance = '100px'
 const animationNames = {
   FADE_IN: 'fadeIn',
   FADE_IN_FROM_LEFT: 'fadeInFromLeft',
@@ -26,7 +25,7 @@ const animationKeyframes = {
   fadeInFromLeft: keyframes`
     0% {
       opacity: 0;
-      transform: translateX(-${slideDistance})
+      transform: translateX(-${animationTokens.slideDistance})
     }
 
     100% {
@@ -37,7 +36,7 @@ const animationKeyframes = {
   fadeInFromRight: keyframes`
     0% {
       opacity: 0;
-      transform: translateX(${slideDistance})
+      transform: translateX(${animationTokens.slideDistance})
     }
 
     100% {
@@ -48,7 +47,7 @@ const animationKeyframes = {
   fadeInFromTop: keyframes`
     0% {
       opacity: 0;
-      transform: translateY(-${slideDistance})
+      transform: translateY(-${animationTokens.slideDistance})
     }
 
     100% {
@@ -59,7 +58,7 @@ const animationKeyframes = {
   fadeInFromBottom: keyframes`
     0% {
       opacity: 0;
-      transform: translateY(${slideDistance})
+      transform: translateY(${animationTokens.slideDistance})
     }
 
     100% {
@@ -72,6 +71,7 @@ const animationKeyframes = {
 const Animate = styled.div`
   animation-name: ${props => animationKeyframes[props.kind]};
   animation-delay: ${props => props.delay};
+  animation-direction: ${props => props.direction}
   animation-duration: ${props => props.duration};
   animation-fill-mode: both;
   animation-play-state: ${props => (props.isPlaying ? 'running' : 'paused')};
@@ -83,6 +83,12 @@ Animate.propTypes = {
   children: PropTypes.node,
   kind: PropTypes.oneOf(Object.values(animationNames)),
   isPlaying: PropTypes.bool,
+  direction: PropTypes.oneOf([
+    'normal',
+    'reverse',
+    'alternate',
+    'alternate-reverse',
+  ]),
   duration: PropTypes.string,
   easing: PropTypes.string,
 }
@@ -91,6 +97,7 @@ Animate.defaultProps = {
   easing: animationTokens.easing,
   delay: '0ms',
   duration: `${animationTokens.duration}ms`,
+  direction: 'normal',
   isPlaying: false,
 }
 
