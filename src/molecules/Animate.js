@@ -72,6 +72,7 @@ const animationKeyframes = {
 const Animate = styled.div`
   animation-name: ${props => animationKeyframes[props.kind]};
   animation-delay: ${props => props.delay};
+  animation-direction: ${props => props.direction}
   animation-duration: ${props => props.duration};
   animation-fill-mode: both;
   animation-play-state: ${props => (props.isPlaying ? 'running' : 'paused')};
@@ -83,6 +84,12 @@ Animate.propTypes = {
   children: PropTypes.node,
   kind: PropTypes.oneOf(Object.values(animationNames)),
   isPlaying: PropTypes.bool,
+  direction: PropTypes.oneOf([
+    'normal',
+    'reverse',
+    'alternate',
+    'alternate-reverse',
+  ]),
   duration: PropTypes.string,
   easing: PropTypes.string,
 }
@@ -91,6 +98,7 @@ Animate.defaultProps = {
   easing: animationTokens.easing,
   delay: '0ms',
   duration: `${animationTokens.duration}ms`,
+  direction: 'normal',
   isPlaying: false,
 }
 

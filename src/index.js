@@ -40,8 +40,10 @@ import BigTeaser from './organisms/BigTeaser'
 import Block from './organisms/Block'
 import Figure from './organisms/Figure'
 import FlyoutMenu from './organisms/FlyoutMenu'
+import Gallery from './organisms/Gallery'
 import Header from './organisms/Header'
 import Matrix from './organisms/Matrix'
+import Modal from './organisms/Modal'
 import Note from './organisms/Note'
 import Notebook from './organisms/Notebook'
 import OffsetGrid from './organisms/OffsetGrid'
@@ -96,8 +98,10 @@ export {
   Block,
   Figure,
   FlyoutMenu,
+  Gallery,
   Header,
   Matrix,
+  Modal,
   Note,
   Notebook,
   OffsetGrid,
