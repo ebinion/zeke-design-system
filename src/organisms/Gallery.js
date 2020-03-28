@@ -91,7 +91,7 @@ const ModalComponent = ({ item, isOpen, handleClose }) => {
 }
 
 const PreviewComponent = ({ items, handleMenuOpen }) => {
-  const handlePreviewClick = (event, element, index) => {
+  const handlePreviewClick = (event, item, index) => {
     event.target.blur()
     handleMenuOpen(index)
   }

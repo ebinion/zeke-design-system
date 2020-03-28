@@ -3,7 +3,7 @@
   "author": "Zeke Binion <zeke@binion.io> (https://zekebinion.io)",
   "description": "This repo is the home of the design system for Zeke Binion. It drives things like Zeke's website, portfolio and experimental sites.",
   "main": "dist/index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "@babel/cli": "7.x",
     "@babel/core": "7.x",
