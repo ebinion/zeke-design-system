@@ -94,7 +94,7 @@ const Modal = ({ handleClose, isOpen, ...props }) => {
               title="close"
               icon={<IconX />}
               type="button"
-              clickHandler={props.handleClose}
+              clickHandler={handleClose}
             />
           </StyledModalClose>
         </Block>
