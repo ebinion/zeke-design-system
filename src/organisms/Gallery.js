@@ -2,24 +2,35 @@ import React, { useState } from 'react' // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { Block, Modal, animationTokens, measurementTokens } from '..'
+import {
+  Block,
+  Modal,
+  animationTokens,
+  colorTokens,
+  measurementTokens,
+} from '..'
 
 const Thumbnail = styled.button`
   appearance: none;
+  outline: 3px solid rgba(255, 255, 255, 0);
   box-shadow: none;
   border: 0;
+  cursor: pointer;
   display: block;
   line-height: 0;
+  overflow: hidden;
   position: relative;
   height: 0;
   margin: 0;
   padding: 100% 0 0;
-  transition: transform ${animationTokens.duration}ms ${animationTokens.easing};
+  transition: outline ${animationTokens.duration}ms ${animationTokens.easing};
   width: 100%;
 
   &:active,
   &:hover {
-    transform: scale(1.05);
+    outline: 3px solid ${colorTokens.text.linkHighlight};
+    transition-duration: 0;
+    z-index: 2;
   }
 `
 
@@ -29,7 +40,12 @@ const ThumbnailInner = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  transition: transform ${animationTokens.duration}ms ${animationTokens.easing};
+
+  button:active &,
+  button:hover & {
+    transform: scale(1.1);
+  }
 
   img {
     object-fit: cover;
@@ -77,9 +93,13 @@ const Figure = styled.figure`
 const FigureContent = styled.figcaption``
 const FigureImage = styled.div``
 
-const ModalComponent = ({ item, isOpen, handleClose }) => {
+const ModalComponent = ({ item, isOpen, handleClose, portalTarget }) => {
   return (
-    <Modal isOpen={isOpen} handleClose={handleClose}>
+    <Modal
+      isOpen={isOpen}
+      handleClose={handleClose}
+      portalTarget={portalTarget}
+    >
       <Block>
         <Figure>
           <FigureImage>{item.image}</FigureImage>
@@ -91,7 +111,7 @@ const ModalComponent = ({ item, isOpen, handleClose }) => {
 }
 
 const PreviewComponent = ({ items, handleMenuOpen }) => {
-  const handlePreviewClick = (event, item, index) => {
+  const handlePreviewClick = (event, index) => {
     event.target.blur()
     handleMenuOpen(index)
   }
@@ -99,10 +119,8 @@ const PreviewComponent = ({ items, handleMenuOpen }) => {
   const renderPreviewItems = () =>
     items.map((item, index) => (
       <GalleryItem key={`preview-items${index}`}>
-        <Thumbnail>
-          <ThumbnailInner
-            onClick={event => handlePreviewClick(event, item, index)}
-          >
+        <Thumbnail type="button" aria-label={item.title || ''}>
+          <ThumbnailInner onClick={event => handlePreviewClick(event, index)}>
             {item.image}
           </ThumbnailInner>
         </Thumbnail>
@@ -112,7 +130,7 @@ const PreviewComponent = ({ items, handleMenuOpen }) => {
   return <Gallery>{renderPreviewItems()}</Gallery>
 }
 
-const GalleryComponent = ({ items }) => {
+const GalleryComponent = ({ items, portalTarget }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [currentItem, setCurrentItem] = useState(false)
 
@@ -133,6 +151,7 @@ const GalleryComponent = ({ items }) => {
         isOpen={modalIsOpen}
         handleClose={handleMenuClose}
         item={currentItem}
+        portalTarget={portalTarget}
       />
     </>
   )
@@ -143,10 +162,10 @@ GalleryComponent.propTypes = {
     PropTypes.shape({
       image: PropTypes.node.isRequired,
       description: PropTypes.node,
+      title: PropTypes.string,
     })
   ),
+  portalTarget: PropTypes.element,
 }
-
-GalleryComponent.defaultProps = {}
 
 export default GalleryComponent
