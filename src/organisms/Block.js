@@ -9,7 +9,9 @@ const StyledComponent = styled.div`
   padding: ${props =>
     props.padding === 'none'
       ? measurementTokens.componentPadding.none
-      : `${props.padding} ${measurementTokens.componentPadding.s}`};
+      : `${props.padding} ${measurementTokens.componentPadding.s}`} ${
+  measurementTokens.sitePadding.s
+};
   ${props =>
     props.paddingBottom &&
     css`
@@ -33,7 +35,8 @@ const StyledComponent = styled.div`
     `}
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
-    padding: ${props => props.padding};
+    padding-top: ${props => props.padding};
+    padding-bottom: ${props => props.padding};
     ${props =>
       props.paddingBottom &&
       css`
@@ -44,12 +47,36 @@ const StyledComponent = styled.div`
       css`
         padding-top: ${props.paddingTop};
       `}
-      ${props =>
-        props.isInset &&
-        css`
-          padding-left: 0;
-          padding-right: 0;
-        `}
+    ${props =>
+      props.isInset &&
+      css`
+        padding-left: 0;
+        padding-right: 0;
+      `}
+  }
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+    padding-left: ${measurementTokens.sitePadding.m};
+    padding-right: ${measurementTokens.sitePadding.m};
+
+    ${props =>
+      props.isInset &&
+      css`
+        padding-left: 0;
+        padding-right: 0;
+      `}
+  }
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
+    padding-left: ${measurementTokens.sitePadding.l};
+    padding-right: ${measurementTokens.sitePadding.l};
+
+    ${props =>
+      props.isInset &&
+      css`
+        padding-left: 0;
+        padding-right: 0;
+      `}
   }
 `
 const StyledContrain = styled.div`

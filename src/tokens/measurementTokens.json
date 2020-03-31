@@ -21,6 +21,11 @@
   "menuWidth": "320px",
   "navButtonOffset": "24px",
   "navButtonOffsetSmall": "12px",
+  "sitePadding": {
+    "s": "12px",
+    "m": "24px",
+    "l": "48px"
+  },
   "componentMargin": {
     "s": "12px",
     "m": "24px",
