@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import respondToWidth from '../helpers/respondToWidth'
 import { colorTokens, H4, IconMenu, IconButton, measurementTokens } from '../'
 
 const StyledComponent = styled.header`
@@ -32,36 +31,6 @@ const StyledTitle = styled.div`
 `
 
 const Header = props => {
-  const [textAlign, setTextAlign] = useState(null)
-  const [respondToSmall, setRespondToSmall] = useState(false)
-
-  const getTextAlignment = event => {
-    if (event.matches) {
-      return 'center'
-    } else {
-      return 'left'
-    }
-  }
-
-  const handleLayoutChange = event => {
-    if (respondToSmall !== event.matches) {
-      setRespondToSmall(event.matches)
-      setTextAlign(getTextAlignment(event))
-    }
-  }
-
-  useEffect(() => {
-    const mediaListenerForS = respondToWidth('s')
-    if (textAlign === null) handleLayoutChange(mediaListenerForS)
-
-    mediaListenerForS.addListener(handleLayoutChange)
-
-    // Tear down
-    return () => {
-      mediaListenerForS.removeListener(handleLayoutChange)
-    }
-  })
-
   return (
     <StyledComponent role="banner">
       <StyledButton>
@@ -72,7 +41,7 @@ const Header = props => {
         />
       </StyledButton>
       <StyledTitle>
-        <H4 truncate align={textAlign}>
+        <H4 truncate align="left" alignSmallUp="center">
           {props.title || props.children}
         </H4>
       </StyledTitle>
@@ -81,8 +50,9 @@ const Header = props => {
 }
 
 Header.propTypes = {
-  title: PropTypes.string,
+  children: PropTypes.node,
   menuClickHandler: PropTypes.func,
+  title: PropTypes.node,
 }
 
 export default Header
