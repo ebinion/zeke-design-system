@@ -13,11 +13,21 @@ const StyledComponent = styled.header`
   grid-template-columns: ${measurementTokens.touchTarget} 1fr;
   grid-template-areas: 'button | title';
   padding: ${measurementTokens.navButtonOffsetSmall};
+  padding-left: ${measurementTokens.sitePadding.s};
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
     grid-template-columns: ${measurementTokens.touchTarget} 1fr ${measurementTokens.touchTarget};
     grid-template-areas: 'button | title | .';
-    padding: ${measurementTokens.navButtonOffset};
+    padding: ${measurementTokens.navButtonOffset}
+      ${measurementTokens.sitePadding.s};
+  }
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+    padding-left: ${measurementTokens.sitePadding.m};
+    padding-right: ${measurementTokens.sitePadding.m};
+  }
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
+    padding-left: ${measurementTokens.sitePadding.l};
+    padding-right: ${measurementTokens.sitePadding.l};
   }
 `
 
