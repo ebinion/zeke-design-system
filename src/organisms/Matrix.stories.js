@@ -3,8 +3,8 @@ import React from 'react'
 import ExampleBlock from '../helpers/ExampleBlock'
 import { Matrix } from '../'
 
-export default {
-  title: 'Organisms|Layout/Matrix',
+const story = {
+  title: 'Organisms/Layout/Matrix',
   component: Matrix,
 }
 
@@ -24,3 +24,5 @@ export const componentPlayground = () => {
     </Matrix>
   )
 }
+
+export default story

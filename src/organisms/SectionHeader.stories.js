@@ -4,8 +4,8 @@ import { boolean } from '@storybook/addon-knobs'
 import { SectionHeader } from '../'
 import lorem from '../helpers/lorem'
 
-export default {
-  title: 'Organisms|Section Header',
+const story = {
+  title: 'Organisms/Section Header',
   component: SectionHeader,
 }
 
@@ -22,3 +22,5 @@ export const ComponentPlayground = () => {
     </SectionHeader>
   )
 }
+
+export default story

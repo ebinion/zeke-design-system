@@ -2,9 +2,11 @@ import React from 'react'
 
 import { IconTwitter } from '../'
 
-export default {
-  title: 'Atoms|Icons/Twitter',
+const story = {
+  title: 'Atoms/Icons/Twitter',
   component: IconTwitter,
 }
 
 export const icon = () => <IconTwitter />
+
+export default story

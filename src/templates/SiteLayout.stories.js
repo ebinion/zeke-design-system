@@ -2,8 +2,8 @@ import React from 'react'
 
 import { SiteLayout } from '../'
 
-export default {
-  title: 'Templates|Layout/Site Layout',
+const story = {
+  title: 'Templates/Layout/Site Layout',
   component: SiteLayout,
 }
 
@@ -20,3 +20,5 @@ export const componentPlayground = () => {
     />
   )
 }
+
+export default story

@@ -3,8 +3,8 @@ import { boolean } from '@storybook/addon-knobs'
 
 import { FlyoutMenu } from '../'
 
-export default {
-  title: 'Organisms|Global/Flyout Menu',
+const story = {
+  title: 'Organisms/Global/Flyout Menu',
   component: FlyoutMenu,
 }
 
@@ -40,3 +40,5 @@ export const componentPlayground = () => {
     />
   )
 }
+
+export default story

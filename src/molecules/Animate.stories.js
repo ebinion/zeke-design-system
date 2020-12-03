@@ -3,8 +3,8 @@ import { select, boolean } from '@storybook/addon-knobs'
 
 import { Animate } from '..'
 
-export default {
-  title: 'Molecules|Animate',
+const story = {
+  title: 'Molecules/Animate',
   component: Animate,
 }
 
@@ -30,3 +30,5 @@ export const componentPlayground = () => {
     </Animate>
   )
 }
+
+export default story
