@@ -3,7 +3,7 @@ import React from 'react'
 import { PhotoOverlayed, Img, Text } from '..'
 import lorem from '../helpers/lorem'
 
-export default {
+const story = {
   title: 'Organisms/PhotoOverlayed',
   component: PhotoOverlayed,
 }
@@ -15,3 +15,5 @@ export const componentPlayground = () => {
     </PhotoOverlayed>
   )
 }
+
+export default story

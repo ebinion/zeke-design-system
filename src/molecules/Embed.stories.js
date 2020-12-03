@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Embed } from '../'
 
-export default {
+const story = {
   title: 'Molecules/Embed',
   component: Embed,
 }
@@ -22,3 +22,5 @@ export const ComponentPlayground = () => {
     </Embed>
   )
 }
+
+export default story

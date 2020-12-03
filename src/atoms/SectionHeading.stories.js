@@ -3,7 +3,7 @@ import { boolean, select } from '@storybook/addon-knobs'
 
 import { SectionHeading } from '../'
 
-export default {
+const story = {
   title: 'Atoms/Text/Section Heading',
   component: SectionHeading,
 }
@@ -17,3 +17,5 @@ export const component = () => (
     Example Content
   </SectionHeading>
 )
+
+export default story

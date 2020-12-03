@@ -12,7 +12,7 @@ const paddingKnobs = () =>
 const isInsetKnob = () => boolean('Is inset?', false)
 const isPositioned = () => boolean('Is positioned?', false)
 
-export default {
+const story = {
   title: 'Organisms/Layout/Block',
   component: Block,
 }
@@ -30,3 +30,5 @@ export const componentPlayground = () => {
     </Block>
   )
 }
+
+export default story

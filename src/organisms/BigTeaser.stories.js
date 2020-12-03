@@ -3,7 +3,7 @@ import React from 'react'
 import { BigTeaser, Img } from '..'
 import { titleKnob, shortGraphKnob, imageSourceKnob } from '../helpers/knobs'
 
-export default {
+const story = {
   title: 'Organisms/Big Teaser',
   component: BigTeaser,
 }
@@ -19,3 +19,5 @@ export const componentPlayground = () => {
     />
   )
 }
+
+export default story

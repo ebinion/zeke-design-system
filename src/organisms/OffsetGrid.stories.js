@@ -3,7 +3,7 @@ import React from 'react'
 import { OffsetGrid, Text } from '..'
 import lorem from '../helpers/lorem'
 
-export default {
+const story = {
   title: 'Organisms/Layout/OffsetGrid',
   component: OffsetGrid,
 }
@@ -18,3 +18,5 @@ export const componentPlayground = () => {
     </OffsetGrid>
   )
 }
+
+export default story

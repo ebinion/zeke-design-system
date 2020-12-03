@@ -4,7 +4,7 @@ import { select } from '@storybook/addon-knobs'
 import { Img, Figure, P } from '../'
 import lorem from '../helpers/lorem'
 
-export default {
+const story = {
   title: 'Organisms/Figure',
   component: Figure,
 }
@@ -21,3 +21,5 @@ export const ComponentPlayground = () => {
     </Figure>
   )
 }
+
+export default story

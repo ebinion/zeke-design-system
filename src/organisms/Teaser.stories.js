@@ -4,7 +4,7 @@ import { text } from '@storybook/addon-knobs'
 import { Teaser, Img } from '../'
 import lorem from '../helpers/lorem'
 
-export default {
+const story = {
   title: 'Organisms/Teaser',
   component: Teaser,
 }
@@ -33,3 +33,5 @@ export const withoutImage = () => {
     />
   )
 }
+
+export default story

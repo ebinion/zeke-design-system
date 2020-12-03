@@ -3,7 +3,7 @@ import { boolean } from '@storybook/addon-knobs'
 
 import { Hidden } from '..'
 
-export default {
+const story = {
   title: 'Molecules/Hidden',
   component: Hidden,
 }
@@ -27,3 +27,5 @@ export const componentPlayground = () => {
     </Hidden>
   )
 }
+
+export default story

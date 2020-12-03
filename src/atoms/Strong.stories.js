@@ -4,7 +4,7 @@ import { boolean } from '@storybook/addon-knobs'
 import lorem from '../helpers/lorem'
 import { Strong } from '../'
 
-export default {
+const story = {
   title: 'Atoms/Text/Strong',
   component: Strong,
 }
@@ -12,3 +12,5 @@ export default {
 const uppercaseKnob = () => boolean('Uppercase', false)
 
 export const component = () => <Strong uppercase={uppercaseKnob()}>{lorem.generateWords(3)}</Strong>
+
+export default story

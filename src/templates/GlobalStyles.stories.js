@@ -2,7 +2,7 @@ import React from 'react'
 
 import { GlobalStyles } from '..'
 
-export default {
+const story = {
   title: 'Templates/Base/Global Styles',
   component: GlobalStyles,
 }
@@ -10,3 +10,5 @@ export default {
 export const componentPlayground = () => {
   return <GlobalStyles />
 }
+
+export default story

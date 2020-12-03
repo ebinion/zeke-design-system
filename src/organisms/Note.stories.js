@@ -3,7 +3,7 @@ import React from 'react'
 import lorem from '../helpers/lorem'
 import { Img, Note, Time } from '../'
 
-export default {
+const story = {
   title: 'Organisms/Note',
   component: Note,
 }
@@ -26,3 +26,5 @@ export const withImage = () => (
     to="#"
   />
 )
+
+export default story

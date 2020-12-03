@@ -20,7 +20,7 @@ const isUppercasedKnob = () => boolean('Is uppercased?', false)
 const sizeKnobs = () => select('Size', ['xxl', 'xl', 'l', 'm', 's', 'xs'], 'm')
 const lineHeightKnobs = () => select('Line Height', ['normal', 'tight'])
 
-export default {
+const story = {
   title: 'Atoms/Text/Text',
   component: Text,
 }
@@ -93,3 +93,5 @@ export const kindHeading = () => (
 export const kindNormal = () => (
   <Text kind="normal">{lorem.generateParagraphs(1)}</Text>
 )
+
+export default story

@@ -4,7 +4,7 @@ import { text } from '@storybook/addon-knobs'
 import { Notebook } from '../'
 import lorem from '../helpers/lorem'
 
-export default {
+const story = {
   title: 'Organisms/Notebook',
   component: Notebook,
 }
@@ -14,3 +14,5 @@ const titleKnob = () => text('Title', lorem.generateWords(10))
 export const ComponentPlayground = () => (
   <Notebook count={99} title={titleKnob()} to="#"></Notebook>
 )
+
+export default story

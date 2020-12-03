@@ -3,7 +3,7 @@ import React from 'react'
 import { Img, Gallery, P } from '..'
 import lorem from '../helpers/lorem'
 
-export default {
+const story = {
   title: 'Organisms/Gallery',
   component: Gallery,
 }
@@ -58,3 +58,5 @@ const items = [
 export const componentPlayground = () => {
   return <Gallery items={items} />
 }
+
+export default story

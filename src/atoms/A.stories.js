@@ -4,7 +4,7 @@ import { select, boolean } from '@storybook/addon-knobs'
 import lorem from '../helpers/lorem'
 import { A } from '../'
 
-export default {
+const story = {
   title: 'Atoms/Links & Buttons/A',
   component: A,
   parameters: {
@@ -33,3 +33,5 @@ export const asIncognito = () => (
   <A kind="incognito">{lorem.generateWords(2)}</A>
 )
 export const asKeyboardOnly = () => <A keyboardOnly>{lorem.generateWords(2)}</A>
+
+export default story

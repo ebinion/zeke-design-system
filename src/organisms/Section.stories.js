@@ -4,7 +4,7 @@ import { text, boolean } from '@storybook/addon-knobs'
 import { Section } from '../'
 import lorem from '../helpers/lorem'
 
-export default {
+const story = {
   title: 'Organisms/Section',
   component: Section,
 }
@@ -26,3 +26,5 @@ export const ComponentPlayground = () => {
     </Section>
   )
 }
+
+export default story

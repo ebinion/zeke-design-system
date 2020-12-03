@@ -4,7 +4,7 @@ import { select } from '@storybook/addon-knobs'
 import ExampleBlock from '../helpers/ExampleBlock'
 import { Rows } from '../'
 
-export default {
+const story = {
   title: 'Organisms/Layout/Rows',
   component: Rows,
 }
@@ -22,3 +22,5 @@ export const componentPlayground = () => {
     </Rows>
   )
 }
+
+export default story

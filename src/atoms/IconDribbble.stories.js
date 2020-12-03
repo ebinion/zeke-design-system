@@ -2,9 +2,11 @@ import React from 'react'
 
 import { IconDribbble } from '../'
 
-export default {
+const story = {
   title: 'Atoms/Icons/Dribbble',
   component: IconDribbble,
 }
 
 export const icon = () => <IconDribbble />
+
+export default story

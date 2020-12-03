@@ -3,7 +3,7 @@ import { select } from '@storybook/addon-knobs'
 
 import { AnimateOnEnter } from '..'
 
-export default {
+const story = {
   title: 'Molecules/AnimateOnEnter',
   component: AnimateOnEnter,
 }
@@ -28,3 +28,5 @@ export const componentPlayground = () => {
     </AnimateOnEnter>
   )
 }
+
+export default story
