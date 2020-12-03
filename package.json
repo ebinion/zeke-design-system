@@ -17,19 +17,6 @@
     "styled-components": "4.x",
     "underscore": "^1.12.0"
   },
-  "peerDependencies": {
-    "@babel/cli": "7.x",
-    "@babel/core": "7.x",
-    "@babel/plugin-proposal-class-properties": "7.x",
-    "@babel/preset-react": "7.x",
-    "prop-types": "15.x",
-    "react": "17.x",
-    "react-dom": "17.x",
-    "react-scripts": "4.x",
-    "react-waypoint": "9.x",
-    "styled-components": "4.x",
-    "underscore": "1.x"
-  },
   "devDependencies": {
     "@storybook/addon-a11y": "^6.1.9",
     "@storybook/addon-actions": "^6.1.9",
