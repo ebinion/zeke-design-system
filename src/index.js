@@ -1,8 +1,8 @@
 // DESIGN SYSTEM TOKENS
-import animationTokens from './tokens/animationTokens.json'
-import colorTokens from './tokens/colorTokens.json'
-import measurementTokens from './tokens/measurementTokens.json'
-import textTokens from './tokens/textTokens.json'
+import animationTokens from './tokens/animationTokens'
+import colorTokens from './tokens/colorTokens'
+import measurementTokens from './tokens/measurementTokens'
+import textTokens from './tokens/textTokens'
 
 // ATOMS
 import A from './atoms/A'
