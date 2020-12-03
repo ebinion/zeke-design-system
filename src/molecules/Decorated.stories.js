@@ -5,7 +5,7 @@ import { Decorated, Text } from '..'
 import lorem from '../helpers/lorem'
 
 export default {
-  title: 'Molecules|Decorated',
+  title: 'Molecules/Decorated',
   component: Decorated,
 }
 

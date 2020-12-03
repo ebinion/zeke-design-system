@@ -5,7 +5,7 @@ import ExampleBlock from '../helpers/ExampleBlock'
 import { Rows } from '../'
 
 export default {
-  title: 'Organisms|Layout/Rows',
+  title: 'Organisms/Layout/Rows',
   component: Rows,
 }
 

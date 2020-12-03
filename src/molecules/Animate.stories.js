@@ -4,7 +4,7 @@ import { select, boolean } from '@storybook/addon-knobs'
 import { Animate } from '..'
 
 export default {
-  title: 'Molecules|Animate',
+  title: 'Molecules/Animate',
   component: Animate,
 }
 

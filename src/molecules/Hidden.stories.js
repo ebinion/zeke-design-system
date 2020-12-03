@@ -4,7 +4,7 @@ import { boolean } from '@storybook/addon-knobs'
 import { Hidden } from '..'
 
 export default {
-  title: 'Molecules|Hidden',
+  title: 'Molecules/Hidden',
   component: Hidden,
 }
 

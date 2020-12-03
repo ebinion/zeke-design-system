@@ -5,7 +5,7 @@ import { Notebook } from '../'
 import lorem from '../helpers/lorem'
 
 export default {
-  title: 'Organisms|Notebook',
+  title: 'Organisms/Notebook',
   component: Notebook,
 }
 

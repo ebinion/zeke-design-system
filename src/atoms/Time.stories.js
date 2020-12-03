@@ -2,7 +2,7 @@ import React from 'react'
 import { Time } from '../'
 
 export default {
-  title: 'Atoms|Text/Time',
+  title: 'Atoms/Text/Time',
   Component: Time,
 }
 

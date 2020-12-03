@@ -4,7 +4,7 @@ import lorem from '../helpers/lorem'
 import { Img, Note, Time } from '../'
 
 export default {
-  title: 'Organisms|Note',
+  title: 'Organisms/Note',
   component: Note,
 }
 

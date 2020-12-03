@@ -7,7 +7,7 @@ const textKnob = () => text('Text', '99')
 const sizeKnob = () => select('Size', ['xs', 's', 'm', 'l', 'xl'], 's')
 
 export default {
-  title: 'Molecules|Badge',
+  title: 'Molecules/Badge',
   component: Badge,
 }
 

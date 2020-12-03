@@ -5,7 +5,7 @@ import lorem from '../helpers/lorem'
 import { A } from '../'
 
 export default {
-  title: 'Atoms|Links & Buttons/A',
+  title: 'Atoms/Links & Buttons/A',
   component: A,
   parameters: {
     componentSubtitle:

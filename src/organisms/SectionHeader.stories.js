@@ -5,7 +5,7 @@ import { SectionHeader } from '../'
 import lorem from '../helpers/lorem'
 
 export default {
-  title: 'Organisms|Section Header',
+  title: 'Organisms/Section Header',
   component: SectionHeader,
 }
 

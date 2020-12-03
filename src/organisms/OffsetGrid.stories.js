@@ -4,7 +4,7 @@ import { OffsetGrid, Text } from '..'
 import lorem from '../helpers/lorem'
 
 export default {
-  title: 'Organisms|Layout/OffsetGrid',
+  title: 'Organisms/Layout/OffsetGrid',
   component: OffsetGrid,
 }
 

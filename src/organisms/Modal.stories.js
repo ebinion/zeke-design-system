@@ -4,7 +4,7 @@ import { boolean } from '@storybook/addon-knobs'
 import { Modal } from '..'
 
 export default {
-  title: 'Organisms|Modal',
+  title: 'Organisms/Modal',
   component: Modal,
 }
 

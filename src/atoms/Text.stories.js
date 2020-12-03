@@ -21,7 +21,7 @@ const sizeKnobs = () => select('Size', ['xxl', 'xl', 'l', 'm', 's', 'xs'], 'm')
 const lineHeightKnobs = () => select('Line Height', ['normal', 'tight'])
 
 export default {
-  title: 'Atoms|Text/Text',
+  title: 'Atoms/Text/Text',
   component: Text,
 }
 

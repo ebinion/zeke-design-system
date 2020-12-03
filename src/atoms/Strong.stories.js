@@ -5,7 +5,7 @@ import lorem from '../helpers/lorem'
 import { Strong } from '../'
 
 export default {
-  title: 'Atoms|Text/Strong',
+  title: 'Atoms/Text/Strong',
   component: Strong,
 }
 

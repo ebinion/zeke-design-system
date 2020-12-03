@@ -4,7 +4,7 @@ import { boolean } from '@storybook/addon-knobs'
 import { FlyoutMenu } from '../'
 
 export default {
-  title: 'Organisms|Global/Flyout Menu',
+  title: 'Organisms/Global/Flyout Menu',
   component: FlyoutMenu,
 }
 

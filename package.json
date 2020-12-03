@@ -5,17 +5,17 @@
   "main": "dist/index.js",
   "version": "1.0.1",
   "dependencies": {
-    "@babel/cli": "7.x",
-    "@babel/core": "7.x",
-    "@babel/plugin-proposal-class-properties": "7.x",
-    "@babel/preset-react": "7.x",
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-react": "^7.12.7",
     "prop-types": "15.x",
-    "react": "16.x",
-    "react-dom": "16.x",
-    "react-scripts": "3.x",
-    "react-waypoint": "9.x",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "^3.4.4",
+    "react-waypoint": "^9.0.3",
     "styled-components": "4.x",
-    "underscore": "1.x"
+    "underscore": "^1.12.0"
   },
   "peerDependencies": {
     "@babel/cli": "7.x",
@@ -31,19 +31,19 @@
     "underscore": "1.x"
   },
   "devDependencies": {
-    "@storybook/preset-create-react-app": "^2.0.0",
-    "@storybook/addon-a11y": "^5.3.14",
-    "@storybook/addon-actions": "^5.3.14",
-    "@storybook/addon-docs": "^5.3.14",
-    "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/addon-links": "^5.3.14",
-    "@storybook/addon-viewport": "^5.3.14",
-    "@storybook/addons": "^5.3.14",
-    "@storybook/react": "^5.3.14",
+    "@storybook/addon-a11y": "^6.1.9",
+    "@storybook/addon-actions": "^6.1.9",
+    "@storybook/addon-docs": "^6.1.9",
+    "@storybook/addon-knobs": "^6.1.9",
+    "@storybook/addon-links": "^6.1.9",
+    "@storybook/addon-viewport": "^6.1.9",
+    "@storybook/addons": "^6.1.9",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.1.9",
     "auto": "^7.17.0",
     "lorem-ipsum": "^2.0.3",
     "prettier": "^1.19.1",
-    "react-test-renderer": "^16.13.0"
+    "react-test-renderer": "^16.14.0"
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",

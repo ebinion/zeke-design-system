@@ -3,7 +3,7 @@ import React from 'react'
 import { Embed } from '../'
 
 export default {
-  title: 'Molecules|Embed',
+  title: 'Molecules/Embed',
   component: Embed,
 }
 

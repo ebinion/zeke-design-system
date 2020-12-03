@@ -4,7 +4,7 @@ import lorem from '../helpers/lorem'
 import { IconButton, IconX } from '../'
 
 export default {
-  title: 'Molecules|IconButton',
+  title: 'Molecules/IconButton',
   component: IconButton,
 }
 

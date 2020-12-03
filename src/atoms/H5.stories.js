@@ -3,7 +3,7 @@ import React from 'react'
 import { H5 } from '../'
 
 export default {
-  title: 'Atoms|Text/H5',
+  title: 'Atoms/Text/H5',
   component: H5,
   parameters: {
     componentSubtitle:

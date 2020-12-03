@@ -4,7 +4,7 @@ import { select } from '@storybook/addon-knobs'
 import { AnimateOnEnter } from '..'
 
 export default {
-  title: 'Molecules|AnimateOnEnter',
+  title: 'Molecules/AnimateOnEnter',
   component: AnimateOnEnter,
 }
 

@@ -4,7 +4,7 @@ import { BigTeaser, Img } from '..'
 import { titleKnob, shortGraphKnob, imageSourceKnob } from '../helpers/knobs'
 
 export default {
-  title: 'Organisms|Big Teaser',
+  title: 'Organisms/Big Teaser',
   component: BigTeaser,
 }
 

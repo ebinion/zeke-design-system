@@ -3,7 +3,7 @@ import React from 'react'
 import { SiteLayout } from '../'
 
 export default {
-  title: 'Templates|Layout/Site Layout',
+  title: 'Templates/Layout/Site Layout',
   component: SiteLayout,
 }
 

@@ -4,7 +4,7 @@ import ExampleBlock from '../helpers/ExampleBlock'
 import { Matrix } from '../'
 
 export default {
-  title: 'Organisms|Layout/Matrix',
+  title: 'Organisms/Layout/Matrix',
   component: Matrix,
 }
 

@@ -13,7 +13,7 @@ const isInsetKnob = () => boolean('Is inset?', false)
 const isPositioned = () => boolean('Is positioned?', false)
 
 export default {
-  title: 'Organisms|Layout/Block',
+  title: 'Organisms/Layout/Block',
   component: Block,
 }
 

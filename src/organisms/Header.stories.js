@@ -3,7 +3,7 @@ import React from 'react' // eslint-disable-line no-unused-vars
 import { Header } from '../'
 
 export default {
-  title: 'Organisms|Global/Header',
+  title: 'Organisms/Global/Header',
   component: Header,
 }
 

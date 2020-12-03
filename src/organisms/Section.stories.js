@@ -5,7 +5,7 @@ import { Section } from '../'
 import lorem from '../helpers/lorem'
 
 export default {
-  title: 'Organisms|Section',
+  title: 'Organisms/Section',
   component: Section,
 }
 

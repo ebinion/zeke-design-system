@@ -3,7 +3,7 @@ import React from 'react'
 import { GlobalStyles } from '..'
 
 export default {
-  title: 'Templates|Base/Global Styles',
+  title: 'Templates/Base/Global Styles',
   component: GlobalStyles,
 }
 

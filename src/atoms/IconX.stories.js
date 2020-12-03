@@ -3,7 +3,7 @@ import React from 'react'
 import { IconX } from '../'
 
 export default {
-  title: 'Atoms|Icons/X',
+  title: 'Atoms/Icons/X',
   component: IconX,
 }
 

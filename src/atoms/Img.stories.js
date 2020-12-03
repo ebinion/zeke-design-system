@@ -3,7 +3,7 @@ import React from 'react'
 import { Img } from '../'
 
 export default {
-  title: 'Atoms|Img',
+  title: 'Atoms/Img',
   component: Img,
 }
 

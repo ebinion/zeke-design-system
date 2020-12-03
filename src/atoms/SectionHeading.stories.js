@@ -4,7 +4,7 @@ import { boolean, select } from '@storybook/addon-knobs'
 import { SectionHeading } from '../'
 
 export default {
-  title: 'Atoms|Text/Section Heading',
+  title: 'Atoms/Text/Section Heading',
   component: SectionHeading,
 }
 

@@ -5,7 +5,7 @@ import { Img, Figure, P } from '../'
 import lorem from '../helpers/lorem'
 
 export default {
-  title: 'Organisms|Figure',
+  title: 'Organisms/Figure',
   component: Figure,
 }
 

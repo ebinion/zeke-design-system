@@ -4,7 +4,7 @@ import { PhotoOverlayed, Img, Text } from '..'
 import lorem from '../helpers/lorem'
 
 export default {
-  title: 'Organisms|PhotoOverlayed',
+  title: 'Organisms/PhotoOverlayed',
   component: PhotoOverlayed,
 }
 

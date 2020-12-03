@@ -5,7 +5,7 @@ import { Teaser, Img } from '../'
 import lorem from '../helpers/lorem'
 
 export default {
-  title: 'Organisms|Teaser',
+  title: 'Organisms/Teaser',
   component: Teaser,
 }
 
