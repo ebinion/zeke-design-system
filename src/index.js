@@ -1,116 +1,64 @@
 // DESIGN SYSTEM TOKENS
-import animationTokens from './tokens/animationTokens'
-import colorTokens from './tokens/colorTokens'
-import measurementTokens from './tokens/measurementTokens'
-import textTokens from './tokens/textTokens'
+import * as animationTokens from './tokens/animationTokens'
+import * as colorTokens from './tokens/colorTokens'
+import * as measurementTokens from './tokens/measurementTokens'
+import * as textTokens from './tokens/textTokens'
 
-// ATOMS
-import A from './atoms/A'
-import Button from './atoms/Button'
-import H1 from './atoms/H1'
-import H2 from './atoms/H2'
-import H3 from './atoms/H3'
-import H4 from './atoms/H4'
-import H5 from './atoms/H5'
-import H6 from './atoms/H6'
-import IconDribbble from './atoms/IconDribbble'
-import IconGithub from './atoms/IconGithub'
-import IconLinkedin from './atoms/IconLinkedin'
-import IconMenu from './atoms/IconMenu'
-import IconTwitter from './atoms/IconTwitter'
-import IconX from './atoms/IconX'
-import Img from './atoms/Img'
-import P from './atoms/P'
-import SectionHeading from './atoms/SectionHeading'
-import Strong from './atoms/Strong'
-import Text from './atoms/Text'
-import Time from './atoms/Time'
-
-// MOLECULES
-import Animate from './molecules/Animate'
-import AnimateOnEnter from './molecules/AnimateOnEnter'
-import Badge from './molecules/Badge'
-import Decorated from './molecules/Decorated'
-import Embed from './molecules/Embed'
-import Hidden from './molecules/Hidden'
-import IconButton from './molecules/IconButton'
-
-// ORGANISIMS
-import BigTeaser from './organisms/BigTeaser'
-import Block from './organisms/Block'
-import Figure from './organisms/Figure'
-import FlyoutMenu from './organisms/FlyoutMenu'
-import Gallery from './organisms/Gallery'
-import Header from './organisms/Header'
-import Matrix from './organisms/Matrix'
-import Modal from './organisms/Modal'
-import Note from './organisms/Note'
-import Notebook from './organisms/Notebook'
-import OffsetGrid from './organisms/OffsetGrid'
-import PhotoOverlayed from './organisms/PhotoOverlayed'
-import Section from './organisms/Section'
-import SectionHeader from './organisms/SectionHeader'
-import Rows from './organisms/Rows'
-import Teaser from './organisms/Teaser'
-
-// TEMPLATES
-import SiteLayout from './templates/SiteLayout'
-import GlobalStyles from './templates/GlobalStyles'
-
-// EXPORTS
 export {
-  // DESIGN SYSTEM TOKENS
   animationTokens,
   colorTokens,
   measurementTokens,
-  textTokens,
-  // ATOMS
-  A,
-  Button,
-  H1,
-  H2,
-  H3,
-  H4,
-  H5,
-  H6,
-  IconDribbble,
-  IconGithub,
-  IconLinkedin,
-  IconMenu,
-  IconTwitter,
-  IconX,
-  Img,
-  P,
-  SectionHeading,
-  Strong,
-  Text,
-  Time,
-  // MOLECULES
-  Animate,
-  AnimateOnEnter,
-  Badge,
-  Decorated,
-  Embed,
-  Hidden,
-  IconButton,
-  // ORGANISMS
-  BigTeaser,
-  Block,
-  Figure,
-  FlyoutMenu,
-  Gallery,
-  Header,
-  Matrix,
-  Modal,
-  Note,
-  Notebook,
-  OffsetGrid,
-  PhotoOverlayed,
-  Rows,
-  Section,
-  SectionHeader,
-  Teaser,
-  // TEMPLATES
-  SiteLayout,
-  GlobalStyles,
-}
+  textTokens}
+
+// ATOMS
+export * from './atoms/A'
+export * from './atoms/Button'
+export * from './atoms/H1'
+export * from './atoms/H2'
+export * from './atoms/H3'
+export * from './atoms/H4'
+export * from './atoms/H5'
+export * from './atoms/H6'
+export * from './atoms/IconDribbble'
+export * from './atoms/IconGithub'
+export * from './atoms/IconLinkedin'
+export * from './atoms/IconMenu'
+export * from './atoms/IconTwitter'
+export * from './atoms/IconX'
+export * from './atoms/Img'
+export * from './atoms/P'
+export * from './atoms/SectionHeading'
+export * from './atoms/Strong'
+export * from './atoms/Text'
+export * from './atoms/Time'
+
+// MOLECULES
+export * from './molecules/Animate'
+export * from './molecules/AnimateOnEnter'
+export * from './molecules/Badge'
+export * from './molecules/Decorated'
+export * from './molecules/Embed'
+export * from './molecules/Hidden'
+export * from './molecules/IconButton'
+
+// ORGANISIMS
+export * from './organisms/BigTeaser'
+export * from './organisms/Block'
+export * from './organisms/Figure'
+export * from './organisms/FlyoutMenu'
+export * from './organisms/Gallery'
+export * from './organisms/Header'
+export * from './organisms/Matrix'
+export * from './organisms/Modal'
+export * from './organisms/Note'
+export * from './organisms/Notebook'
+export * from './organisms/OffsetGrid'
+export * from './organisms/PhotoOverlayed'
+export * from './organisms/Section'
+export * from './organisms/SectionHeader'
+export * from './organisms/Rows'
+export * from './organisms/Teaser'
+
+// TEMPLATES
+export * from './templates/SiteLayout'
+export * from './templates/GlobalStyles'
