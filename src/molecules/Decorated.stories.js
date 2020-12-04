@@ -4,8 +4,8 @@ import { boolean } from '@storybook/addon-knobs'
 import { Decorated, Text } from '..'
 import lorem from '../helpers/lorem'
 
-export default {
-  title: 'Molecules|Decorated',
+const story = {
+  title: 'Molecules/Decorated',
   component: Decorated,
 }
 
@@ -18,3 +18,5 @@ export const componentPlayground = () => {
     </Decorated>
   )
 }
+
+export default story

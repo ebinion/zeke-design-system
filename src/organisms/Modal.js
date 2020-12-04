@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react' // eslint-disable-line no-unused-vars
+import React, { useEffect } from 'react' // eslint-disable-line no-unused-vars
+import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import styled, { css, createGlobalStyle } from 'styled-components'
 
@@ -58,20 +59,26 @@ const BodyStyle = createGlobalStyle`
   }
 `
 
-const Modal = ({ handleClose, isOpen, ...props }) => {
-  const [hasPlayed, setHasPlayed] = useState(false)
+const RenderedModal = ({ children, handleClose, isOpen }) => (
+  <StyledWrapper isOpen={isOpen}>
+    <BodyStyle scrollIsLocked={isOpen} />
+    <StyledModal>
+      <Block>
+        <StyledModalClose>
+          <IconButton
+            title="close"
+            icon={<IconX />}
+            type="button"
+            clickHandler={handleClose}
+          />
+        </StyledModalClose>
+      </Block>
+      <StyledModalContent>{children}</StyledModalContent>
+    </StyledModal>
+  </StyledWrapper>
+)
 
-  const getModelIsOpen = () => {
-    if (isOpen && !hasPlayed) {
-      setHasPlayed(true)
-      return true
-    } else if (isOpen) {
-      return true
-    } else {
-      return false
-    }
-  }
-
+const Modal = ({ children, handleClose, isOpen, portalTarget, ...props }) => {
   useEffect(() => {
     const handleKeyPress = event => {
       if (event.keyCode === 27 && isOpen) {
@@ -84,33 +91,35 @@ const Modal = ({ handleClose, isOpen, ...props }) => {
     return () => document.removeEventListener('keyup', handleKeyPress)
   }, [handleClose, isOpen])
 
-  return (
-    <StyledWrapper isOpen={getModelIsOpen()}>
-      <BodyStyle scrollIsLocked={getModelIsOpen()} />
-      <StyledModal>
-        <Block>
-          <StyledModalClose>
-            <IconButton
-              title="close"
-              icon={<IconX />}
-              type="button"
-              clickHandler={handleClose}
-            />
-          </StyledModalClose>
-        </Block>
-        <StyledModalContent>{props.children}</StyledModalContent>
-      </StyledModal>
-    </StyledWrapper>
-  )
+  if (portalTarget) {
+    return createPortal(
+      <RenderedModal
+        children={children}
+        handleClose={handleClose}
+        isOpen={isOpen}
+      />,
+      portalTarget
+    )
+  } else {
+    return (
+      <RenderedModal
+        children={children}
+        handleClose={handleClose}
+        isOpen={isOpen}
+      />
+    )
+  }
 }
 
 Modal.propTypes = {
   isOpen: PropTypes.bool,
   handleClose: PropTypes.func,
+  portalTarget: PropTypes.element,
 }
 
 Modal.defaultProps = {
   isOpen: false,
+  handleClose: () => {},
 }
 
 export default Modal

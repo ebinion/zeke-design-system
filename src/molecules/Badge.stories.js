@@ -6,11 +6,13 @@ import { Badge } from '../'
 const textKnob = () => text('Text', '99')
 const sizeKnob = () => select('Size', ['xs', 's', 'm', 'l', 'xl'], 's')
 
-export default {
-  title: 'Molecules|Badge',
+const story = {
+  title: 'Molecules/Badge',
   component: Badge,
 }
 
 export const ComponentPlayground = () => (
   <Badge size={sizeKnob()}>{textKnob()}</Badge>
 )
+
+export default story

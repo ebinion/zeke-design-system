@@ -2,8 +2,8 @@ import React from 'react'
 
 import { H6 } from '../'
 
-export default {
-  title: 'Atoms|Text/H6',
+const story = {
+  title: 'Atoms/Text/H6',
   component: H6,
   parameters: {
     componentSubtitle:
@@ -12,3 +12,5 @@ export default {
 }
 
 export const component = () => <H6>Example H6</H6>
+
+export default story

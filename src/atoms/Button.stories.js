@@ -3,8 +3,8 @@ import { select, boolean } from '@storybook/addon-knobs'
 
 import Button from './Button'
 
-export default {
-  title: 'Atoms|Links & Buttons/Button',
+const story = {
+  title: 'Atoms/Links & Buttons/Button',
   component: Button,
 }
 
@@ -25,3 +25,5 @@ export const secondaryButton = () => (
 )
 
 export const fullWidth = () => <Button fullWidth>Full width button</Button>
+
+export default story

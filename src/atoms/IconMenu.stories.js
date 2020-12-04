@@ -2,9 +2,11 @@ import React from 'react'
 
 import { IconMenu } from '../'
 
-export default {
-  title: 'Atoms|Icons/Menu',
+const story = {
+  title: 'Atoms/Icons/Menu',
   component: IconMenu,
 }
 
 export const icon = () => <IconMenu />
+
+export default story
