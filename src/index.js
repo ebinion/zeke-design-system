@@ -14,12 +14,14 @@ import H4 from './atoms/H4'
 import H5 from './atoms/H5'
 import H6 from './atoms/H6'
 import IconDribbble from './atoms/IconDribbble'
+import IconEllipsis from './atoms/IconEllipsis'
 import IconGithub from './atoms/IconGithub'
 import IconLinkedin from './atoms/IconLinkedin'
 import IconMenu from './atoms/IconMenu'
 import IconTwitter from './atoms/IconTwitter'
 import IconX from './atoms/IconX'
 import Img from './atoms/Img'
+import HR from './atoms/HR'
 import P from './atoms/P'
 import SectionHeading from './atoms/SectionHeading'
 import Strong from './atoms/Strong'
@@ -74,12 +76,14 @@ export {
   H5,
   H6,
   IconDribbble,
+  IconEllipsis,
   IconGithub,
   IconLinkedin,
   IconMenu,
   IconTwitter,
   IconX,
   Img,
+  HR,
   P,
   SectionHeading,
   Strong,

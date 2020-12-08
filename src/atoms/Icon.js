@@ -15,7 +15,7 @@ export default class Icon extends React.Component {
   static propTypes = {
     viewbox: PropTypes.string,
     title: PropTypes.string,
-    size: PropTypes.oneOf(['s', 'm']),
+    size: PropTypes.oneOf(['s', 'm', 'l', 'xl']),
   }
 
   static defaultProps = {
