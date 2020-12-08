@@ -8,7 +8,7 @@
     "bold": "#131623",
     "light": "#88888d",
     "link": "inherit",
-    "linkHighlight": "#009ad6",
+    "linkHighlight": "inherit",
     "knockout": "#fff",
     "button-primary": "#fff",
     "button-primary-highlight": "#fff",
@@ -22,6 +22,8 @@
   "backgrounds": {
     "site": "#f1f1ee",
     "light": "#fff",
+    "link": "rgba(217,194,144, 0)",
+    "linkHighlight": "rgba(217,194,144, .25)",
     "badge": {
       "white": "#fafafa"
     },
@@ -49,7 +51,9 @@
     "button-primary": "#000",
     "button-primary-highlight": "#333",
     "button-secondary": "#4a4a4a",
-    "button-secondary-highlight": "#333"
+    "button-secondary-highlight": "#333",
+    "link": "#dbc290",
+    "linkHighlight": "#D9A945"
   },
   "shadows": {
     "light": "rgba(0,0,0,.15)",
