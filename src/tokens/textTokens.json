@@ -1,17 +1,19 @@
 {
-  "fontImportUrl": "https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400&display=swap",
+  "fontImportUrl": "https://use.typekit.net/iuy7ikv.css",
   "heading": {
-    "fontFamily": "'Open Sans Condensed', sans-serif",
-    "weightBold": "700"
+    "fontFamily": "playfair-display, serif",
+    "weightNormal": "400",
+    "weightBold": "900"
   },
   "normal": {
-    "fontFamily": "'Open Sans', 'Helvetica Neue', Helvetica, sans-serif",
-    "weightBold": "700",
+    "fontFamily": "proxima-nova, sans-serif",
+    "weightBold": "800",
     "weightNormal": "400"
   },
   "decorative": {
-    "fontFamily": "'Playfair Display', sans-serif",
-    "weightNormal": "400"
+    "fontFamily": "playfair-display, serif",
+    "weightNormal": "400",
+    "weightBold": "900"
   },
   "sizes": {
     "xxl": {
@@ -21,15 +23,15 @@
       "spacing": "45px"
     },
     "xl": {
-      "size": "28px",
-      "lineHeightNormal": "40px",
-      "lineHeightTight": "35px",
-      "spacing": "40px"
-    },
-    "l": {
       "size": "24px",
       "lineHeightNormal": "35px",
       "lineHeightTight": "30px",
+      "spacing": "40px"
+    },
+    "l": {
+      "size": "18px",
+      "lineHeightNormal": "30px",
+      "lineHeightTight": "25px",
       "spacing": "35px"
     },
     "m": {

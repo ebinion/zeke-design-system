@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { colorTokens, measurementTokens, H4 } from '../'
+import { colorTokens, measurementTokens, Text } from '../'
 
 const StyledComponent = styled.div`
   &::after {
     content: '';
     display: block;
-    border-bottom: 5px solid
+    border-bottom: 8px solid
       ${props =>
         props.isKnockedOut
           ? colorTokens.text.knockout
@@ -65,18 +65,20 @@ const SectionHeading = ({ as, children, isKnockedOut, ...props }) => {
       }
       isKnockedOut={isKnockedOut}
     >
-      <H4
+      <Text
         as={as}
         align={props.align}
         alignSmallUp={props.alignSmallUp}
         alignMediumUp={props.alignMediumUp}
         alignLargeUp={props.alignLargeUp}
+        bold
         color={isKnockedOut ? 'knockout' : 'normal'}
         constrain={false}
-        isUppercased
+        kind="decorative"
+        size="l"
       >
         {children}
-      </H4>
+      </Text>
     </StyledComponent>
   )
 }
