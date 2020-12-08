@@ -14,7 +14,9 @@
   },
   "icons": {
     "s": "16px",
-    "m": "24px"
+    "m": "24px",
+    "l": "32px",
+    "xl": "48px"
   },
   "linkBorder": "3px",
   "maxSiteWidth": "1200px",
