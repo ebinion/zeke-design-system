@@ -17,6 +17,7 @@ import IconDribbble from './atoms/IconDribbble'
 import IconEllipsis from './atoms/IconEllipsis'
 import IconGithub from './atoms/IconGithub'
 import IconLinkedin from './atoms/IconLinkedin'
+import IconLogo from './atoms/IconLogo'
 import IconMenu from './atoms/IconMenu'
 import IconTwitter from './atoms/IconTwitter'
 import IconX from './atoms/IconX'
@@ -79,6 +80,7 @@ export {
   IconEllipsis,
   IconGithub,
   IconLinkedin,
+  IconLogo,
   IconMenu,
   IconTwitter,
   IconX,
