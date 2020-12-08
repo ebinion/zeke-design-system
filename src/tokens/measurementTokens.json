@@ -16,6 +16,7 @@
     "s": "16px",
     "m": "24px"
   },
+  "linkBorder": "3px",
   "maxSiteWidth": "1200px",
   "maxTextWidth": "700px",
   "menuWidth": "320px",

@@ -22,6 +22,7 @@ export const componentPlayground = () => (
     kind={kindKnob()}
     keyboardOnly={keyboardOnlyKnob()}
     useInheritedFont={inheritedFontKnob()}
+    href="http://example.com"
   >
     {lorem.generateWords(2)}
   </A>
@@ -30,8 +31,8 @@ export const componentPlayground = () => (
 export const asNormal = () => <A>{lorem.generateWords(2)}</A>
 export const asNav = () => <A kind="nav">{lorem.generateWords(2)}</A>
 export const asIncognito = () => (
-  <A kind="incognito">{lorem.generateWords(2)}</A>
+  <A kind="incognito" href="#">{lorem.generateWords(2)}</A>
 )
-export const asKeyboardOnly = () => <A keyboardOnly>{lorem.generateWords(2)}</A>
+export const asKeyboardOnly = () => <A href="#" keyboardOnly>{lorem.generateWords(2)}</A>
 
 export default story
