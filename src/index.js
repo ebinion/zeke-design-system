@@ -16,6 +16,7 @@ import H6 from './atoms/H6'
 import IconDribbble from './atoms/IconDribbble'
 import IconGithub from './atoms/IconGithub'
 import IconLinkedin from './atoms/IconLinkedin'
+import IconLogo from './atoms/IconLogo'
 import IconMenu from './atoms/IconMenu'
 import IconTwitter from './atoms/IconTwitter'
 import IconX from './atoms/IconX'
@@ -76,6 +77,7 @@ export {
   IconDribbble,
   IconGithub,
   IconLinkedin,
+  IconLogo,
   IconMenu,
   IconTwitter,
   IconX,
