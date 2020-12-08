@@ -150,10 +150,28 @@ const Text = ({
     }
   }
 
-  const getLineHeight = (sizeToken, lineHeight) => {
-    return lineHeight === 'normal'
-      ? textTokens.sizes[sizeToken].lineHeightNormal
-      : textTokens.sizes[sizeToken].lineHeightTight
+  const getLineHeight = (sizeKey, lineHeight) => {
+    const lineHeightPx = lineHeight === 'normal'
+      ? textTokens.sizes[sizeKey].lineHeightNormal
+      : textTokens.sizes[sizeKey].lineHeightTight
+
+    return pxToMultiLineHeight(getSize(sizeKey), lineHeightPx)
+  }
+
+  const pxToMultiLineHeight = (textSize, lineHeight) => {
+    const context = stripPx(textSize)
+    const target = stripPx(lineHeight)
+
+    return  target / context
+  }
+
+  const stripPx = pxString => {
+    if(typeof pxString === 'string') {
+      return parseInt(pxString.trim().split('px')[0], 10)
+    } else {
+      return pxString
+    }
+    
   }
 
   const getSize = sizeKey => {
