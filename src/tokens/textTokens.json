@@ -1,7 +1,8 @@
 {
   "fontImportUrl": "https://use.typekit.net/iuy7ikv.css",
   "heading": {
-    "fontFamily": "proxima-nova, sans-serif",
+    "fontFamily": "playfair-display, serif",
+    "weightNormal": "400",
     "weightBold": "900"
   },
   "normal": {
@@ -22,15 +23,15 @@
       "spacing": "45px"
     },
     "xl": {
-      "size": "28px",
-      "lineHeightNormal": "40px",
-      "lineHeightTight": "35px",
-      "spacing": "40px"
-    },
-    "l": {
       "size": "24px",
       "lineHeightNormal": "35px",
       "lineHeightTight": "30px",
+      "spacing": "40px"
+    },
+    "l": {
+      "size": "18px",
+      "lineHeightNormal": "30px",
+      "lineHeightTight": "25px",
       "spacing": "35px"
     },
     "m": {
