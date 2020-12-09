@@ -8,15 +8,15 @@ const StyledComponent = styled.div`
   &::after {
     content: '';
     display: block;
-    border-bottom: 8px solid
+    border-bottom: ${measurementTokens.sectionHeadingBorder} solid
       ${props =>
         props.isKnockedOut
           ? colorTokens.text.knockout
           : colorTokens.text.heading};
-    margin-top: 0.5em;
-    margin-bottom: 20px;
+    margin-top: ${measurementTokens.componentPadding.s};
+    margin-bottom: ${measurementTokens.componentMargin.s};
     ${props => props.align}
-    width: 100px;
+    width: 50px;
 
     @media (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
       ${props => props.alignSmallUp}
@@ -74,8 +74,7 @@ const SectionHeading = ({ as, children, isKnockedOut, ...props }) => {
         bold
         color={isKnockedOut ? 'knockout' : 'normal'}
         constrain={false}
-        kind="decorative"
-        size="l"
+        isUppercased
       >
         {children}
       </Text>

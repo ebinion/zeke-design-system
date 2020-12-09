@@ -7,15 +7,14 @@ const story = {
   title: 'Atoms/Text/Section Heading',
   component: SectionHeading,
 }
+export default story
 
 const isKnockedoutKnob = () => boolean('Is knocked out?', false)
 const alignKnob = () =>
   select('Align heading', ['left', 'center', 'right'], 'center')
 
-export const component = () => (
+export const sectionHeading = () => (
   <SectionHeading isKnockedOut={isKnockedoutKnob()} align={alignKnob()}>
     Example Content
   </SectionHeading>
 )
-
-export default story
