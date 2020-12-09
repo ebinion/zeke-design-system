@@ -37,6 +37,7 @@ import Decorated from './molecules/Decorated'
 import Embed from './molecules/Embed'
 import Hidden from './molecules/Hidden'
 import IconButton from './molecules/IconButton'
+import Logo from './molecules/Logo'
 
 // ORGANISIMS
 import BigTeaser from './organisms/BigTeaser'
@@ -99,6 +100,7 @@ export {
   Embed,
   Hidden,
   IconButton,
+  Logo,
   // ORGANISMS
   BigTeaser,
   Block,

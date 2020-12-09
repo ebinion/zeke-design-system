@@ -19,7 +19,6 @@ const StyledIcon = styled.svg`
 
   ${props => {
     if (props.isLink) {
-      // eslint-disable-next-line default-case
       switch (props.color) {
         case 'gold':
           return css`
@@ -38,11 +37,29 @@ const StyledIcon = styled.svg`
       }
     }
   }}
+
+  ${props => {
+    switch (props.color) {
+      case 'knockout':
+        return css`
+            & .duotone {
+              fill: ${colorTokens.icons.black};
+            }
+          }
+        `
+      default:
+        return css`
+          & .duotone {
+            fill: ${colorTokens.icons.knockout};
+          }
+        `
+    }
+  }}
 `
 
 const Icon = ({ children, title, viewbox, ...props }) => {
   return (
-    <StyledIcon viewBox={viewbox} {...props}>
+    <StyledIcon viewBox={viewbox} {...props} role="img" aria-label={title}>
       <title>{title}</title>
       {children}
     </StyledIcon>
