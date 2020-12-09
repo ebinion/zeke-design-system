@@ -1,7 +1,7 @@
 {
   "backgrounds": {
-    "site": "#f1f1ee",
-    "light": "#fff",
+    "site": "#fff",
+    "light": "#fafafa",
     "link": "rgba(217,194,144, 0)",
     "linkHighlight": "rgba(217,194,144, .25)",
     "badge": {
