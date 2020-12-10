@@ -1,10 +1,22 @@
 {
-  "touchTarget": "44px",
+  "breakpoints": {
+    "horizontal": {
+      "s": "600px",
+      "m": "800px",
+      "l": "1200px"
+    }
+  },
   "button-border": "1px",
   "button-padding-top": "8px",
   "button-padding-right": "24px",
   "button-padding-bottom": "8px",
   "button-padding-left": "24px",
+  "componentMargin": {
+    "s": "12px",
+    "m": "24px",
+    "l": "40px",
+    "xl": "56px"
+  },
   "componentPadding": {
     "none": "0",
     "s": "12px",
@@ -29,22 +41,11 @@
     "m": "24px",
     "l": "48px"
   },
-  "componentMargin": {
-    "s": "12px",
-    "m": "24px",
-    "l": "40px",
-    "xl": "56px"
-  },
-  "breakpoints": {
-    "horizontal": {
-      "s": "600px",
-      "m": "800px",
-      "l": "1200px"
-    }
-  },
+  "sectionHeadingBorder": "3px",
   "shadowDistance": {
     "large": "40px"
   },
+  "touchTarget": "44px",
   "zIndex": {
     "nav": "99",
     "modal": "999"
