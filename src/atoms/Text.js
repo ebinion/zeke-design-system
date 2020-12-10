@@ -12,7 +12,7 @@ import {
 const StyledP = styled.p`
   max-width: ${props =>
     props.constrain ? measurementTokens.maxTextWidth : '100%'};
-  transition: color ${animationTokens.duration}ms ${animationTokens.easing};
+  transition: color ${animationTokens.duration} ${animationTokens.easing};
 
   ${props => css`
     color: ${props.textColor};
@@ -151,9 +151,10 @@ const Text = ({
   }
 
   const getLineHeight = (sizeKey, lineHeight) => {
-    const lineHeightPx = lineHeight === 'normal'
-      ? textTokens.sizes[sizeKey].lineHeightNormal
-      : textTokens.sizes[sizeKey].lineHeightTight
+    const lineHeightPx =
+      lineHeight === 'normal'
+        ? textTokens.sizes[sizeKey].lineHeightNormal
+        : textTokens.sizes[sizeKey].lineHeightTight
 
     return pxToMultiLineHeight(getSize(sizeKey), lineHeightPx)
   }
@@ -162,16 +163,15 @@ const Text = ({
     const context = stripPx(textSize)
     const target = stripPx(lineHeight)
 
-    return  target / context
+    return target / context
   }
 
   const stripPx = pxString => {
-    if(typeof pxString === 'string') {
+    if (typeof pxString === 'string') {
       return parseInt(pxString.trim().split('px')[0], 10)
     } else {
       return pxString
     }
-    
   }
 
   const getSize = sizeKey => {

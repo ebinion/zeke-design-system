@@ -31,6 +31,16 @@ export const iconArgTypes = {
       },
     },
   },
+  isLink: {
+    type: {
+      name: 'boolean',
+      required: false,
+    },
+    description: 'Boolean',
+    control: {
+      type: null,
+    },
+  },
   size: {
     type: {
       name: 'string',
@@ -49,14 +59,49 @@ export const iconArgTypes = {
       },
     },
   },
-  isLink: {
+  sizeSmallAndAbove: {
     type: {
-      name: 'boolean',
-      required: false,
+      name: 'string',
+      required: true,
     },
-    description: 'Boolean',
+    description: '`m` `l` `xl`',
     control: {
       type: null,
+    },
+    table: {
+      type: {
+        summary: null,
+      },
+    },
+  },
+  sizeMediumAndAbove: {
+    type: {
+      name: 'string',
+      required: true,
+    },
+    description: '`m` `l` `xl`',
+    control: {
+      type: null,
+    },
+    table: {
+      type: {
+        summary: null,
+      },
+    },
+  },
+  sizeLargeAndAbove: {
+    type: {
+      name: 'string',
+      required: true,
+    },
+    description: '`m` `l` `xl`',
+    control: {
+      type: null,
+    },
+    table: {
+      type: {
+        summary: null,
+      },
     },
   },
 }

@@ -68,7 +68,7 @@ const animationKeyframes = {
   `,
 }
 
-const Animate = styled.div`
+const StyledAnimate = styled.div`
   animation-name: ${props => animationKeyframes[props.kind]};
   animation-delay: ${props => props.delay};
   animation-direction: ${props => props.direction}
@@ -77,6 +77,8 @@ const Animate = styled.div`
   animation-play-state: ${props => (props.isPlaying ? 'running' : 'paused')};
   animation-timing-function: ${props => props.easing};
 `
+
+const Animate = props => <StyledAnimate {...props} />
 
 Animate.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
@@ -95,8 +97,8 @@ Animate.propTypes = {
 
 Animate.defaultProps = {
   easing: animationTokens.easing,
-  delay: '0ms',
-  duration: `${animationTokens.duration}ms`,
+  delay: 0,
+  duration: animationTokens.duration,
   direction: 'normal',
   isPlaying: false,
 }

@@ -23,7 +23,7 @@ const Thumbnail = styled.button`
   height: 0;
   margin: 0;
   padding: 100% 0 0;
-  transition: outline ${animationTokens.duration}ms ${animationTokens.easing};
+  transition: outline ${animationTokens.duration} ${animationTokens.easing};
   width: 100%;
 
   &:active,
@@ -40,7 +40,7 @@ const ThumbnailInner = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  transition: transform ${animationTokens.duration}ms ${animationTokens.easing};
+  transition: transform ${animationTokens.duration} ${animationTokens.easing};
 
   button:active &,
   button:hover & {

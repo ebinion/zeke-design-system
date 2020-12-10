@@ -1,9 +1,5 @@
 {
   "backgrounds": {
-    "site": "#fff",
-    "light": "#fafafa",
-    "link": "rgba(217,194,144, 0)",
-    "linkHighlight": "rgba(217,194,144, .25)",
     "badge": {
       "white": "#fafafa"
     },
@@ -16,55 +12,59 @@
     "button-primary-highlight": "#333",
     "button-secondary": "transparent",
     "button-secondary-highlight": "#333",
+    "flyout": "#ffffff",
+    "light": "#fafafa",
+    "link": "rgba(217,194,144, 0)",
+    "linkHighlight": "rgba(217,194,144, .25)",
     "notice-success": "#00ab1c",
     "notice-warning": "#F3EEAB",
     "notice-error": "#eb6a38",
+    "site": "#fff",
     "teaser": "#fff",
     "teaser-highlight": "#009ad6",
-    "flyout": "#ffffff",
     "overlay": "linear-gradient(270deg, rgba(0,0,0,.05), rgba(0,0,0,.2))"
   },
   "borders": {
-    "rule": "#f1f1ee",
-    "input": "#c1c1bb",
-    "input-highlight": "#88888d",
-    "button-primary": "#000",
     "button-primary-highlight": "#333",
-    "button-secondary": "#4a4a4a",
+    "button-primary": "#000",
     "button-secondary-highlight": "#333",
+    "button-secondary": "#4a4a4a",
+    "input-highlight": "#88888d",
+    "input": "#c1c1bb",
     "link": "#dbc290",
-    "linkHighlight": "#D9A945"
+    "linkHighlight": "#c99845",
+    "rule": "#f1f1ee"
+  },
+  "icons": {
+    "black": "#000",
+    "blackHighlight": "#555",
+    "gold": "#dbc290",
+    "goldHighlight": "#c99845",
+    "inherit": "inherit",
+    "knockout": "#fff"
   },
   "shadows": {
     "light": "rgba(0,0,0,.15)",
     "normal": "rgba(0,0,0,.3)"
   },
   "text": {
+    "bold": "#131623",
+    "button-primary-highlight": "#fff",
+    "button-primary": "#fff",
+    "button-secondary-highlight": "#fff",
+    "button-secondary": "#4a4a4a",
+    "code": "#d25265",
+    "error": "#eb6a38",
     "heading": "#131623",
     "headingLight": "#aaaaaf",
-    "normal": "#4a4a4a",
-    "nav": "#4a4a4a",
-    "navHighlight": "#009ad6",
-    "bold": "#131623",
+    "knockout": "#fff",
     "light": "#88888d",
     "link": "inherit",
     "linkHighlight": "inherit",
-    "knockout": "#fff",
-    "button-primary": "#fff",
-    "button-primary-highlight": "#fff",
-    "button-secondary": "#4a4a4a",
-    "button-secondary-highlight": "#fff",
+    "nav": "#4a4a4a",
+    "navHighlight": "#c99845",
+    "normal": "#4a4a4a",
     "success": "#00ab1c",
-    "warning": "#F3EEAB",
-    "error": "#eb6a38",
-    "code": "#d25265"
-  },
-  "icons": {
-    "black": "#000",
-    "blackHighlight": "#555",
-    "gold": "#dbc290",
-    "goldHighlight": "#d9a945",
-    "knockout": "#fff",
-    "inherit": "inherit"
+    "warning": "#F3EEAB"
   }
 }
