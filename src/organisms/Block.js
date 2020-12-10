@@ -7,11 +7,8 @@ import { colorTokens, measurementTokens } from '../'
 const StyledComponent = styled.div`
   background: ${props => props.bgColor};
   padding: ${props =>
-    props.padding === 'none'
-      ? measurementTokens.componentPadding.none
-      : `${props.padding} ${measurementTokens.componentPadding.s}`} ${
-  measurementTokens.sitePadding.s
-};
+    props.padding === 'none' ? '0' : `${props.padding} var(--site-padding)`};
+
   ${props =>
     props.paddingBottom &&
     css`
@@ -56,9 +53,6 @@ const StyledComponent = styled.div`
   }
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
-    padding-left: ${measurementTokens.sitePadding.m};
-    padding-right: ${measurementTokens.sitePadding.m};
-
     ${props =>
       props.isInset &&
       css`
@@ -68,9 +62,6 @@ const StyledComponent = styled.div`
   }
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
-    padding-left: ${measurementTokens.sitePadding.l};
-    padding-right: ${measurementTokens.sitePadding.l};
-
     ${props =>
       props.isInset &&
       css`
@@ -80,7 +71,6 @@ const StyledComponent = styled.div`
   }
 `
 const StyledContrain = styled.div`
-  margin: 0 auto;
   max-width: ${props => props.maxWidth || '100%'};
 `
 

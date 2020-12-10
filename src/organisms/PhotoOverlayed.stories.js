@@ -4,16 +4,15 @@ import { PhotoOverlayed, Img, Text } from '..'
 import lorem from '../helpers/lorem'
 
 const story = {
-  title: 'Organisms/PhotoOverlayed',
+  title: 'Organisms/Photo Overlayed',
   component: PhotoOverlayed,
 }
+export default story
 
-export const componentPlayground = () => {
+export const photoOverlayed = () => {
   return (
     <PhotoOverlayed image={<Img src="https://via.placeholder.com/1200x700" />}>
       <Text>{lorem.generateSentences(5)}</Text>
     </PhotoOverlayed>
   )
 }
-
-export default story

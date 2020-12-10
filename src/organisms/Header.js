@@ -1,43 +1,49 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-import { colorTokens, H4, IconMenu, IconButton, measurementTokens } from '../'
+import { IconMenu, IconButton, Logo, measurementTokens } from '../'
 
 const StyledComponent = styled.header`
   align-items: center;
-  background: ${colorTokens.backgrounds.light};
   box-sizing: border-box;
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: ${measurementTokens.touchTarget} 1fr;
-  grid-template-areas: 'button | title';
-  padding: ${measurementTokens.navButtonOffsetSmall};
-  padding-left: ${measurementTokens.sitePadding.s};
-
-  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
-    grid-template-columns: ${measurementTokens.touchTarget} 1fr ${measurementTokens.touchTarget};
-    grid-template-areas: 'button | title | .';
-    padding: ${measurementTokens.navButtonOffset}
-      ${measurementTokens.sitePadding.s};
-  }
-  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
-    padding-left: ${measurementTokens.sitePadding.m};
-    padding-right: ${measurementTokens.sitePadding.m};
-  }
-  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
-    padding-left: ${measurementTokens.sitePadding.l};
-    padding-right: ${measurementTokens.sitePadding.l};
-  }
+  grid-gap: var(--component-padding);
+  grid-template-columns: auto auto 1fr auto;
+  grid-template-areas: 'button logo . cta';
+  padding: var(--site-padding);
 `
 
 const StyledButton = styled.div`
-  grid-area: 'button';
+  grid-area: button;
 `
 
-const StyledTitle = styled.div`
-  grid-area: 'title';
-  overflow: hidden;
+const StyledLogo = styled.div`
+  grid-area: logo;
+`
+
+const StyledCta = styled.div`
+  grid-area: cta;
+
+  ${props =>
+    props.ctaHiddenBelow === 'small' &&
+    css`
+      display: none;
+      @media screen and (min-width: ${measurementTokens.breakpoints.horizontal
+          .s}) {
+        display: block;
+      }
+    `}
+
+  ${props =>
+    props.ctaHiddenBelow === 'medium' &&
+    css`
+      display: none;
+      @media screen and (min-width: ${measurementTokens.breakpoints.horizontal
+          .m}) {
+        display: block;
+      }
+    `}
 `
 
 const Header = props => {
@@ -45,24 +51,42 @@ const Header = props => {
     <StyledComponent role="banner">
       <StyledButton>
         <IconButton
-          icon={<IconMenu />}
+          icon={
+            <IconMenu size="m" sizeMediumAndAbove="l" color={props.color} />
+          }
           title="Menu"
           clickHandler={props.menuClickHandler}
         />
       </StyledButton>
-      <StyledTitle>
-        <H4 truncate align="left" alignSmallUp="center">
-          {props.title || props.children}
-        </H4>
-      </StyledTitle>
+      <StyledLogo>
+        <Logo
+          color={props.color}
+          href={props.logoHref}
+          linkElement={props.logoLinkElement}
+          isLink={props.href ? true : false}
+        >
+          {props.siteTitle}
+        </Logo>
+      </StyledLogo>
+      <StyledCta ctaHiddenBelow={props.ctaHiddenBelow}>
+        {props.children}
+      </StyledCta>
     </StyledComponent>
   )
 }
 
 Header.propTypes = {
+  color: PropTypes.oneOf(['black', 'knockout']),
   children: PropTypes.node,
   menuClickHandler: PropTypes.func,
-  title: PropTypes.node,
+  siteTitle: PropTypes.element,
+  ctaHiddenBelow: PropTypes.oneOf(['small', 'medium']),
+  logoHref: PropTypes.string,
+  logoLinkElement: PropTypes.node,
+}
+
+Header.defaultProps = {
+  color: 'black',
 }
 
 export default Header

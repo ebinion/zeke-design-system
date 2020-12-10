@@ -1,9 +1,43 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 import { createGlobalStyle } from 'styled-components'
 
-import { colorTokens, textTokens } from '..'
+import { colorTokens, measurementTokens, textTokens } from '..'
 
 const GlobalWrapper = createGlobalStyle`
+  :root {
+    --component-margin: ${measurementTokens.componentMargin.s};
+    --component-padding: ${measurementTokens.componentPadding.s};
+    --component-padding-l: ${measurementTokens.componentPaddingL.s};
+    --site-padding: ${measurementTokens.sitePadding.s};
+  }
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+    :root {
+      --component-margin: ${measurementTokens.componentMargin.m};
+      --component-padding: ${measurementTokens.componentPadding.m};
+      --component-padding-l: ${measurementTokens.componentPaddingL.m};
+      --site-padding: ${measurementTokens.sitePadding.m};
+    }
+  }
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
+    :root {
+      --component-margin: ${measurementTokens.componentMargin.l};
+      --component-padding: ${measurementTokens.componentPadding.l};
+      --component-padding-l: ${measurementTokens.componentPaddingL.l};
+      --site-padding: ${measurementTokens.sitePadding.l};
+    }
+  }
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.xl}) {
+    :root {
+      --component-margin: ${measurementTokens.componentMargin.xl};
+      --component-padding: ${measurementTokens.componentPadding.xl};
+      --component-padding-l: ${measurementTokens.componentPaddingL.xl};
+      --site-padding: ${measurementTokens.sitePadding.xl};
+    }
+  }
+
   body {
     background-color: ${colorTokens.backgrounds.site};
     color: ${colorTokens.text.normal};

@@ -2,40 +2,59 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { animationTokens, colorTokens, measurementTokens, textTokens } from '../'
+import {
+  animationTokens,
+  colorTokens,
+  measurementTokens,
+  textTokens,
+} from '../'
 
 const StyledA = styled.a`
   font: inherit;
   line-height: inherit;
 
-  ${props => props.kind !== 'incognito' && css`
-    background: ${colorTokens.backgrounds.link};
-    color: ${colorTokens.text.link};
-    cursor: pointer;
-    font-weight: ${textTokens.normal.weightBold};
-    text-decoration: none;
-    border-bottom: ${measurementTokens.linkBorder} solid ${colorTokens.borders.link};
-    transition-property: border, background; 
-    transition-duration: ${animationTokens.duration}ms;
-    transition-timing-function: ${animationTokens.easing};
+  ${props =>
+    props.kind !== 'incognito' &&
+    css`
+      background: ${colorTokens.backgrounds.link};
+      color: ${colorTokens.text.link};
+      cursor: pointer;
+      font-weight: ${textTokens.normal.weightBold};
+      text-decoration: none;
+      border-bottom: ${measurementTokens.linkBorder} solid
+        ${colorTokens.borders.link};
+      transition-property: border, background;
+      transition-duration: ${animationTokens.duration};
+      transition-timing-function: ${animationTokens.easing};
 
-    &:active,
-    &:hover {
-      color: ${colorTokens.text.linkHighlight};
-      background: ${colorTokens.backgrounds.linkHighlight};
-      border-color: ${colorTokens.borders.linkHighlight};
-      outline: 0;
-    }
-  `}
+      &:active,
+      &:hover {
+        color: ${colorTokens.text.linkHighlight};
+        background: ${colorTokens.backgrounds.linkHighlight};
+        border-color: ${colorTokens.borders.linkHighlight};
+        outline: 0;
+      }
+    `}
 
-  ${props => props.kind === 'nav' && css`
-    border-color: transparent;
-  `}
+  ${props =>
+    props.kind === 'nav' &&
+    css`
+      border: 0;
 
-  ${props => props.kind === 'incognito' && css`
-    color: inherit;
-    text-decoration: none;
-  `}
+      &:active,
+      &:hover {
+        color: ${colorTokens.text.navHighlight};
+        background: none;
+        outline: 0;
+      }
+    `}
+
+  ${props =>
+    props.kind === 'incognito' &&
+    css`
+      color: inherit;
+      text-decoration: none;
+    `}
 
   ${props =>
     props.keyboardOnly &&
@@ -65,10 +84,7 @@ const StyledA = styled.a`
 
 const A = props => {
   return (
-    <StyledA
-      {...props}
-      href={props.to ? props.to : props.href}
-    >
+    <StyledA {...props} href={props.to ? props.to : props.href}>
       {props.children}
     </StyledA>
   )
@@ -78,7 +94,6 @@ A.propTypes = {
   kind: PropTypes.oneOf(['normal', 'incognito', 'nav']),
   keyboardOnly: PropTypes.bool,
   href: PropTypes.string,
-  inheritFont: PropTypes.bool, // will depreacate because of React warnings in 1.0
   useInheritedFont: PropTypes.bool,
   to: PropTypes.string,
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),

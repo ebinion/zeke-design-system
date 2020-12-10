@@ -22,7 +22,7 @@ const StyledWrapper = styled.div`
   opacity: 0;
   transform: translateY(200px);
   pointer-events: none;
-  transition-duration: ${animationTokens.duration}ms;
+  transition-duration: ${animationTokens.duration};
   transition-property: opacity transform;
   transition-timing-function: ${animationTokens.easing};
   z-index: ${measurementTokens.zIndex.modal};

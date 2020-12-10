@@ -14,7 +14,11 @@ const IconTwitter = props => {
 
 IconTwitter.propTypes = {
   color: PropTypes.oneOf(Object.keys(colorTokens.icons)),
+  isLink: PropTypes.bool,
   size: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
+  sizeSmallAndAbove: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
+  sizeMediumAndAbove: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
+  sizeLargeAndAbove: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
 }
 
 export default IconTwitter
