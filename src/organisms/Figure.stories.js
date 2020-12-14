@@ -11,7 +11,7 @@ const story = {
 
 const positionKnob = () => select('Figure Position', ['left', 'right'], 'left')
 
-export const ComponentPlayground = () => {
+export const figure = () => {
   return (
     <Figure
       figurePosition={positionKnob()}

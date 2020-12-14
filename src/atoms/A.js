@@ -40,6 +40,9 @@ const StyledA = styled.a`
     props.kind === 'nav' &&
     css`
       border: 0;
+      transition-property: color;
+      transition-duration: ${animationTokens.duration};
+      transition-timing-function: ${animationTokens.easing};
 
       &:active,
       &:hover {

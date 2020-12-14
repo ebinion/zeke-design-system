@@ -7,7 +7,7 @@ const story = {
   component: Img,
 }
 
-export const ComponentPlayground = () => {
+export const img = () => {
   return <Img src="https://via.placeholder.com/1200x700" />
 }
 

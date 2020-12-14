@@ -9,7 +9,7 @@ const story = {
   component: A,
   parameters: {
     componentSubtitle:
-      'Anchor element to be used in conjuction with link wrappers. Try not to "href" directly from this component.',
+      'Anchor element that can be used with link helpers from frameworks or stand alone.',
   },
 }
 
@@ -17,7 +17,7 @@ const kindKnob = () => select('Kind', ['normal', 'incognito', 'nav'], 'normal')
 const keyboardOnlyKnob = () => boolean('Visible to keyboards only', false)
 const inheritedFontKnob = () => boolean('Use inherited font?', false)
 
-export const componentPlayground = () => (
+export const a = () => (
   <A
     kind={kindKnob()}
     keyboardOnly={keyboardOnlyKnob()}
@@ -31,8 +31,14 @@ export const componentPlayground = () => (
 export const asNormal = () => <A>{lorem.generateWords(2)}</A>
 export const asNav = () => <A kind="nav">{lorem.generateWords(2)}</A>
 export const asIncognito = () => (
-  <A kind="incognito" href="#">{lorem.generateWords(2)}</A>
+  <A kind="incognito" href="#">
+    {lorem.generateWords(2)}
+  </A>
 )
-export const asKeyboardOnly = () => <A href="#" keyboardOnly>{lorem.generateWords(2)}</A>
+export const asKeyboardOnly = () => (
+  <A href="#" keyboardOnly>
+    {lorem.generateWords(2)}
+  </A>
+)
 
 export default story

@@ -10,7 +10,7 @@ const story = {
 
 const isOpenKnob = () => boolean('Is open?', false)
 
-export const componentPlayground = () => {
+export const modal = () => {
   return <Modal isOpen={isOpenKnob()}>Modal Content</Modal>
 }
 

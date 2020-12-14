@@ -10,7 +10,7 @@ const story = {
 
 const isOpenKnob = () => boolean('Menu is open', true)
 
-export const componentPlayground = () => {
+export const flyoutMenu = () => {
   const items = [
     {
       label: 'Home',

@@ -7,7 +7,7 @@ const story = {
   component: Embed,
 }
 
-export const ComponentPlayground = () => {
+export const embed = () => {
   return (
     <Embed>
       <iframe

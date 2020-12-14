@@ -25,7 +25,7 @@ const story = {
   component: Text,
 }
 
-export const componentPlayground = () => (
+export const text = () => (
   <Text
     align={alignKnobs()}
     as={asKnobs()}

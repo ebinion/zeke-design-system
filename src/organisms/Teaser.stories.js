@@ -12,7 +12,7 @@ const story = {
 const titleKnob = () => text('Title', lorem.generateWords(10))
 const summaryKnob = () => text('Summary', lorem.generateSentences(2))
 
-export const componentPlayground = () => {
+export const teaser = () => {
   return (
     <Teaser
       summary={summaryKnob()}

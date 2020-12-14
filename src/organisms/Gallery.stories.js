@@ -66,7 +66,7 @@ const items = [
   },
 ]
 
-export const componentPlayground = () => {
+export const gallery = () => {
   return <Gallery items={items} />
 }
 

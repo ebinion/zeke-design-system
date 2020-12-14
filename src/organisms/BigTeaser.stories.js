@@ -8,7 +8,7 @@ const story = {
   component: BigTeaser,
 }
 
-export const componentPlayground = () => {
+export const bigTeaser = () => {
   return (
     <BigTeaser
       summary={shortGraphKnob('Summary')}

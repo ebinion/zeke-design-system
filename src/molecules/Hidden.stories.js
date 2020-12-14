@@ -14,7 +14,7 @@ const atMediumKnob = () => boolean('atMedium', false)
 const atLargeKnob = () => boolean('atLarge', false)
 const andUpKnob = () => boolean('andUp', false)
 
-export const componentPlayground = () => {
+export const hidden = () => {
   return (
     <Hidden
       atBase={atBaseKnob()}

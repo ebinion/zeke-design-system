@@ -11,8 +11,6 @@ const story = {
   component: Badge,
 }
 
-export const ComponentPlayground = () => (
-  <Badge size={sizeKnob()}>{textKnob()}</Badge>
-)
+export const badge = () => <Badge size={sizeKnob()}>{textKnob()}</Badge>
 
 export default story

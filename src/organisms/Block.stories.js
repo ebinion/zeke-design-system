@@ -17,7 +17,7 @@ const story = {
   component: Block,
 }
 
-export const componentPlayground = () => {
+export const block = () => {
   return (
     <Block
       constain={constrainKnobs()}
