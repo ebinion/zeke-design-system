@@ -8,7 +8,7 @@ const story = {
   component: Matrix,
 }
 
-export const componentPlayground = () => {
+export const matrix = () => {
   return (
     <Matrix>
       <ExampleBlock />

@@ -23,7 +23,7 @@ const animationKnob = () =>
 
 const isPlayingKnob = () => boolean('Is playing?', true)
 
-export const componentPlayground = () => {
+export const animate = () => {
   return (
     <Animate kind={animationKnob()} isPlaying={isPlayingKnob()}>
       <div>Example Animation</div>

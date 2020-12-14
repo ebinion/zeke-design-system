@@ -8,7 +8,7 @@ const story = {
   component: OffsetGrid,
 }
 
-export const componentPlayground = () => {
+export const offsetGrid = () => {
   return (
     <OffsetGrid>
       <Text>{lorem.generateSentences(6)}</Text>

@@ -11,7 +11,7 @@ const story = {
 
 const sizeKnob = () => select('Size', ['s', 'm', 'l', 'xl'], 'm')
 
-export const componentPlayground = () => {
+export const rows = () => {
   return (
     <Rows size={sizeKnob()}>
       <ExampleBlock />

@@ -60,7 +60,7 @@ const StyledP = styled.p`
     css`
       a:active &,
       a:hover & {
-        color: ${colorTokens.text.linkHighlight};
+        color: ${colorTokens.text.respondToLink};
       }
     `}
 

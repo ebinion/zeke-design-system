@@ -11,7 +11,7 @@ const story = {
 const fullWidthKnob = () => boolean('Full Width', false)
 const kindKnob = () => select('Kind', ['primary', 'secondary'], 'primary')
 
-export const componentPlayground = () => (
+export const button = () => (
   <Button fullWidth={fullWidthKnob()} kind={kindKnob()}>
     Button example
   </Button>

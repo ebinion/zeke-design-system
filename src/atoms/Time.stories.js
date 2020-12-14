@@ -6,6 +6,6 @@ const story = {
   Component: Time,
 }
 
-export const component = () => <Time date={new Date()} />
+export const time = () => <Time date={new Date()} />
 
 export default story

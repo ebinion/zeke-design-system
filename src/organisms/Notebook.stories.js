@@ -11,7 +11,7 @@ const story = {
 
 const titleKnob = () => text('Title', lorem.generateWords(10))
 
-export const ComponentPlayground = () => (
+export const notebook = () => (
   <Notebook count={99} title={titleKnob()} to="#"></Notebook>
 )
 

@@ -8,7 +8,7 @@ const story = {
   component: Note,
 }
 
-export const ComponentPlayground = () => (
+export const note = () => (
   <Note
     superTitle={<Time date={new Date()} />}
     title={lorem.generateWords(10)}
