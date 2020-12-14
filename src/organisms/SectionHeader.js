@@ -20,13 +20,7 @@ const SectionHeader = ({
   const renderLead = () => {
     if (typeof composedLead === 'string') {
       return (
-        <Text
-          align="center"
-          size="l"
-          color={getColor()}
-          kind="decorative"
-          noMargin
-        >
+        <Text align="center" size="l" color={getColor()} noMargin>
           {composedLead}
         </Text>
       )
@@ -42,12 +36,20 @@ const SectionHeader = ({
           {superTitle}
         </SectionHeading>
       )}
-      {title && (
-        <H2 as="h3" align="center" color={getColor()} noMargin>
-          {title}
-        </H2>
-      )}
-      {composedLead && renderLead()}
+      <div>
+        {title && (
+          <H2
+            as="h3"
+            align="center"
+            color={getColor()}
+            lineHeight="normal"
+            noMargin
+          >
+            {title}
+          </H2>
+        )}
+        {composedLead && renderLead()}
+      </div>
     </Block>
   )
 }

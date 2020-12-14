@@ -16,11 +16,18 @@ const Note = ({
     <A as={linkElement} to={to} kind="incognito">
       <article>
         {image}
-        <Text noMargin color="light" size="s" align="center" respondToLinkHover>
+        <Text
+          noMargin
+          color="light"
+          size="s"
+          align="center"
+          respondToLinkHover
+          lineHeight="tight"
+        >
           {date && <Time date={date} />}
         </Text>
         <H3
-          lineHeight="tight"
+          lineHeight="normal"
           noMargin
           as={headingLevel}
           align="center"
@@ -28,13 +35,7 @@ const Note = ({
         >
           {title}
         </H3>
-        <P
-          align="center"
-          kind={image ? 'normal' : 'decorative'}
-          size={image ? 'm' : 'l'}
-          noMargin
-          lineHeight={image ? 'tight' : 'normal'}
-        >
+        <P align="center" size={image ? 'm' : 'l'} noMargin lineHeight="tight">
           {summary}
         </P>
       </article>
