@@ -42,6 +42,8 @@ import Logo from './molecules/Logo'
 // ORGANISIMS
 import BigTeaser from './organisms/BigTeaser'
 import Block from './organisms/Block'
+import Column from './organisms/Column'
+import Columns from './organisms/Columns'
 import Figure from './organisms/Figure'
 import FlyoutMenu from './organisms/FlyoutMenu'
 import Gallery from './organisms/Gallery'
@@ -104,6 +106,8 @@ export {
   // ORGANISMS
   BigTeaser,
   Block,
+  Column,
+  Columns,
   Figure,
   FlyoutMenu,
   Gallery,
