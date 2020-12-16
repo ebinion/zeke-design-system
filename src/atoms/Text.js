@@ -10,8 +10,6 @@ import {
 } from '../'
 
 const StyledP = styled.p`
-  max-width: ${props =>
-    props.constrain ? measurementTokens.maxTextWidth : '100%'};
   transition: color ${animationTokens.duration} ${animationTokens.easing};
 
   ${props => css`
@@ -179,9 +177,7 @@ const Text = ({
   }
 
   const getSpacing = () => {
-    return noMargin
-      ? '0 auto'
-      : `${textTokens.sizes[size].spacing} auto ${textTokens.sizes.m.spacing} auto`
+    return noMargin ? '0' : `${textTokens.sizes[size].spacing} 0`
   }
 
   const getWeight = () => {
