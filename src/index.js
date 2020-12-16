@@ -26,6 +26,7 @@ import HR from './atoms/HR'
 import P from './atoms/P'
 import SectionHeading from './atoms/SectionHeading'
 import Strong from './atoms/Strong'
+import SubHeading from './atoms/SubHeading'
 import Text from './atoms/Text'
 import Time from './atoms/Time'
 
@@ -92,6 +93,7 @@ export {
   P,
   SectionHeading,
   Strong,
+  SubHeading,
   Text,
   Time,
   // MOLECULES

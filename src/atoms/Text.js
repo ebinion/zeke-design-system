@@ -10,8 +10,6 @@ import {
 } from '../'
 
 const StyledP = styled.p`
-  transition: color ${animationTokens.duration} ${animationTokens.easing};
-
   ${props => css`
     color: ${props.textColor};
     font-weight: ${props.weight};
@@ -22,6 +20,12 @@ const StyledP = styled.p`
     margin: ${props.marginSpacing};
     text-transform: ${props.isUppercased ? 'uppercase' : 'none'};
   `}
+
+  ${props =>
+    props.constrain &&
+    css`
+      max-width: ${measurementTokens.maxTextWidth};
+    `}
 
   ${props =>
     props.truncate &&
@@ -56,6 +60,8 @@ const StyledP = styled.p`
   ${props =>
     props.respondToLinkHover &&
     css`
+      transition: color ${animationTokens.duration} ${animationTokens.easing};
+
       a:active &,
       a:hover & {
         color: ${colorTokens.text.respondToLink};
@@ -177,7 +183,13 @@ const Text = ({
   }
 
   const getSpacing = () => {
-    return noMargin ? '0' : `${textTokens.sizes[size].spacing} 0`
+    if (noMargin || props.margin === 'none') {
+      return '0'
+    } else if (props.margin === 'tight') {
+      return `${textTokens.sizes[size].spacingTight} 0`
+    } else {
+      return `${textTokens.sizes[size].spacing} 0 ${textTokens.sizes[size].spacingTight} 0`
+    }
   }
 
   const getWeight = () => {
@@ -319,6 +331,7 @@ Text.propTypes = {
   lineHeightSmallUp: PropTypes.oneOf(['normal', 'tight']),
   lineHeightMediumUp: PropTypes.oneOf(['normal', 'tight']),
   lineHeightLargeUp: PropTypes.oneOf(['normal', 'tight']),
+  margin: PropTypes.oneOf(['normal', 'tight', 'none']),
   noMargin: PropTypes.bool,
   respondToLinkHover: PropTypes.bool,
   size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
@@ -334,9 +347,9 @@ Text.defaultProps = {
   align: 'left',
   bold: false,
   color: 'normal',
-  constrain: true,
   kind: 'normal',
   lineHeight: 'normal',
+  margin: 'normal',
   respondToLinkHover: false,
   size: 'm',
 }

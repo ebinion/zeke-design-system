@@ -18,39 +18,45 @@
   "sizes": {
     "xxl": {
       "size": "36px",
-      "lineHeightNormal": "44px",
-      "lineHeightTight": "40px",
-      "spacing": "45px"
+      "lineHeightNormal": "52px",
+      "lineHeightTight": "44px",
+      "spacing": "44px",
+      "spacingTight": "8px"
     },
     "xl": {
       "size": "24px",
-      "lineHeightNormal": "32px",
-      "lineHeightTight": "28px",
-      "spacing": "40px"
+      "lineHeightNormal": "40px",
+      "lineHeightTight": "32px",
+      "spacing": "32px",
+      "spacingTight": "8px"
     },
     "l": {
       "size": "18px",
       "lineHeightNormal": "32px",
       "lineHeightTight": "24px",
-      "spacing": "35px"
+      "spacing": "32px",
+      "spacingTight": "4px"
     },
     "m": {
       "size": "16px",
       "lineHeightNormal": "32px",
       "lineHeightTight": "24px",
-      "spacing": "30px"
+      "spacing": "16px",
+      "spacingTight": "4px"
     },
     "s": {
       "size": "14px",
       "lineHeightNormal": "24px",
       "lineHeightTight": "20px",
-      "spacing": "25px"
+      "spacing": "16px",
+      "spacingTight": "4px"
     },
     "xs": {
       "size": "12px",
       "lineHeightNormal": "20px",
       "lineHeightTight": "16px",
-      "spacing": "20px"
+      "spacing": "16px",
+      "spacingTight": "4px"
     }
   },
   "listItem": {
