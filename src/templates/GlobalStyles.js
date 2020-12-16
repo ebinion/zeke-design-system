@@ -8,6 +8,7 @@ const GlobalWrapper = createGlobalStyle`
     --component-margin: ${measurementTokens.componentMargin.s};
     --component-padding: ${measurementTokens.componentPadding.s};
     --component-padding-l: ${measurementTokens.componentPaddingL.s};
+    --component-padding-xl: ${measurementTokens.componentPaddingXl.s};
     --site-padding: ${measurementTokens.sitePadding.s};
   }
 
@@ -16,6 +17,7 @@ const GlobalWrapper = createGlobalStyle`
       --component-margin: ${measurementTokens.componentMargin.m};
       --component-padding: ${measurementTokens.componentPadding.m};
       --component-padding-l: ${measurementTokens.componentPaddingL.m};
+      --component-padding-xl: ${measurementTokens.componentPaddingXl.m};
       --site-padding: ${measurementTokens.sitePadding.m};
     }
   }
@@ -25,6 +27,7 @@ const GlobalWrapper = createGlobalStyle`
       --component-margin: ${measurementTokens.componentMargin.l};
       --component-padding: ${measurementTokens.componentPadding.l};
       --component-padding-l: ${measurementTokens.componentPaddingL.l};
+      --component-padding-xl: ${measurementTokens.componentPaddingXl.l};
       --site-padding: ${measurementTokens.sitePadding.l};
     }
   }
@@ -34,6 +37,7 @@ const GlobalWrapper = createGlobalStyle`
       --component-margin: ${measurementTokens.componentMargin.xl};
       --component-padding: ${measurementTokens.componentPadding.xl};
       --component-padding-l: ${measurementTokens.componentPaddingL.xl};
+      --component-padding-xl: ${measurementTokens.componentPaddingXl.xl};
       --site-padding: ${measurementTokens.sitePadding.xl};
     }
   }

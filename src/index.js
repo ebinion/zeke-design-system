@@ -46,6 +46,7 @@ import BigTeaser from './organisms/BigTeaser'
 import Block from './organisms/Block'
 import Column from './organisms/Column'
 import Columns from './organisms/Columns'
+import Constrain from './organisms/Constrain'
 import Figure from './organisms/Figure'
 import FlyoutMenu from './organisms/FlyoutMenu'
 import Gallery from './organisms/Gallery'
@@ -112,6 +113,7 @@ export {
   Block,
   Column,
   Columns,
+  Constrain,
   Figure,
   FlyoutMenu,
   Gallery,

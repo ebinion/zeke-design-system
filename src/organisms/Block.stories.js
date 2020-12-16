@@ -1,7 +1,7 @@
 import React from 'react'
 import { select, boolean } from '@storybook/addon-knobs'
 
-import { Block, colorTokens, measurementTokens } from '../'
+import { Block, colorTokens, measurementTokens, Text } from '../'
 
 const constrainKnobs = () =>
   select('Constrain', ['none', 'text', 'site'], 'site')
@@ -26,7 +26,7 @@ export const block = () => {
       isInset={isInsetKnob()}
       isPositioned={isPositioned()}
     >
-      Testing
+      <Text color="knockout">Testing</Text>
     </Block>
   )
 }

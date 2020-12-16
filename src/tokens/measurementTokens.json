@@ -32,6 +32,12 @@
     "l": "32px",
     "xl": "40px"
   },
+  "componentPaddingXl": {
+    "s": "32px",
+    "m": "48px",
+    "l": "60px",
+    "xl": "72px"
+  },
   "icons": {
     "s": "16px",
     "m": "24px",
