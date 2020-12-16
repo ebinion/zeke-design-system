@@ -18,15 +18,28 @@ const repeatString = (count, text = '1fr') => {
 const StyledComponent = styled.div`
   display: grid;
   list-style: none;
-  grid-gap: ${measurementTokens.componentMargin.xl};
   margin: 0;
   padding: 0;
+  ${props =>
+    props.gutter === 'm' &&
+    css`
+      grid-gap: var(--component-padding);
+    `}
+  ${props =>
+    props.gutter === 'l' &&
+    css`
+      grid-gap: var(--component-padding-l);
+    `}
+  ${props =>
+    props.gutter === 'xl' &&
+    css`
+      grid-gap: var(--component-padding-xl);
+    `}
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
     ${props =>
       props.maxColumns >= 2 &&
       css`
-        grid-gap: ${measurementTokens.componentMargin.l};
         grid-template-columns: ${repeatString(2)};
       `}
   }
@@ -50,21 +63,19 @@ const StyledComponent = styled.div`
 `
 
 const Matrix = props => {
-  return (
-    <StyledComponent maxColumns={props.maxColumns} as={props.as}>
-      {props.children}
-    </StyledComponent>
-  )
+  return <StyledComponent {...props}>{props.children}</StyledComponent>
 }
 
 Matrix.propTypes = {
-  maxColumns: PropTypes.number.isRequired,
   as: PropTypes.string,
+  gutter: PropTypes.oneOf(['m', 'l', 'xl']),
+  maxColumns: PropTypes.number,
 }
 
 Matrix.defaultProps = {
-  maxColumns: 4,
   as: 'div',
+  gutter: 'm',
+  maxColumns: 4,
 }
 
 export default Matrix

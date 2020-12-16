@@ -2,7 +2,7 @@ import React from 'react'
 import PropType from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { colorTokens, measurementTokens } from '../'
+import { colorTokens } from '../'
 
 const StyledComponent = styled.div`
   background: ${props => props.bgColor};

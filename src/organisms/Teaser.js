@@ -34,6 +34,7 @@ const Note = ({
           size="s"
           respondToLinkHover
           lineHeight="tight"
+          isUppercased
         >
           {superTitle}
         </Text>
