@@ -27,6 +27,7 @@
     "@storybook/addons": "^6.1.9",
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.9",
+    "@storybook/theming": "^6.1.11",
     "auto": "^7.17.0",
     "lorem-ipsum": "^2.0.3",
     "prettier": "^1.19.1",
