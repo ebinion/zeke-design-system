@@ -10,7 +10,7 @@ const StyledIconGroup = styled.div`
     margin-right: var(--component-padding);
   }
 
-  > *::last-child {
+  > *:last-child {
     margin-right: 0;
   }
 `
