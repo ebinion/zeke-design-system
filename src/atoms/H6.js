@@ -17,7 +17,7 @@ H6.defaultProps = {
   as: 'h6',
   bold: true,
   lineHeight: 'tight',
-  size: 'xs',
+  size: 's',
 }
 
 export default H6

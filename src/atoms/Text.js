@@ -125,6 +125,7 @@ const StyledP = styled.p`
 `
 
 const Text = ({
+  as,
   bold,
   color,
   children,
@@ -295,12 +296,13 @@ const Text = ({
 
   return (
     <StyledP
-      {...props}
-      textColor={getColor()}
+      as={props.visuallyHidden ? 'i' : as}
       fontList={getFontFamily()}
       {...getSizes()}
       {...getLineHeights()}
       marginSpacing={getSpacing()}
+      {...props}
+      textColor={getColor()}
       weight={getWeight()}
     >
       {children}

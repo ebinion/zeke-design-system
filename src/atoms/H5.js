@@ -17,7 +17,7 @@ H5.defaultProps = {
   as: 'h5',
   bold: true,
   lineHeight: 'tight',
-  size: 's',
+  size: 'm',
 }
 
 export default H5

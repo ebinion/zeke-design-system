@@ -17,7 +17,7 @@ H4.defaultProps = {
   as: 'h4',
   bold: true,
   lineHeight: 'tight',
-  size: 'm',
+  size: 'l',
 }
 
 export default H4
