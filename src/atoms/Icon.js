@@ -5,17 +5,12 @@ import styled, { css } from 'styled-components'
 import { animationTokens, colorTokens, measurementTokens } from '../'
 
 const StyledIcon = styled.svg`
-  color: ${props => colorTokens.icons[props.color]};
-  fill: currentColor;
+  fill: ${props => colorTokens.icons[props.color]};
   height: auto;
+  transition-property: fill;
+  transition-duration: ${animationTokens.duration};
+  transition-timing-function: ${animationTokens.easing};
   width: ${props => measurementTokens.icons[props.size]};
-  ${props =>
-    props.respondToHover &&
-    css`
-      transition-property: color, fill;
-      transition-duration: ${animationTokens.duration};
-      transition-timing-function: ${animationTokens.easing};
-    `}
 
   ${props => {
     if (props.respondToHover) {
@@ -26,7 +21,7 @@ const StyledIcon = styled.svg`
             button:hover &,
             a:active &,
             a:hover & {
-              color: ${colorTokens.icons.goldHighlight};
+              fill: ${colorTokens.icons.goldHighlight};
             }
           `
         default:
@@ -35,7 +30,7 @@ const StyledIcon = styled.svg`
             button:hover &,
             a:active &,
             a:hover & {
-              color: ${colorTokens.icons.blackHighlight};
+              fill: ${colorTokens.icons.blackHighlight};
             }
           `
       }
@@ -46,17 +41,15 @@ const StyledIcon = styled.svg`
     switch (props.color) {
       case 'knockout':
         return css`
-            & .duotone {
-              color: ${colorTokens.icons.black};
-              fill: currentColor;
+            .duotone {
+              fill: ${colorTokens.icons.black};
             }
           }
         `
       default:
         return css`
-          & .duotone {
-            color: ${colorTokens.icons.knockout};
-            fill: currentColor;
+          .duotone {
+            fill: ${colorTokens.icons.knockout};
           }
         `
     }

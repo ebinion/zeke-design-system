@@ -40,7 +40,7 @@
     "blackHighlight": "#c99845",
     "gold": "#dbc290",
     "goldHighlight": "#c99845",
-    "inherit": "inherit",
+    "inherit": "currentColor",
     "knockout": "#FDFEFB"
   },
   "shadows": {
