@@ -59,6 +59,7 @@
     "headingLight": "#aaaaaf",
     "knockout": "#FDFEFB",
     "light": "#767676",
+    "xLight": "#E2E2E2",
     "link": "inherit",
     "linkHighlight": "inherit",
     "respondToLink": "#c99845",

@@ -306,6 +306,7 @@ Text.propTypes = {
   color: PropTypes.oneOf([
     'normal',
     'light',
+    'xLight',
     'knockout',
     'success',
     'error',
