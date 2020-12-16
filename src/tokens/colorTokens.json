@@ -6,7 +6,7 @@
     "block": {
       "transparent": "transparent",
       "white": "#fff",
-      "dark": "rgb(32, 37, 56)"
+      "dark": "#000"
     },
     "button-primary": "#000",
     "button-primary-highlight": "#333",
