@@ -20,21 +20,28 @@ const StyledComponent = styled.div`
   list-style: none;
   margin: 0;
   padding: 0;
+  ${props => {
+    switch (props.gutter) {
+      case 'xl':
+        return css`
+          grid-gap: var(--component-padding-xl);
+        `
+      case 'l':
+        return css`
+          grid-gap: var(--component-padding-l);
+        `
+      default:
+        return css`
+          grid-gap: var(--component-padding);
+        `
+    }
+  }}
   ${props =>
-    props.gutter === 'm' &&
+    props.useComponentMargin &&
     css`
-      grid-gap: var(--component-padding);
+      column-gap: var(--component-margin);
     `}
-  ${props =>
-    props.gutter === 'l' &&
-    css`
-      grid-gap: var(--component-padding-l);
-    `}
-  ${props =>
-    props.gutter === 'xl' &&
-    css`
-      grid-gap: var(--component-padding-xl);
-    `}
+
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
     ${props =>
@@ -70,6 +77,10 @@ Matrix.propTypes = {
   as: PropTypes.string,
   gutter: PropTypes.oneOf(['m', 'l', 'xl']),
   maxColumns: PropTypes.number,
+  /**
+   * Use to ensure columns gaps align with <Columns> component
+   */
+  useComponentMargin: PropTypes.bool,
 }
 
 Matrix.defaultProps = {

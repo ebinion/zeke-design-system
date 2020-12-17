@@ -1,5 +1,5 @@
 import React from 'react'
-import { select } from '@storybook/addon-knobs'
+import { boolean, select } from '@storybook/addon-knobs'
 
 import ExampleBlock from '../helpers/ExampleBlock'
 import { Matrix } from '../'
@@ -10,10 +10,11 @@ const story = {
 }
 
 const gutterKnob = () => select('Gutter', ['m', 'l', 'xl'], 'm')
+const columnKnob = () => boolean('Use "componentMargin"?', false)
 
 export const matrix = () => {
   return (
-    <Matrix gutter={gutterKnob()}>
+    <Matrix gutter={gutterKnob()} useComponentMargin={columnKnob()}>
       <ExampleBlock />
       <ExampleBlock />
       <ExampleBlock />
