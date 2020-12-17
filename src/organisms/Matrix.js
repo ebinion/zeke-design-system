@@ -21,26 +21,38 @@ const StyledComponent = styled.div`
   margin: 0;
   padding: 0;
   ${props => {
-    switch (props.gutter) {
-      case 'xl':
-        return css`
-          grid-gap: var(--component-padding-xl);
-        `
-      case 'l':
-        return css`
-          grid-gap: var(--component-padding-l);
-        `
-      default:
-        return css`
-          grid-gap: var(--component-padding);
-        `
+    if (props.useComponentMargin) {
+      switch (props.gutter) {
+        case 'xl':
+          return css`
+            gap: var(--component-padding-xl) var(--component-margin);
+          `
+        case 'l':
+          return css`
+            gap: var(--component-padding-l) var(--component-margin);
+          `
+        default:
+          return css`
+            gap: var(--component-padding) var(--component-margin);
+          `
+      }
+    } else {
+      switch (props.gutter) {
+        case 'xl':
+          return css`
+            gap: var(--component-padding-xl);
+          `
+        case 'l':
+          return css`
+            gap: var(--component-padding-l);
+          `
+        default:
+          return css`
+            gap: var(--component-padding);
+          `
+      }
     }
   }}
-  ${props =>
-    props.useComponentMargin &&
-    css`
-      column-gap: var(--component-margin);
-    `}
 
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
