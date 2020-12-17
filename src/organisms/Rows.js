@@ -1,29 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const StyledRow = styled.div`
-  margin: var(--component-margin) 0;
+  > * {
+    margin: var(--component-margin) 0;
+  }
 
-  &:last-child {
+  > *:last-child {
     margin-bottom: 0;
   }
 
-  &:first-child {
+  > *:first-child {
     margin-top: 0;
   }
 `
 
-const Rows = props => {
-  const renderChildren = () => {
-    if (props.children && props.children.length > 0) {
-      return props.children.map((child, iteration) => (
-        <StyledRow key={`row-${iteration}`}>{child}</StyledRow>
-      ))
-    }
-  }
+const Rows = props => <StyledRow>{props.children}</StyledRow>
 
-  return <div>{renderChildren()}</div>
+Rows.propTypes = {
+  children: PropTypes.node,
 }
 
 export default Rows
