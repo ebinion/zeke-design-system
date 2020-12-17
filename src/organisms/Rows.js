@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const StyledRow = styled.div`
   > * {
+    display: block;
     margin: var(--component-margin) 0;
   }
 
