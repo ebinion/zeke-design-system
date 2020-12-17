@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const StyledRow = styled.div`
   > * {
-    display: block;
     margin: var(--component-margin) 0;
+
+    ${props =>
+      props.forceDisplay &&
+      css`
+        display: block;
+      `}
   }
 
   > *:last-child {
@@ -17,10 +22,16 @@ const StyledRow = styled.div`
   }
 `
 
-const Rows = props => <StyledRow>{props.children}</StyledRow>
+const Rows = props => (
+  <StyledRow forceDisplay={props.forceDisplay}>{props.children}</StyledRow>
+)
 
 Rows.propTypes = {
   children: PropTypes.node,
+  /**
+   * Set to `true` to force `display: block` on children
+   */
+  forceDisplay: PropTypes.bool,
 }
 
 export default Rows
