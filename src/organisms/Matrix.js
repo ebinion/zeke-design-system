@@ -72,7 +72,6 @@ const StyledComponent = styled.div`
   }
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
-    grid-gap: ${measurementTokens.componentMargin.xl};
     ${props =>
       props.maxColumns >= 4 &&
       css`
