@@ -96,7 +96,7 @@ export default class Modal extends React.Component {
     document.addEventListener('keyup', this.handleKeyPress)
 
     if (this.props.portalQuery) {
-      this.portalRoot = document.getElementById(this.props.portalQuery)
+      this.portalRoot = document.querySelector(this.props.portalQuery)
       this.portalElement = document.createElement('div')
       this.portalRoot.appendChild(this.portalElement)
     }
