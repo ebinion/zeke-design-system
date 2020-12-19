@@ -34,6 +34,7 @@ import Time from './atoms/Time'
 import Animate from './molecules/Animate'
 import AnimateOnEnter from './molecules/AnimateOnEnter'
 import Badge from './molecules/Badge'
+import ClippedImage from './molecules/ClippedImage'
 import Decorated from './molecules/Decorated'
 import Embed from './molecules/Embed'
 import Hidden from './molecules/Hidden'
@@ -102,6 +103,7 @@ export {
   Animate,
   AnimateOnEnter,
   Badge,
+  ClippedImage,
   Decorated,
   Embed,
   Hidden,
