@@ -62,6 +62,7 @@
   },
   "touchTarget": "44px",
   "zIndex": {
+    "header": "9",
     "nav": "99",
     "modal": "999"
   }

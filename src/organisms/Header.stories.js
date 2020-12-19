@@ -1,7 +1,7 @@
 import React from 'react' // eslint-disable-line no-unused-vars
 import { select, text } from '@storybook/addon-knobs'
 
-import { Header } from '../'
+import { Header, Text } from '../'
 
 const story = {
   title: 'Organisms/Global/Header',
@@ -22,7 +22,7 @@ export const header = () => {
       ctaHiddenBelow={ctaHiddenBelowKnob()}
       logoHref="https://zekebinion.io"
     >
-      String
+      <Text>Header Content</Text>
     </Header>
   )
 }
