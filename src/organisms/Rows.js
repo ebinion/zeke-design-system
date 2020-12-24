@@ -4,7 +4,22 @@ import styled, { css } from 'styled-components'
 
 const StyledRow = styled.div`
   > * {
-    margin: var(--component-margin) 0;
+    ${props => {
+      switch (props.spacing) {
+        case 'xl':
+          return css`
+            margin: var(--component-padding-xl) 0;
+          `
+        case 'l':
+          return css`
+            margin: var(--component-padding-l) 0;
+          `
+        default:
+          return css`
+            margin: var(--component-padding) 0;
+          `
+      }
+    }}
 
     ${props =>
       props.forceDisplay &&
@@ -23,7 +38,9 @@ const StyledRow = styled.div`
 `
 
 const Rows = props => (
-  <StyledRow forceDisplay={props.forceDisplay}>{props.children}</StyledRow>
+  <StyledRow forceDisplay={props.forceDisplay} spacing={props.spacing}>
+    {props.children}
+  </StyledRow>
 )
 
 Rows.propTypes = {
@@ -32,6 +49,11 @@ Rows.propTypes = {
    * Set to `true` to force `display: block` on children
    */
   forceDisplay: PropTypes.bool,
+  spacing: PropTypes.oneOf(['m', 'l', 'xl']),
+}
+
+Rows.defaultProps = {
+  spacing: 'l',
 }
 
 export default Rows

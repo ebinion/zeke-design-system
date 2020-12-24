@@ -1,4 +1,5 @@
 import React from 'react' // eslint-disable-line no-unused-vars
+import { select } from '@storybook/addon-knobs'
 
 import ExampleBlock from '../helpers/ExampleBlock'
 import { Rows } from '../'
@@ -8,9 +9,11 @@ const story = {
   component: Rows,
 }
 
+const spacingKnob = () => select('Spacing', ['m', 'l', 'xl'], 'l')
+
 export const rows = () => {
   return (
-    <Rows>
+    <Rows spacing={spacingKnob()}>
       <ExampleBlock />
       <ExampleBlock />
       <ExampleBlock />
