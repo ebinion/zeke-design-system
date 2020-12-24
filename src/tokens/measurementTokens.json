@@ -21,16 +21,16 @@
   },
   "componentPadding": {
     "none": "0",
-    "s": "12px",
-    "m": "16px",
-    "l": "18px",
-    "xl": "24px"
+    "s": "16px",
+    "m": "20px",
+    "l": "24px",
+    "xl": "28px"
   },
   "componentPaddingL": {
-    "s": "18px",
-    "m": "24px",
-    "l": "32px",
-    "xl": "40px"
+    "s": "24px",
+    "m": "32px",
+    "l": "40px",
+    "xl": "48px"
   },
   "componentPaddingXl": {
     "s": "32px",
