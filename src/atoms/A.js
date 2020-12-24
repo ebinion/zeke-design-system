@@ -1,4 +1,4 @@
-import React, { createRef } from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
@@ -86,7 +86,7 @@ const StyledA = styled.a`
 `
 
 const A = ({ onClick, ...props }) => {
-  const elementRef = createRef()
+  const elementRef = useRef(null)
 
   const handleClick = event => {
     elementRef.current.blur()
