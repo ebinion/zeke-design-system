@@ -68,12 +68,20 @@ const StyledModal = styled.div`
       height: auto;
       min-height: 25vh;
       max-height: 80vh;
-      max-width: ${measurementTokens.maxTextWidth};
+      max-width: 700px;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, 0%);
-      width: 66vw;
+      width: 90vw;
+
+      @media (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
+        width: 80vw;
+      }
+
+      @media (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+        width: 75vw;
+      }
     `}
 
   ${props =>
