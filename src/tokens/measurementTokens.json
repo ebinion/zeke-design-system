@@ -51,7 +51,7 @@
   "navButtonOffset": "24px",
   "navButtonOffsetSmall": "12px",
   "sitePadding": {
-    "s": "12px",
+    "s": "16px",
     "m": "32px",
     "l": "60px",
     "xl": "72px"
