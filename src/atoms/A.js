@@ -90,7 +90,7 @@ const A = ({ onClick, ...props }) => {
 
   const handleClick = event => {
     elementRef.current.blur()
-    onClick()
+    onClick(event)
   }
 
   return (
