@@ -24,7 +24,7 @@ const StyledA = styled.a`
       border-bottom: ${measurementTokens.linkBorder} solid
         ${colorTokens.borders.link};
       transition-property: border, background;
-      transition-duration: ${animationTokens.duration};
+      transition-duration: ${animationTokens.duration.normal};
       transition-timing-function: ${animationTokens.easing};
 
       &:active,
@@ -41,7 +41,7 @@ const StyledA = styled.a`
     css`
       border: 0;
       transition-property: color;
-      transition-duration: ${animationTokens.duration};
+      transition-duration: ${animationTokens.duration.normal};
       transition-timing-function: ${animationTokens.easing};
 
       &:active,

@@ -20,7 +20,8 @@ const StyledComponent = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  transition: opacity ${animationTokens.duration} ${animationTokens.easing};
+  transition: opacity ${animationTokens.duration.normal}
+    ${animationTokens.easing};
   z-index: ${measurementTokens.zIndex.nav};
 
   ${props =>
@@ -39,7 +40,8 @@ const StyledMenu = styled.div`
   top: 0;
   left: 0;
   transform: translate(0, ${animationTokens.slideDistance});
-  transition: transform ${animationTokens.duration} ${animationTokens.easing};
+  transition: transform ${animationTokens.duration.normal}
+    ${animationTokens.easing};
   z-index: 2;
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {

@@ -8,7 +8,7 @@ const StyledIcon = styled.svg`
   fill: ${props => colorTokens.icons[props.color]};
   height: auto;
   transition-property: fill;
-  transition-duration: ${animationTokens.duration};
+  transition-duration: ${animationTokens.duration.normal};
   transition-timing-function: ${animationTokens.easing};
   width: ${props => measurementTokens.icons[props.size]};
 

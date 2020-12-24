@@ -98,7 +98,7 @@ Animate.propTypes = {
 Animate.defaultProps = {
   easing: animationTokens.easing,
   delay: 0,
-  duration: animationTokens.duration,
+  duration: animationTokens.duration.normal,
   direction: 'normal',
   isPlaying: false,
 }

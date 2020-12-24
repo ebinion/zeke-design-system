@@ -16,7 +16,8 @@ const StyledContainer = styled.a`
   position: relative;
   outline: 4px solid transparent;
   text-decoration: none;
-  transition: box-shadow ${animationTokens.duration} ${animationTokens.easing};
+  transition: box-shadow ${animationTokens.duration.normal}
+    ${animationTokens.easing};
 
   &:active,
   &:hover {

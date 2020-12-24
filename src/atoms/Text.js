@@ -60,7 +60,8 @@ const StyledP = styled.p`
   ${props =>
     props.respondToLinkHover &&
     css`
-      transition: color ${animationTokens.duration} ${animationTokens.easing};
+      transition: color ${animationTokens.duration.normal}
+        ${animationTokens.easing};
 
       a:active &,
       a:hover & {
