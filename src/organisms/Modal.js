@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import styled, { css, createGlobalStyle } from 'styled-components'
 
 import {
-  Block,
   IconButton,
   IconX,
   animationTokens,
@@ -13,7 +12,6 @@ import {
 } from '..'
 
 const StyledWrapper = styled.div`
-  background: ${colorTokens.backgrounds.overlay};
   height: 100vh;
   left: 0;
   position: fixed;
@@ -21,19 +19,23 @@ const StyledWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   opacity: 0;
-  transform: translateY(200px);
   pointer-events: none;
   transition-duration: ${animationTokens.duration.normal};
-  transition-property: opacity, transform;
+  transition-property: opacity;
   transition-timing-function: ${animationTokens.easing};
   z-index: ${measurementTokens.zIndex.modal};
+
+  ${props =>
+    props.size === 'window' &&
+    css`
+      background: ${colorTokens.backgrounds.overlay};
+    `}
 
   ${props =>
     props.isOpen &&
     css`
       pointer-events: auto;
       opacity: 1;
-      transform: translateY(0);
     `};
 `
 
@@ -41,20 +43,58 @@ const StyledModal = styled.div`
   background: ${colorTokens.backgrounds.light};
   height: 100%;
   overflow: scroll;
+  transition-duration: ${animationTokens.duration.normal};
+  transition-property: opacity, transform;
+  transition-timing-function: ${animationTokens.easing};
   -webkit-overflow-scrolling: touch;
+
+  ${props =>
+    props.size === 'full' &&
+    !props.isOpen &&
+    css`
+      transform: translateY(${animationTokens.slideDistance.long});
+    `}
+
+  ${props =>
+    props.size === 'full' &&
+    props.isOpen &&
+    css`
+      transform: 0;
+    `}
 
   ${props =>
     props.size === 'window' &&
     css`
-      margin: 10vh auto;
-      max-width: ${measurementTokens.maxTextWidth};
-      width: 66vw;
+      height: auto;
+      min-height: 25vh;
       max-height: 80vh;
+      max-width: ${measurementTokens.maxTextWidth};
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 66vw;
+    `}
+
+  ${props =>
+    props.size === 'window' &&
+    props.isOpen &&
+    css`
+      transform: translate(-50%, -50%);
     `}
 `
 
 const StyledModalClose = styled.div`
   text-align: right;
+  padding: var(--component-padding);
+
+  ${props =>
+    props.size === 'full' &&
+    css`
+      padding-left: var(--site-padding);
+      padding-right: var(--site-padding);
+      padding-top: var(--site-padding);
+    `}
 `
 
 const BodyStyle = createGlobalStyle`
@@ -118,19 +158,17 @@ export default class Modal extends React.Component {
 
   renderModal() {
     return (
-      <StyledWrapper isOpen={this.props.isOpen}>
+      <StyledWrapper isOpen={this.props.isOpen} size={this.props.size}>
         <BodyStyle scrollIsLocked={this.props.isOpen} />
-        <StyledModal size={this.props.size}>
-          <Block>
-            <StyledModalClose>
-              <IconButton
-                title="close"
-                icon={<IconX />}
-                type="button"
-                clickHandler={this.props.handleClose}
-              />
-            </StyledModalClose>
-          </Block>
+        <StyledModal isOpen={this.props.isOpen} size={this.props.size}>
+          <StyledModalClose size={this.props.size}>
+            <IconButton
+              title="close"
+              icon={<IconX />}
+              type="button"
+              clickHandler={this.props.handleClose}
+            />
+          </StyledModalClose>
           <div>{this.props.children}</div>
         </StyledModal>
       </StyledWrapper>

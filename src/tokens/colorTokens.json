@@ -22,7 +22,7 @@
     "site": "#FDFEFB",
     "teaser": "#FDFEFB",
     "teaser-highlight": "#009ad6",
-    "overlay": "linear-gradient(270deg, rgba(0,0,0,.05), rgba(0,0,0,.2))"
+    "overlay": "linear-gradient(270deg, rgba(0,0,0,.35), rgba(0,0,0,.5))"
   },
   "borders": {
     "button-primary-highlight": "#333",
