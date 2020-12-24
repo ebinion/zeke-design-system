@@ -53,6 +53,11 @@ const GlobalWrapper = createGlobalStyle`
     padding: 0;
   }
 
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   :focus {
     outline: 4px solid ${colorTokens.borders.link};
   }
