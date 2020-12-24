@@ -16,8 +16,8 @@
   "componentMargin": {
     "s": "16px",
     "m": "32px",
-    "l": "48px",
-    "xl": "60px"
+    "l": "60px",
+    "xl": "72px"
   },
   "componentPadding": {
     "none": "0",
