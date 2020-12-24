@@ -121,7 +121,11 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
     const LinkElement = props.Link
 
     return (
-      <StyledNav role="navigation" aria-label="Main">
+      <StyledNav
+        role="navigation"
+        aria-label="Main"
+        tabIndex={isOpen ? '0' : '-1'}
+      >
         {props.items &&
           props.items.map((item, i) => (
             <StyleNavItem key={`navItem${i}`}>
