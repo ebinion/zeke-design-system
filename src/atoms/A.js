@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
@@ -85,25 +85,39 @@ const StyledA = styled.a`
     `}
 `
 
-const A = props => {
+const A = ({ onClick, ...props }) => {
+  const elementRef = createRef()
+
+  const handleClick = event => {
+    elementRef.current.blur()
+    onClick()
+  }
+
   return (
-    <StyledA {...props} href={props.to ? props.to : props.href}>
+    <StyledA
+      {...props}
+      href={props.to ? props.to : props.href}
+      onClick={handleClick}
+      ref={elementRef}
+    >
       {props.children}
     </StyledA>
   )
 }
 
 A.propTypes = {
-  kind: PropTypes.oneOf(['normal', 'incognito', 'nav']),
-  keyboardOnly: PropTypes.bool,
-  href: PropTypes.string,
-  useInheritedFont: PropTypes.bool,
-  to: PropTypes.string,
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  href: PropTypes.string,
+  keyboardOnly: PropTypes.bool,
+  kind: PropTypes.oneOf(['normal', 'incognito', 'nav']),
+  onClick: PropTypes.func,
+  to: PropTypes.string,
+  useInheritedFont: PropTypes.bool,
 }
 
 A.defaultProps = {
   kind: 'normal',
+  onClick: () => {},
 }
 
 export default A
