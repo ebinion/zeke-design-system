@@ -89,7 +89,7 @@ const StyledClose = styled.div`
   }
 `
 
-const StyledNav = styled.nav`
+const StyledNav = styled.div`
   padding: ${measurementTokens.componentMargin.l};
   padding-top: calc(
     ${measurementTokens.componentMargin.xl} +
@@ -123,7 +123,7 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
     const LinkElement = props.Link
 
     return (
-      <>
+      <StyledNav>
         {props.items &&
           props.items.map((item, i) => (
             <StyleNavItem key={`navItem${i}`}>
@@ -137,7 +137,7 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
               </A>
             </StyleNavItem>
           ))}
-      </>
+      </StyledNav>
     )
   }
 
@@ -152,10 +152,10 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
             clickHandler={closeHandler}
           />
         </StyledClose>
-        <StyledNav role="navigation" aria-label="Main">
+        <nav role="navigation" aria-label="Main">
           {renderItems()}
           {props.children}
-        </StyledNav>
+        </nav>
       </StyledMenu>
     </StyledComponent>
   )
