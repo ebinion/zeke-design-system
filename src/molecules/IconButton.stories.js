@@ -4,18 +4,17 @@ import lorem from '../helpers/lorem'
 import { IconButton, IconX } from '../'
 
 const story = {
-  title: 'Molecules/IconButton',
+  title: 'Molecules/Icon Button',
   component: IconButton,
 }
+export default story
 
-export const ComponentPlayground = () => (
+export const iconButton = () => (
   <IconButton
-    icon={IconX}
+    icon={<IconX />}
     title={lorem.generateWords(1)}
     clickHandler={() => {
       window.alert('Button clicked')
     }}
   />
 )
-
-export default story

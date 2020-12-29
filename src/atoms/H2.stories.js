@@ -11,6 +11,6 @@ const story = {
   },
 }
 
-export const component = () => <H2>Example H2</H2>
+export const h2 = () => <H2>Example H2</H2>
 
 export default story

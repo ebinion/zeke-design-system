@@ -2,7 +2,7 @@ import React from 'react'
 import { select, boolean } from '@storybook/addon-knobs'
 
 import lorem from '../helpers/lorem'
-import { Text } from '../'
+import { H1, H2, H3, H4, H5, H6, P, SubHeading, Text } from '../'
 
 const alignKnobs = () => select('Align', ['left', 'center', 'right'])
 const boldKnobs = () => boolean('Bold', false)
@@ -20,12 +20,13 @@ const isUppercasedKnob = () => boolean('Is uppercased?', false)
 const sizeKnobs = () => select('Size', ['xxl', 'xl', 'l', 'm', 's', 'xs'], 'm')
 const lineHeightKnobs = () => select('Line Height', ['normal', 'tight'])
 
-const story = {
+const config = {
   title: 'Atoms/Text/Text',
   component: Text,
 }
+export default config
 
-export const componentPlayground = () => (
+export const text = () => (
   <Text
     align={alignKnobs()}
     as={asKnobs()}
@@ -94,4 +95,21 @@ export const kindNormal = () => (
   <Text kind="normal">{lorem.generateParagraphs(1)}</Text>
 )
 
-export default story
+export const kitchenSink = () => (
+  <>
+    <H1 margin="tight">{lorem.generateSentences(1)}</H1>
+    <SubHeading>{lorem.generateSentences(1)}</SubHeading>
+    <P>{lorem.generateParagraphs(1)}</P>
+    <P>{lorem.generateParagraphs(1)}</P>
+    <H2>{lorem.generateSentences(1)}</H2>
+    <P>{lorem.generateParagraphs(1)}</P>
+    <H3>{lorem.generateSentences(1)}</H3>
+    <P>{lorem.generateParagraphs(1)}</P>
+    <H4>{lorem.generateSentences(1)}</H4>
+    <P>{lorem.generateParagraphs(1)}</P>
+    <H5>{lorem.generateSentences(1)}</H5>
+    <P>{lorem.generateParagraphs(1)}</P>
+    <H6>{lorem.generateSentences(1)}</H6>
+    <P>{lorem.generateParagraphs(1)}</P>
+  </>
+)

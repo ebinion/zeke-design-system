@@ -25,9 +25,7 @@ const ImageContainer = styled.div`
   }
 `
 const ContentContainer = styled.div`
-  padding: ${measurementTokens.componentPadding.m}
-    ${measurementTokens.componentPadding.s};
-  padding-bottom: 0;
+  padding: var(--component-padding-l);
 
   @media (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
     background-color: ${props => props.bgColor};
@@ -35,13 +33,11 @@ const ContentContainer = styled.div`
     position: relative;
     margin-top: 100px;
     left: 25%;
-    padding: ${measurementTokens.componentPadding.l};
     width: 75%;
     z-index: 2;
   }
 
   @media (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
-    padding: ${measurementTokens.componentPadding.xl};
     width: 67%;
     left: 33%;
     margin-top: 150px;
@@ -63,7 +59,7 @@ PhotoOverlayed.propTypes = {
 }
 
 PhotoOverlayed.defaultProps = {
-  bgColor: colorTokens.backgrounds.light,
+  bgColor: colorTokens.backgrounds.site,
 }
 
 export default PhotoOverlayed

@@ -14,7 +14,7 @@ const titleKnob = () => text('Title', lorem.generateWords(10))
 const leadKnob = () => text('Lead', lorem.generateSentences(2))
 const isDarkKnob = () => boolean('Is dark?', false)
 
-export const ComponentPlayground = () => {
+export const section = () => {
   return (
     <Section
       superTitle={superTitleKnob()}

@@ -20,7 +20,9 @@ const StyledComponent = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  transition: opacity ${animationTokens.duration}ms ${animationTokens.easing};
+  transition-property: opacity;
+  transition-duration: ${animationTokens.duration.normal};
+  transition-timing-function: ${animationTokens.easing};
   z-index: ${measurementTokens.zIndex.nav};
 
   ${props =>
@@ -38,13 +40,15 @@ const StyledMenu = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  transform: translate(0, ${animationTokens.slideDistance});
-  transition: transform ${animationTokens.duration}ms ${animationTokens.easing};
+  transform: translate(0, ${animationTokens.slideDistance.long});
+  transition: transform;
+  transition-duration: ${animationTokens.duration.normal};
+  transition-timing-function: ${animationTokens.easing};
   z-index: 2;
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
     max-width: ${measurementTokens.menuWidth};
-    transform: translate(-${animationTokens.slideDistance}, 0);
+    transform: translate(-${animationTokens.slideDistance.long}, 0);
   }
 
   ${props =>
@@ -85,7 +89,7 @@ const StyledClose = styled.div`
   }
 `
 
-const StyledNav = styled.nav`
+const StyledNav = styled.div`
   padding: ${measurementTokens.componentMargin.l};
   padding-top: calc(
     ${measurementTokens.componentMargin.xl} +
@@ -119,7 +123,7 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
     const LinkElement = props.Link
 
     return (
-      <StyledNav role="navigation" aria-label="Main">
+      <StyledNav>
         {props.items &&
           props.items.map((item, i) => (
             <StyleNavItem key={`navItem${i}`}>
@@ -138,7 +142,7 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
   }
 
   return (
-    <StyledComponent isOpen={isOpen}>
+    <StyledComponent isOpen={isOpen} tabIndex={isOpen ? false : '-1'}>
       <StyledMask onClick={closeHandler} />
       <StyledMenu isOpen={isOpen}>
         <StyledClose>
@@ -148,8 +152,10 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
             clickHandler={closeHandler}
           />
         </StyledClose>
-        {renderItems()}
-        {props.children}
+        <nav role="navigation" aria-label="Main">
+          {renderItems()}
+          {props.children}
+        </nav>
       </StyledMenu>
     </StyledComponent>
   )

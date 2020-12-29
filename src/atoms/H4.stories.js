@@ -11,6 +11,6 @@ const story = {
   },
 }
 
-export const component = () => <H4>Example H4</H4>
+export const h4 = () => <H4>Example H4</H4>
 
 export default story

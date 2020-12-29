@@ -14,7 +14,6 @@ const StyledComponent = styled.button`
   padding: 0;
   text-align: center;
   min-height: ${measurementTokens.touchTarget};
-  min-width: ${measurementTokens.touchTarget};
 
   &:hover,
   &:focus {
@@ -36,7 +35,7 @@ const IconButton = props => {
       <Text element="span" visuallyHidden>
         {props.title}
       </Text>
-      {props.icon}
+      {props.icon && React.cloneElement(props.icon, { respondToHover: true })}
     </StyledComponent>
   )
 }

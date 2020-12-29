@@ -11,7 +11,7 @@ const story = {
 
 const knockedOutKnob = () => boolean('Is Knocked Out?', false)
 
-export const ComponentPlayground = () => {
+export const sectionHeader = () => {
   return (
     <SectionHeader
       title={lorem.generateWords(10)}

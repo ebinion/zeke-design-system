@@ -3,18 +3,21 @@ import PropTypes from 'prop-types'
 
 import Text from './Text'
 
-const H6 = props => <Text {...props} kind="heading" />
+const H6 = props => <Text kind={props.kind} {...props} />
 
 H6.propTypes = {
-  bold: PropTypes.bool,
-  size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
   as: PropTypes.string,
+  bold: PropTypes.bool,
+  kind: PropTypes.oneOf(['normal', 'heading', 'decorative', 'code']),
+  lineHeight: PropTypes.oneOf(['normal', 'tight']),
+  size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm', 's', 'xs']),
 }
 
 H6.defaultProps = {
-  bold: true,
-  size: 'xs',
   as: 'h6',
+  bold: true,
+  lineHeight: 'tight',
+  size: 's',
 }
 
 export default H6
