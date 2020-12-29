@@ -1,3 +1,13 @@
+# v2.0.1 (Tue Dec 29 2020)
+
+- fix: Git tagging
+
+#### Authors: 1
+
+- Zeke Binion (zeke@binion.io)
+
+---
+
 # v2.0.0 (Tue Dec 29 2020)
 
 - update: adjust fonts
