@@ -25,7 +25,7 @@ const animationKeyframes = {
   fadeInFromLeft: keyframes`
     0% {
       opacity: 0;
-      transform: translateX(-${animationTokens.slideDistance})
+      transform: translateX(-${animationTokens.slideDistance.normal})
     }
 
     100% {
@@ -36,7 +36,7 @@ const animationKeyframes = {
   fadeInFromRight: keyframes`
     0% {
       opacity: 0;
-      transform: translateX(${animationTokens.slideDistance})
+      transform: translateX(${animationTokens.slideDistance.normal})
     }
 
     100% {
@@ -47,7 +47,7 @@ const animationKeyframes = {
   fadeInFromTop: keyframes`
     0% {
       opacity: 0;
-      transform: translateY(-${animationTokens.slideDistance})
+      transform: translateY(-${animationTokens.slideDistance.normal})
     }
 
     100% {
@@ -58,7 +58,7 @@ const animationKeyframes = {
   fadeInFromBottom: keyframes`
     0% {
       opacity: 0;
-      transform: translateY(${animationTokens.slideDistance})
+      transform: translateY(${animationTokens.slideDistance.normal})
     }
 
     100% {
@@ -98,7 +98,7 @@ Animate.propTypes = {
 Animate.defaultProps = {
   easing: animationTokens.easing,
   delay: 0,
-  duration: animationTokens.duration,
+  duration: animationTokens.duration.normal,
   direction: 'normal',
   isPlaying: false,
 }

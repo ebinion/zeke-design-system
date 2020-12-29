@@ -12,6 +12,13 @@ const StyledComponent = styled.header`
   grid-template-columns: auto auto 1fr auto;
   grid-template-areas: 'button logo . cta';
   padding: var(--site-padding);
+
+  ${props =>
+    props.isFloated &&
+    css`
+      position: absolute;
+      z-index: ${measurementTokens.zIndex.header};
+    `}
 `
 
 const StyledButton = styled.div`
@@ -48,7 +55,7 @@ const StyledCta = styled.div`
 
 const Header = props => {
   return (
-    <StyledComponent role="banner">
+    <StyledComponent role="banner" isFloated={props.isFloated}>
       <StyledButton>
         <IconButton
           icon={
@@ -76,13 +83,14 @@ const Header = props => {
 }
 
 Header.propTypes = {
-  color: PropTypes.oneOf(['black', 'knockout']),
   children: PropTypes.node,
-  menuClickHandler: PropTypes.func,
-  siteTitle: PropTypes.element,
+  color: PropTypes.oneOf(['black', 'knockout']),
   ctaHiddenBelow: PropTypes.oneOf(['small', 'medium']),
+  isFloated: PropTypes.bool,
   logoHref: PropTypes.string,
   logoLinkElement: PropTypes.node,
+  menuClickHandler: PropTypes.func,
+  siteTitle: PropTypes.element,
 }
 
 Header.defaultProps = {

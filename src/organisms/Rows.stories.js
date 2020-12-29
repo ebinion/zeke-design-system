@@ -9,11 +9,11 @@ const story = {
   component: Rows,
 }
 
-const sizeKnob = () => select('Size', ['s', 'm', 'l', 'xl'], 'm')
+const spacingKnob = () => select('Spacing', ['m', 'l', 'xl'], 'l')
 
 export const rows = () => {
   return (
-    <Rows size={sizeKnob()}>
+    <Rows spacing={spacingKnob()}>
       <ExampleBlock />
       <ExampleBlock />
       <ExampleBlock />

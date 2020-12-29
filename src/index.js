@@ -26,6 +26,7 @@ import HR from './atoms/HR'
 import P from './atoms/P'
 import SectionHeading from './atoms/SectionHeading'
 import Strong from './atoms/Strong'
+import SubHeading from './atoms/SubHeading'
 import Text from './atoms/Text'
 import Time from './atoms/Time'
 
@@ -33,10 +34,12 @@ import Time from './atoms/Time'
 import Animate from './molecules/Animate'
 import AnimateOnEnter from './molecules/AnimateOnEnter'
 import Badge from './molecules/Badge'
+import ClippedImage from './molecules/ClippedImage'
 import Decorated from './molecules/Decorated'
 import Embed from './molecules/Embed'
 import Hidden from './molecules/Hidden'
 import IconButton from './molecules/IconButton'
+import IconGroup from './molecules/IconGroup'
 import Logo from './molecules/Logo'
 
 // ORGANISIMS
@@ -44,6 +47,7 @@ import BigTeaser from './organisms/BigTeaser'
 import Block from './organisms/Block'
 import Column from './organisms/Column'
 import Columns from './organisms/Columns'
+import Constrain from './organisms/Constrain'
 import Figure from './organisms/Figure'
 import FlyoutMenu from './organisms/FlyoutMenu'
 import Gallery from './organisms/Gallery'
@@ -92,22 +96,26 @@ export {
   P,
   SectionHeading,
   Strong,
+  SubHeading,
   Text,
   Time,
   // MOLECULES
   Animate,
   AnimateOnEnter,
   Badge,
+  ClippedImage,
   Decorated,
   Embed,
   Hidden,
   IconButton,
+  IconGroup,
   Logo,
   // ORGANISMS
   BigTeaser,
   Block,
   Column,
   Columns,
+  Constrain,
   Figure,
   FlyoutMenu,
   Gallery,

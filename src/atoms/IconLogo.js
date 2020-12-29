@@ -21,7 +21,7 @@ const IconLogo = props => {
 
 IconLogo.propTypes = {
   color: PropTypes.oneOf(Object.keys(colorTokens.icons)),
-  isLink: PropTypes.bool,
+  respondToHover: PropTypes.bool,
   size: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
   sizeSmallAndAbove: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
   sizeMediumAndAbove: PropTypes.oneOf(Object.keys(measurementTokens.icons)),

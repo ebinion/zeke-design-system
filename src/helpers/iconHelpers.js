@@ -31,12 +31,12 @@ export const iconArgTypes = {
       },
     },
   },
-  isLink: {
+  respondToHover: {
     type: {
       name: 'boolean',
       required: false,
     },
-    description: 'Boolean',
+    description: 'Set to true when embedded in links or buttons',
     control: {
       type: null,
     },

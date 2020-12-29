@@ -6,6 +6,11 @@ import { measurementTokens } from '..'
 
 const StyledColumn = styled.div`
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+    ${props =>
+      props.alignSelf &&
+      css`
+        align-self: ${props.alignSelf};
+      `}
     ${props => css`
       grid-column-end: span ${props.span};
       grid-column-start: ${props.start};
@@ -15,13 +20,18 @@ const StyledColumn = styled.div`
 
 const Column = props => {
   return (
-    <StyledColumn start={props.start} span={props.span}>
+    <StyledColumn
+      start={props.start}
+      span={props.span}
+      alignSelf={props.alignSelf}
+    >
       {props.children}
     </StyledColumn>
   )
 }
 
 Column.propTypes = {
+  alignSelf: PropTypes.oneOf(['start', 'end', 'center', 'stretch']),
   /**
    * Sets how many columns in the grid system this component occupies
    */

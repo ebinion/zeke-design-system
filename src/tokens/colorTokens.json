@@ -6,7 +6,7 @@
     "block": {
       "transparent": "transparent",
       "white": "#fff",
-      "dark": "rgb(32, 37, 56)"
+      "dark": "#000"
     },
     "button-primary": "#000",
     "button-primary-highlight": "#333",
@@ -22,7 +22,7 @@
     "site": "#FDFEFB",
     "teaser": "#FDFEFB",
     "teaser-highlight": "#009ad6",
-    "overlay": "linear-gradient(270deg, rgba(0,0,0,.05), rgba(0,0,0,.2))"
+    "overlay": "linear-gradient(270deg, rgba(0,0,0,.35), rgba(0,0,0,.5))"
   },
   "borders": {
     "button-primary-highlight": "#333",
@@ -40,7 +40,7 @@
     "blackHighlight": "#c99845",
     "gold": "#dbc290",
     "goldHighlight": "#c99845",
-    "inherit": "inherit",
+    "inherit": "currentColor",
     "knockout": "#FDFEFB"
   },
   "shadows": {
@@ -59,6 +59,7 @@
     "headingLight": "#aaaaaf",
     "knockout": "#FDFEFB",
     "light": "#767676",
+    "xLight": "#E2E2E2",
     "link": "inherit",
     "linkHighlight": "inherit",
     "respondToLink": "#c99845",
