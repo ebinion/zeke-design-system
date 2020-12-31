@@ -1,5 +1,8 @@
 {
   "appMinimumWidth": "320px",
+  "blur": {
+    "normal": "3px"
+  },
   "breakpoints": {
     "horizontal": {
       "s": "600px",
@@ -47,7 +50,7 @@
   "linkBorder": "3px",
   "maxSiteWidth": "1200px",
   "maxTextWidth": "850px",
-  "menuWidth": "320px",
+  "maxMenuWidth": "425px",
   "navButtonOffset": "24px",
   "navButtonOffsetSmall": "12px",
   "sitePadding": {

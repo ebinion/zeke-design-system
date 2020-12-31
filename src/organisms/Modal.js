@@ -14,39 +14,39 @@ import {
 const StyledWrapper = styled.div`
   height: 100vh;
   left: 0;
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
   opacity: 0;
   pointer-events: none;
+  position: fixed;
+  top: 0;
   transition-duration: ${animationTokens.duration.normal};
-  transition-property: opacity;
+  transition-property: backdrop-filter, opacity;
   transition-timing-function: ${animationTokens.easing};
+  width: 100vw;
   z-index: ${measurementTokens.zIndex.modal};
 
   ${props =>
     props.size === 'window' &&
     css`
       background: ${colorTokens.backgrounds.overlay};
+      backdrop-filter: blur(${measurementTokens.blur.normal});
     `}
 
   ${props =>
     props.isOpen &&
     css`
-      pointer-events: auto;
       opacity: 1;
+      pointer-events: auto;
     `};
 `
 
 const StyledModal = styled.div`
+  -webkit-overflow-scrolling: touch;
   background: ${colorTokens.backgrounds.light};
   height: 100%;
   overflow: scroll;
   transition-duration: ${animationTokens.duration.normal};
   transition-property: opacity, transform;
   transition-timing-function: ${animationTokens.easing};
-  -webkit-overflow-scrolling: touch;
 
   ${props =>
     props.size === 'full' &&

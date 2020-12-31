@@ -1,28 +1,36 @@
-import React from 'react'
-import { boolean, select } from '@storybook/addon-knobs'
+import React, { useState } from 'react'
+import { select } from '@storybook/addon-knobs'
 
-import { Modal } from '..'
+import { Button, Modal } from '..'
 
 const story = {
   title: 'Organisms/Modal',
   component: Modal,
 }
 
-const isOpenKnob = () => boolean('Is open?', false)
 const sizeKnob = () => select('Size', ['full', 'window'], 'full')
 
-const handleClose = () => {
-  window.alert(
-    'Close triggered, you’ll want to do something better with this. \n(hint: change the isOpen prop to close it).'
+const ModalComponent = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleOpen = () => {
+    setIsOpen(true)
+  }
+
+  const handleClose = () => {
+    setIsOpen(false)
+  }
+
+  return (
+    <div>
+      <Button onClick={handleOpen}>Open Modal</Button>
+      <Modal isOpen={isOpen} size={sizeKnob()} handleClose={handleClose}>
+        Modal content goes here
+      </Modal>
+    </div>
   )
 }
 
-export const modal = () => {
-  return (
-    <Modal isOpen={isOpenKnob()} size={sizeKnob()} handleClose={handleClose}>
-      Modal Content
-    </Modal>
-  )
-}
+export const modal = () => <ModalComponent />
 
 export default story
