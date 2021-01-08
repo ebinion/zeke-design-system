@@ -10,6 +10,29 @@ const GlobalWrapper = createGlobalStyle`
     --component-padding-l: ${measurementTokens.componentPaddingL.s};
     --component-padding-xl: ${measurementTokens.componentPaddingXl.s};
     --site-padding: ${measurementTokens.sitePadding.s};
+
+    --c-black-light: ${colorTokens.named.blackLight};
+    --c-black-x-light: ${colorTokens.named.blackXLight};
+    --c-black-xx-light: ${colorTokens.named.blackXxLight};
+    --c-black: ${colorTokens.named.black};
+    --c-black-transparent: ${colorTokens.named.blackTransparent};
+    --c-black-transparent-dark: ${colorTokens.named.blackTransparentDark};
+    --c-gold-dark: ${colorTokens.named.goldDark};
+    --c-gold-invisible: ${colorTokens.named.goldInvisible};
+    --c-gold-light: ${colorTokens.named.goldLight};
+    --c-gold: ${colorTokens.named.gold};
+    --c-gray-light: ${colorTokens.named.grayLight};
+    --c-gray-x-light: ${colorTokens.named.grayXLight};
+    --c-gray-xx-light: ${colorTokens.named.grayXxLight};
+    --c-gold-transparent: ${colorTokens.named.goldTransparent};
+    --c-gray: ${colorTokens.named.gray};
+    --c-green: ${colorTokens.named.green};
+    --c-pink: ${colorTokens.named.pink};
+    --c-red: ${colorTokens.named.red};
+    --c-white-dark: ${colorTokens.named.whiteDark};
+    --c-white-x-dark: ${colorTokens.named.whiteXDark};
+    --c-white: ${colorTokens.named.white};
+    --c-yellow: ${colorTokens.named.yellow};
   }
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {

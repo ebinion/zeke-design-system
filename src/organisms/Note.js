@@ -22,7 +22,7 @@ const StyledContainer = styled.a`
   &:active,
   &:hover {
     box-shadow: 0 2px 12px 0 ${colorTokens.shadows.light},
-      0 0 0 3px ${colorTokens.text.linkHighlight};
+      0 0 0 3px ${colorTokens.borders.linkHighlight};
   }
 `
 
