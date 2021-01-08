@@ -60,6 +60,7 @@ import OffsetGrid from './organisms/OffsetGrid'
 import PhotoOverlayed from './organisms/PhotoOverlayed'
 import Section from './organisms/Section'
 import SectionHeader from './organisms/SectionHeader'
+import Snap from './organisms/Snap'
 import Rows from './organisms/Rows'
 import Teaser from './organisms/Teaser'
 
@@ -129,6 +130,7 @@ export {
   Rows,
   Section,
   SectionHeader,
+  Snap,
   Teaser,
   // TEMPLATES
   SiteLayout,

@@ -10,7 +10,8 @@ const colorKnobs = () =>
 const paddingKnobs = () =>
   select('Padding', Object.keys(measurementTokens.componentPadding), 'm')
 const isInsetKnob = () => boolean('Is inset?', false)
-const isPositioned = () => boolean('Is positioned?', false)
+const isPositionedKnob = () => boolean('Is positioned?', false)
+const isFullScreenKnob = () => boolean('Is full screen?', false)
 
 const story = {
   title: 'Organisms/Layout/Block',
@@ -20,12 +21,14 @@ const story = {
 export const block = () => {
   return (
     <Block
-      constain={constrainKnobs()}
       color={colorKnobs()}
-      padding={paddingKnobs()}
+      constain={constrainKnobs()}
+      isFullScreen={isFullScreenKnob()}
       isInset={isInsetKnob()}
-      isPositioned={isPositioned()}
+      isPositioned={isPositionedKnob()}
+      padding={paddingKnobs()}
     >
+      <Text>Testing</Text>
       <Text color="knockout">Testing</Text>
     </Block>
   )
