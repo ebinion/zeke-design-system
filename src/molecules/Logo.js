@@ -46,7 +46,7 @@ const Logo = props => {
       >
         <IconLogo
           color={props.color}
-          size="l"
+          size="xl"
           sizeMediumAndAbove="xl"
           respondToHover={isLink()}
         />
