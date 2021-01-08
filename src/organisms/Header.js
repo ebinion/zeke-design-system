@@ -58,9 +58,7 @@ const Header = props => {
     <StyledComponent role="banner" isFloated={props.isFloated}>
       <StyledButton>
         <IconButton
-          icon={
-            <IconMenu size="m" sizeMediumAndAbove="l" color={props.color} />
-          }
+          icon={<IconMenu size="l" color={props.color} />}
           title="Menu"
           clickHandler={props.menuClickHandler}
         />

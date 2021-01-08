@@ -65,8 +65,9 @@ import Rows from './organisms/Rows'
 import Teaser from './organisms/Teaser'
 
 // TEMPLATES
-import SiteLayout from './templates/SiteLayout'
 import GlobalStyles from './templates/GlobalStyles'
+import SiteLayout from './templates/SiteLayout'
+import SnapLayout from './templates/SnapLayout'
 
 // EXPORTS
 export {
@@ -133,6 +134,7 @@ export {
   Snap,
   Teaser,
   // TEMPLATES
-  SiteLayout,
   GlobalStyles,
+  SiteLayout,
+  SnapLayout,
 }

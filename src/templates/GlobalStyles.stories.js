@@ -3,11 +3,11 @@ import React from 'react'
 import { GlobalStyles } from '..'
 
 const story = {
-  title: 'Templates/Base/Global Styles',
+  title: 'Templates/Global Styles',
   component: GlobalStyles,
 }
 
-export const componentPlayground = () => {
+export const globalStyles = () => {
   return <GlobalStyles />
 }
 

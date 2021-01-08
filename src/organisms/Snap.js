@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 const StyledSnap = styled.div`
-  display: flex;
-  flex-direction: ${props => (props.direction === 'x' ? 'row' : 'column')};
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: ${props => props.direction} ${props => props.type};
   width: 100%;
@@ -12,6 +10,8 @@ const StyledSnap = styled.div`
   ${props => {
     if (props.direction === 'x') {
       return css`
+        display: flex;
+        flex-direction: row;
         overflow-x: auto;
       `
     } else {

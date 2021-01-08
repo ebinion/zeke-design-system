@@ -57,6 +57,14 @@ const StyledComponent = styled.div`
       min-height: 100vh;
       width: 100vw;
     `}
+
+  ${props =>
+    props.hasChildrenCenterY &&
+    css`
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    `}
 `
 
 const Block = ({ children, color, ...props }) => {
@@ -76,6 +84,7 @@ Block.propTypes = {
   padding: PropType.oneOf(['none', 'm', 'l', 'xl']),
   paddingBottom: PropType.string,
   paddingTop: PropType.string,
+  hasChildrenCenterY: PropType.bool,
 }
 
 Block.defaultProps = {

@@ -7,11 +7,13 @@ const constrainKnobs = () =>
   select('Constrain', ['none', 'text', 'site'], 'site')
 const colorKnobs = () =>
   select('Color', Object.keys(colorTokens.backgrounds.block), 'transparent')
-const paddingKnobs = () =>
-  select('Padding', Object.keys(measurementTokens.componentPadding), 'm')
+const hasChildrenCenterYKnob = () =>
+  boolean('Vertically center children?', false)
 const isInsetKnob = () => boolean('Is inset?', false)
 const isPositionedKnob = () => boolean('Is positioned?', false)
 const isFullScreenKnob = () => boolean('Is full screen?', false)
+const paddingKnobs = () =>
+  select('Padding', Object.keys(measurementTokens.componentPadding), 'm')
 
 const story = {
   title: 'Organisms/Layout/Block',
@@ -23,6 +25,7 @@ export const block = () => {
     <Block
       color={colorKnobs()}
       constain={constrainKnobs()}
+      hasChildrenCenterY={hasChildrenCenterYKnob()}
       isFullScreen={isFullScreenKnob()}
       isInset={isInsetKnob()}
       isPositioned={isPositionedKnob()}
