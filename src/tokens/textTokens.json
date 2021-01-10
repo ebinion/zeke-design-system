@@ -15,6 +15,11 @@
     "weightNormal": "400",
     "weightBold": "900"
   },
+  "code": {
+    "fontFamily": "monospace",
+    "weightBold": "600",
+    "weightNormal": "400"
+  },
   "sizes": {
     "xxl": {
       "size": "36px",

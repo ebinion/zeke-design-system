@@ -195,11 +195,17 @@ const Text = ({
   }
 
   const getWeight = () => {
-    switch (textTokens[kind]) {
+    switch (kind) {
       case 'decorative':
-        return textTokens.decorative.weightNormal
+        return bold
+          ? textTokens.decorative.weightBold
+          : textTokens.decorative.weightNormal
       case 'heading':
-        return textTokens.heading.weightBold
+        return bold
+          ? textTokens.heading.weightBold
+          : textTokens.heading.weightNormal
+      case 'code':
+        return bold ? textTokens.code.weightBold : textTokens.code.weightNormal
       default:
         return bold
           ? textTokens.normal.weightBold
