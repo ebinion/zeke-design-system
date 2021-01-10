@@ -5,7 +5,12 @@ import styled, { css } from 'styled-components'
 import { measurementTokens } from '../'
 
 const StyledContrain = styled.div`
-  max-width: ${props => props.maxWidth || '100%'};
+  ${props =>
+    props.maxWidth &&
+    css`
+      width: 100%;
+      max-width: ${props.maxWidth};
+    `};
   ${props =>
     props.isCentered &&
     css`
@@ -20,7 +25,7 @@ const getMaxWidth = constrain => {
     case 'site':
       return measurementTokens.maxSiteWidth
     default:
-      return '100%'
+      return false
   }
 }
 
