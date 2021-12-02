@@ -1,4 +1,9 @@
 {
-  "noVersionPrefix": true,
+  "plugins": [
+    "git-tag"
+  ],
+  "owner": "ebinion",
+  "repo": "zeke-design-system",
+  "name": "Zeke Binion",
   "email": "zeke@binion.io"
 }
