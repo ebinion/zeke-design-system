@@ -3,15 +3,18 @@ import React from 'react'
 import { SiteLayout } from '../'
 
 const story = {
-  title: 'Templates/Layout/Site Layout',
+  title: 'Templates/Site Layout',
   component: SiteLayout,
+  parameters: {
+    layout: 'fullscreen',
+  },
 }
 
-export const componentPlayground = () => {
-  const Header = () => <div>Header Area</div>
-  const Main = () => <div>Main Area</div>
-  const Footer = () => <div>Footer Area</div>
+const Header = () => <div>Header Area</div>
+const Main = () => <div>Main Area</div>
+const Footer = () => <div>Footer Area</div>
 
+export const siteLayout = () => {
   return (
     <SiteLayout
       headerChildren={<Header />}

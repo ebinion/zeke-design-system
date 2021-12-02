@@ -49,28 +49,27 @@ const StyledComponent = styled.div`
       padding-left: 0;
       padding-right: 0;
     `}
+
+  ${props =>
+    props.isFullScreen &&
+    css`
+      box-sizing: border-box;
+      min-height: 100vh;
+      width: 100vw;
+    `}
+
+  ${props =>
+    props.hasChildrenCenterY &&
+    css`
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    `}
 `
 
-const Block = ({
-  as,
-  children,
-  color,
-  isPositioned,
-  isInset,
-  padding,
-  paddingBottom,
-  paddingTop,
-}) => {
+const Block = ({ children, color, ...props }) => {
   return (
-    <StyledComponent
-      as={as}
-      padding={padding}
-      bgColor={colorTokens.backgrounds.block[color]}
-      isPositioned={isPositioned}
-      paddingBottom={paddingBottom}
-      paddingTop={paddingTop}
-      isInset={isInset}
-    >
+    <StyledComponent bgColor={colorTokens.backgrounds.block[color]} {...props}>
       {children}
     </StyledComponent>
   )
@@ -79,19 +78,21 @@ const Block = ({
 Block.propTypes = {
   as: PropType.string,
   color: PropType.oneOf(Object.keys(colorTokens.backgrounds.block)),
-  padding: PropType.oneOf(['none', 'm', 'l', 'xl']),
-  isPositioned: PropType.bool,
+  isFullScreen: PropType.bool,
   isInset: PropType.bool,
+  isPositioned: PropType.bool,
+  padding: PropType.oneOf(['none', 'm', 'l', 'xl']),
   paddingBottom: PropType.string,
   paddingTop: PropType.string,
+  hasChildrenCenterY: PropType.bool,
 }
 
 Block.defaultProps = {
   as: 'div',
   color: 'transparent',
-  padding: 'm',
-  isPositioned: false,
   isInset: false,
+  isPositioned: false,
+  padding: 'm',
 }
 
 export default Block

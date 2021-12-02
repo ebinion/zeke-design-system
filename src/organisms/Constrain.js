@@ -1,11 +1,21 @@
 import React from 'react'
 import PropType from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { measurementTokens } from '../'
 
 const StyledContrain = styled.div`
-  max-width: ${props => props.maxWidth || '100%'};
+  ${props =>
+    props.maxWidth &&
+    css`
+      width: 100%;
+      max-width: ${props.maxWidth};
+    `};
+  ${props =>
+    props.isCentered &&
+    css`
+      margin: 0 auto;
+    `}
 `
 
 const getMaxWidth = constrain => {
@@ -15,17 +25,21 @@ const getMaxWidth = constrain => {
     case 'site':
       return measurementTokens.maxSiteWidth
     default:
-      return '100%'
+      return false
   }
 }
 
 const Constrain = props => (
-  <StyledContrain maxWidth={getMaxWidth(props.limit)}>
+  <StyledContrain
+    maxWidth={getMaxWidth(props.limit)}
+    isCentered={props.isCentered}
+  >
     {props.children}
   </StyledContrain>
 )
 
 Constrain.propTypes = {
+  isCentered: PropType.bool,
   limit: PropType.oneOf(['none', 'text', 'site']),
 }
 

@@ -47,8 +47,13 @@ const StyledMenu = styled.div`
   z-index: 2;
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
-    max-width: ${measurementTokens.menuWidth};
+    max-width: ${measurementTokens.maxMenuWidth};
+    width: 50vw;
     transform: translate(-${animationTokens.slideDistance.long}, 0);
+  }
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+    width: 40vw;
   }
 
   ${props =>
@@ -64,6 +69,7 @@ const StyledMenu = styled.div`
 `
 
 const StyledMask = styled.div`
+  backdrop-filter: blur(${measurementTokens.blur.normal});
   background: ${colorTokens.backgrounds.flyout};
   width: 100vw;
   height: 100vh;

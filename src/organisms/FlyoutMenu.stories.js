@@ -1,16 +1,18 @@
-import React from 'react'
-import { boolean } from '@storybook/addon-knobs'
+import React, { useState } from 'react'
 
-import { FlyoutMenu } from '../'
+import { Button, FlyoutMenu, Text } from '../'
+import lorem from '../helpers/lorem'
 
 const story = {
   title: 'Organisms/Global/Flyout Menu',
   component: FlyoutMenu,
 }
 
-const isOpenKnob = () => boolean('Menu is open', true)
+const graph = lorem.generateParagraphs(1)
 
-export const flyoutMenu = () => {
+const FlyoutMenuExample = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   const items = [
     {
       label: 'Home',
@@ -30,15 +32,22 @@ export const flyoutMenu = () => {
     },
   ]
 
+  const handleOpen = () => {
+    setIsOpen(true)
+  }
+
+  const handleClose = () => {
+    setIsOpen(false)
+  }
+
   return (
-    <FlyoutMenu
-      items={items}
-      isOpen={isOpenKnob()}
-      closeHandler={() => {
-        window.alert('Close clicked')
-      }}
-    />
+    <div>
+      <Button onClick={handleOpen}>Open Menu</Button>
+      <Text>{graph}</Text>
+      <FlyoutMenu items={items} isOpen={isOpen} closeHandler={handleClose} />
+    </div>
   )
 }
+export const flyoutMenu = () => <FlyoutMenuExample />
 
 export default story

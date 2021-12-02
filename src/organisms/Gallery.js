@@ -1,6 +1,6 @@
 import React, { useState } from 'react' // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import {
   Block,
@@ -10,7 +10,7 @@ import {
   measurementTokens,
 } from '..'
 
-const Thumbnail = styled.button`
+const StyledThumbnail = styled.button`
   appearance: none;
   outline: 3px solid rgba(255, 255, 255, 0);
   box-shadow: none;
@@ -23,8 +23,9 @@ const Thumbnail = styled.button`
   height: 0;
   margin: 0;
   padding: 100% 0 0;
-  transition: outline ${animationTokens.duration.normal}
-    ${animationTokens.easing};
+  transition-property: outline;
+  transition-duration: ${animationTokens.duration.normal};
+  transition-timing-function: ${animationTokens.easing};
   width: 100%;
 
   &:active,
@@ -35,14 +36,15 @@ const Thumbnail = styled.button`
   }
 `
 
-const ThumbnailInner = styled.div`
+const StyledThumbnailInner = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  transition: transform ${animationTokens.duration.normal}
-    ${animationTokens.easing};
+  transition-property: transform;
+  transition-duration: ${animationTokens.duration.normal};
+  transition-timing-function: ${animationTokens.easing};
 
   button:active &,
   button:hover & {
@@ -56,24 +58,52 @@ const ThumbnailInner = styled.div`
   }
 `
 
-const Gallery = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+const StyledGallery = styled.ul`
+  display: grid;
+  gap: var(--component-padding-l);
   justify-content: center;
   list-style: none;
   padding: 0;
-`
 
-const GalleryItem = styled.li`
-  flex: 1 0 50%;
-
-  @media (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
-    flex-basis: 33.333333%;
-  }
+  ${props => {
+    if (props.itemsCount >= 2) {
+      return css`
+        grid-template-columns: repeat(2, 1fr);
+      `
+    } else {
+      return css`
+        grid-template-columns: repeat(1, 1fr);
+      `
+    }
+  }}
+  
 
   @media (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
-    flex-basis: 25%;
-    flex-grow: 0;
+    ${props => {
+      if (props.itemsCount >= 3) {
+        return css`
+          grid-template-columns: repeat(3, 1fr);
+        `
+      } else {
+        return css`
+          grid-template-columns: repeat(${props.itemCount}, 1fr);
+        `
+      }
+    }}
+  }
+
+  @media (min-width: ${measurementTokens.breakpoints.horizontal.xl}) {
+    ${props => {
+      if (props.itemsCount >= 4) {
+        return css`
+          grid-template-columns: repeat(4, 1fr);
+        `
+      } else {
+        return css`
+          grid-template-columns: repeat(${props.itemCount}, 1fr);
+        `
+      }
+    }}
   }
 `
 
@@ -120,19 +150,25 @@ const PreviewComponent = ({ items, handleMenuOpen }) => {
 
   const renderPreviewItems = () =>
     items.map((item, index) => (
-      <GalleryItem key={`preview-items${index}`}>
-        <Thumbnail type="button" aria-label={item.title || ''}>
-          <ThumbnailInner onClick={event => handlePreviewClick(event, index)}>
+      <li key={`preview-items${index}`}>
+        <StyledThumbnail type="button" aria-label={item.title || ''}>
+          <StyledThumbnailInner
+            onClick={event => handlePreviewClick(event, index)}
+          >
             {item.image}
-          </ThumbnailInner>
-        </Thumbnail>
-      </GalleryItem>
+          </StyledThumbnailInner>
+        </StyledThumbnail>
+      </li>
     ))
 
-  return <Gallery>{renderPreviewItems()}</Gallery>
+  return (
+    <StyledGallery itemsCount={items.length}>
+      {renderPreviewItems()}
+    </StyledGallery>
+  )
 }
 
-const GalleryComponent = ({ items, portalTarget }) => {
+const Gallery = ({ items, portalTarget }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [currentItem, setCurrentItem] = useState(false)
 
@@ -159,7 +195,7 @@ const GalleryComponent = ({ items, portalTarget }) => {
   )
 }
 
-GalleryComponent.propTypes = {
+Gallery.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.node.isRequired,
@@ -170,4 +206,4 @@ GalleryComponent.propTypes = {
   portalTarget: PropTypes.element,
 }
 
-export default GalleryComponent
+export default Gallery
