@@ -2,6 +2,10 @@
   "name": "@ebinion/zeke-design-system",
   "author": "Zeke Binion <zeke@binion.io> (https://zekebinion.io)",
   "description": "This repo is the home of the design system for Zeke Binion. It drives things like Zeke's website, portfolio and experimental sites.",
+  "engines": {
+    "node": ">= 16.0.0",
+    "npm": ">=8.0.0"
+  },
   "main": "dist/index.js",
   "version": "2.0.2",
   "dependencies": {
@@ -9,6 +13,7 @@
     "@babel/plugin-proposal-class-properties": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
     "@babel/runtime": "^7.16.3",
+    "lorem-ipsum": "^2.0.4",
     "prop-types": "15.x",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -19,6 +24,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
+    "cross-env": "^7.0.3",
     "@storybook/addon-a11y": "^6.4.4",
     "@storybook/addon-actions": "^6.4.4",
     "@storybook/addon-docs": "^6.4.4",
@@ -29,9 +35,8 @@
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.4.4",
     "@storybook/theming": "^6.4.4",
-    "auto": "^7.17.0",
-    "cross-env": "^7.0.3",
-    "lorem-ipsum": "^2.0.4",
+    "auto": "^10.32.3",
+    "git-tag": "^0.2.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.14.0"
   },
@@ -41,8 +46,7 @@
     "test": "react-scripts test",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint ./src",
-    "release": "auto shipit",
-    "postinstall": "npm run build"
+    "release": "auto shipit"
   },
   "babel": {
     "plugins": [

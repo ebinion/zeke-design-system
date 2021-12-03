@@ -1,3 +1,18 @@
+# v2.0.3 (Thu Dec 02 2021)
+
+#### 🐛 Bug Fix
+
+- fix: deployment bugs [#81](https://github.com/ebinion/zeke-design-system/pull/81) ([@ebinion](https://github.com/ebinion))
+- Merge pull request #79 from ebinion/develop [#80](https://github.com/ebinion/zeke-design-system/pull/80) ([@ebinion](https://github.com/ebinion))
+- Release v2.0.2 [#79](https://github.com/ebinion/zeke-design-system/pull/79) ([@ebinion](https://github.com/ebinion))
+- feat: update packages and build [#78](https://github.com/ebinion/zeke-design-system/pull/78) ([@ebinion](https://github.com/ebinion))
+
+#### Authors: 1
+
+- Zeke Binion ([@ebinion](https://github.com/ebinion))
+
+---
+
 # v2.0.1 (Tue Dec 29 2020)
 
 - fix: Git tagging
