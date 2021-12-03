@@ -10,8 +10,6 @@
   "version": "2.0.2",
   "dependencies": {
     "@babel/core": "^7.16.0",
-    "@babel/plugin-proposal-class-properties": "^7.16.0",
-    "@babel/preset-react": "^7.16.0",
     "@babel/runtime": "^7.16.3",
     "lorem-ipsum": "^2.0.4",
     "prop-types": "15.x",
@@ -24,7 +22,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
-    "cross-env": "^7.0.3",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
     "@storybook/addon-a11y": "^6.4.4",
     "@storybook/addon-actions": "^6.4.4",
     "@storybook/addon-docs": "^6.4.4",
@@ -36,6 +35,7 @@
     "@storybook/react": "^6.4.4",
     "@storybook/theming": "^6.4.4",
     "auto": "^10.32.3",
+    "cross-env": "^7.0.3",
     "git-tag": "^0.2.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.14.0"
@@ -50,16 +50,9 @@
     "test": "react-scripts test"
   },
   "babel": {
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ],
     "presets": [
-      [
-        "react-app",
-        {
-          "absoluteRuntime": false
-        }
-      ]
+      "@babel/preset-env",
+      "@babel/preset-react"
     ]
   },
   "eslintConfig": {
