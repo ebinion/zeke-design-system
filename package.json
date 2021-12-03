@@ -102,5 +102,9 @@
   "bugs": {
     "url": "https://github.com/ebinion/zeke-design-system/issues"
   },
-  "homepage": "https://github.com/ebinion/zeke-design-system#readme"
+  "homepage": "https://github.com/ebinion/zeke-design-system#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@ebinion"
+  },
+  "type": "module"
 }
