@@ -1,11 +1,12 @@
-/.storybook
-/.circleci
-
 .env
 .autorc
 .nvmrc
 
-README-Create-React-App.md
-
+# Ignore dev files
+/.storybook
+/.circleci
+.github
 *.stories.js
 *.test.js
+src/
+README-Create-React-App.md
