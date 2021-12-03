@@ -41,12 +41,13 @@
     "react-test-renderer": "^16.14.0"
   },
   "scripts": {
-    "start": "start-storybook -p 9009 -s public",
     "build": "cross-env BABEL_ENV=production babel src -d dist --copy-files",
-    "test": "react-scripts test",
     "build-storybook": "build-storybook -s public",
+    "ci-test": "jest --ci src/",
     "lint": "eslint ./src",
-    "release": "auto shipit"
+    "release": "auto shipit",
+    "start": "start-storybook -p 9009 -s public",
+    "test": "react-scripts test"
   },
   "babel": {
     "plugins": [
