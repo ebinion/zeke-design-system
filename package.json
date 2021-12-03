@@ -105,6 +105,5 @@
   "homepage": "https://github.com/ebinion/zeke-design-system#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@ebinion"
-  },
-  "type": "module"
+  }
 }
