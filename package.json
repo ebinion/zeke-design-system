@@ -7,18 +7,17 @@
     "npm": ">=8.0.0"
   },
   "main": "dist/index.js",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "dependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/runtime": "^7.16.3",
-    "lorem-ipsum": "^2.0.4",
+    "@babel/core": "7.x",
+    "@babel/runtime": "7.x",
+    "lorem-ipsum": "2.x",
     "prop-types": "15.x",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3",
-    "react-waypoint": "^9.0.3",
-    "styled-components": "4.x",
-    "underscore": "^1.13.1"
+    "react": "^17.x",
+    "react-dom": "^17.x",
+    "react-waypoint": "10.x",
+    "styled-components": "5.x",
+    "underscore": "1.x"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -38,6 +37,7 @@
     "cross-env": "^7.0.3",
     "git-tag": "^0.2.0",
     "prettier": "^1.19.1",
+    "react-scripts": "^4.0.3",
     "react-test-renderer": "^16.14.0"
   },
   "scripts": {
@@ -52,7 +52,12 @@
   "babel": {
     "presets": [
       "@babel/preset-env",
-      "@babel/preset-react"
+      [
+        "@babel/preset-react",
+        {
+          "absoluteRuntime": false
+        }
+      ]
     ]
   },
   "eslintConfig": {

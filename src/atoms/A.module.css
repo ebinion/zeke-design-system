@@ -1,0 +1,25 @@
+.a {
+  font: inherit;
+  line-height: inherit;
+}
+
+.notIncognito {
+  background: ${colorTokens.backgrounds.link};
+  color: ${colorTokens.text.link};
+  cursor: pointer;
+  font-weight: ${textTokens.normal.weightBold};
+  text-decoration: none;
+  border-bottom: ${measurementTokens.linkBorder} solid
+    ${colorTokens.borders.link};
+  transition-property: border, background;
+  transition-duration: ${animationTokens.duration.normal};
+  transition-timing-function: ${animationTokens.easing};
+}
+
+.notIncognito:active,
+.notIncognito:hover {
+  color: ${colorTokens.text.linkHighlight};
+  background: ${colorTokens.backgrounds.linkHighlight};
+  border-color: ${colorTokens.borders.linkHighlight};
+  outline: 0;
+}
