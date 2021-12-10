@@ -1,0 +1,11 @@
+{
+  "duration": {
+    "normal": "400ms",
+    "short": "200ms"
+  },
+  "easing": "cubic-bezier(.1, 0, 0, .8)",
+  "slideDistance": {
+    "normal": "50px",
+    "long": "150px"
+  }
+}

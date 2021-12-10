@@ -7,38 +7,17 @@
     "npm": ">=8.0.0"
   },
   "main": "dist/index.js",
-  "version": "2.0.3",
+  "version": "2.0.2",
   "dependencies": {
-    "@babel/core": "7.x",
-    "@babel/runtime": "7.x",
-    "lorem-ipsum": "2.x",
+    "@babel/core": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "lorem-ipsum": "^2.0.4",
     "prop-types": "15.x",
-    "react": "^17.x",
-    "react-dom": "^17.x",
-    "react-waypoint": "10.x",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-waypoint": "^9.0.3",
     "styled-components": "5.x",
-    "underscore": "1.x"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
-    "@storybook/addon-a11y": "^6.4.4",
-    "@storybook/addon-actions": "^6.4.4",
-    "@storybook/addon-docs": "^6.4.4",
-    "@storybook/addon-knobs": "^6.4.0",
-    "@storybook/addon-links": "^6.4.4",
-    "@storybook/addon-viewport": "^6.4.4",
-    "@storybook/addons": "^6.4.4",
-    "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.4.4",
-    "@storybook/theming": "^6.4.4",
-    "auto": "^10.32.3",
-    "cross-env": "^7.0.3",
-    "git-tag": "^0.2.0",
-    "prettier": "^1.19.1",
-    "react-scripts": "^4.0.3",
-    "react-test-renderer": "^16.14.0"
+    "underscore": "^1.13.1"
   },
   "scripts": {
     "build": "cross-env BABEL_ENV=production babel src -d dist --copy-files",
@@ -103,5 +82,6 @@
   "homepage": "https://github.com/ebinion/zeke-design-system#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@ebinion"
-  }
+  },
+  "yalcSig": "f9c36743e912c1b5529614f9b34286ef"
 }

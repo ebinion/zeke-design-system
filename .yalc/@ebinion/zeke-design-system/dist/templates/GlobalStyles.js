@@ -1,0 +1,22 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = require("styled-components");
+
+var _ = require("..");
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var GlobalWrapper = (0, _styledComponents.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  :root {\n    --component-margin: ", ";\n    --component-padding: ", ";\n    --component-padding-l: ", ";\n    --component-padding-xl: ", ";\n    --site-padding: ", ";\n\n    --c-black-light: ", ";\n    --c-black-x-light: ", ";\n    --c-black-xx-light: ", ";\n    --c-black: ", ";\n    --c-black-transparent: ", ";\n    --c-black-transparent-dark: ", ";\n    --c-gold-dark: ", ";\n    --c-gold-invisible: ", ";\n    --c-gold-light: ", ";\n    --c-gold: ", ";\n    --c-gray-light: ", ";\n    --c-gray-x-light: ", ";\n    --c-gray-xx-light: ", ";\n    --c-gold-transparent: ", ";\n    --c-gray: ", ";\n    --c-green: ", ";\n    --c-pink: ", ";\n    --c-red: ", ";\n    --c-white-dark: ", ";\n    --c-white-x-dark: ", ";\n    --c-white: ", ";\n    --c-yellow: ", ";\n  }\n\n  @media screen and (min-width: ", ") {\n    :root {\n      --component-margin: ", ";\n      --component-padding: ", ";\n      --component-padding-l: ", ";\n      --component-padding-xl: ", ";\n      --site-padding: ", ";\n    }\n  }\n\n  @media screen and (min-width: ", ") {\n    :root {\n      --component-margin: ", ";\n      --component-padding: ", ";\n      --component-padding-l: ", ";\n      --component-padding-xl: ", ";\n      --site-padding: ", ";\n    }\n  }\n\n  @media screen and (min-width: ", ") {\n    :root {\n      --component-margin: ", ";\n      --component-padding: ", ";\n      --component-padding-l: ", ";\n      --component-padding-xl: ", ";\n      --site-padding: ", ";\n    }\n  }\n\n  body {\n    background-color: ", ";\n    color: ", ";\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    line-height: ", ";\n    margin: 0;\n    padding: 0;\n  }\n\n  * {\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  :focus {\n    outline: 4px solid ", ";\n  }\n"])), _.measurementTokens.componentMargin.s, _.measurementTokens.componentPadding.s, _.measurementTokens.componentPaddingL.s, _.measurementTokens.componentPaddingXl.s, _.measurementTokens.sitePadding.s, _.colorTokens.named.blackLight, _.colorTokens.named.blackXLight, _.colorTokens.named.blackXxLight, _.colorTokens.named.black, _.colorTokens.named.blackTransparent, _.colorTokens.named.blackTransparentDark, _.colorTokens.named.goldDark, _.colorTokens.named.goldInvisible, _.colorTokens.named.goldLight, _.colorTokens.named.gold, _.colorTokens.named.grayLight, _.colorTokens.named.grayXLight, _.colorTokens.named.grayXxLight, _.colorTokens.named.goldTransparent, _.colorTokens.named.gray, _.colorTokens.named.green, _.colorTokens.named.pink, _.colorTokens.named.red, _.colorTokens.named.whiteDark, _.colorTokens.named.whiteXDark, _.colorTokens.named.white, _.colorTokens.named.yellow, _.measurementTokens.breakpoints.horizontal.m, _.measurementTokens.componentMargin.m, _.measurementTokens.componentPadding.m, _.measurementTokens.componentPaddingL.m, _.measurementTokens.componentPaddingXl.m, _.measurementTokens.sitePadding.m, _.measurementTokens.breakpoints.horizontal.l, _.measurementTokens.componentMargin.l, _.measurementTokens.componentPadding.l, _.measurementTokens.componentPaddingL.l, _.measurementTokens.componentPaddingXl.l, _.measurementTokens.sitePadding.l, _.measurementTokens.breakpoints.horizontal.xl, _.measurementTokens.componentMargin.xl, _.measurementTokens.componentPadding.xl, _.measurementTokens.componentPaddingL.xl, _.measurementTokens.componentPaddingXl.xl, _.measurementTokens.sitePadding.xl, _.colorTokens.backgrounds.site, _.colorTokens.text.normal, _.textTokens.normal.fontFamily, _.textTokens.sizes.m.size, _.textTokens.normal.weightNormal, _.textTokens.sizes.m.lineHeightTight, _.colorTokens.borders.link);
+var _default = GlobalWrapper;
+exports.default = _default;

@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@ebinion/zeke-design-system": {
+      "signature": "f9c36743e912c1b5529614f9b34286ef",
+      "file": true
+    }
+  }
+}
