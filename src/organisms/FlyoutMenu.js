@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { createGlobalStyle, css } from 'styled-components'
 import PropTypes from 'prop-types'
 
 import {
@@ -10,6 +10,17 @@ import {
   colorTokens,
   measurementTokens,
 } from '../'
+
+const StyledClose = styled.div`
+  position: sticky;
+  text-align: right;
+  top: 0;
+  padding: ${measurementTokens.navButtonOffsetSmall};
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+    padding: ${measurementTokens.navButtonOffset};
+  }
+`
 
 const StyledComponent = styled.div`
   height: 100vh;
@@ -33,17 +44,44 @@ const StyledComponent = styled.div`
     `}
 `
 
+const StyledFooter = styled.div`
+  padding: ${measurementTokens.componentMargin.m}
+    ${measurementTokens.componentMargin.l};
+`
+
+const StyledMain = styled.div`
+  flex: 1;
+  padding: ${measurementTokens.componentMargin.l};
+  padding-top: 0;
+`
+
+const StyledMask = styled.div`
+  backdrop-filter: blur(${measurementTokens.blur.normal});
+  background: ${colorTokens.backgrounds.flyout};
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
+    background: ${colorTokens.backgrounds.overlay};
+  }
+`
+
 const StyledMenu = styled.div`
   background: ${colorTokens.backgrounds.flyout};
   width: 100%;
   height: 100vh;
-  position: fixed;
-  top: 0;
   left: 0;
+  overflow-y: auto;
+  position: fixed;
   transform: translate(0, ${animationTokens.slideDistance.long});
   transition: transform;
   transition-duration: ${animationTokens.duration.normal};
   transition-timing-function: ${animationTokens.easing};
+  top: 0;
   z-index: 2;
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
@@ -68,49 +106,26 @@ const StyledMenu = styled.div`
     `}
 `
 
-const StyledMask = styled.div`
-  backdrop-filter: blur(${measurementTokens.blur.normal});
-  background: ${colorTokens.backgrounds.flyout};
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
-    background: ${colorTokens.backgrounds.overlay};
-  }
-`
-
-const StyledClose = styled.div`
-  position: absolute;
-  text-align: center;
-  top: ${measurementTokens.navButtonOffsetSmall};
-  right: ${measurementTokens.navButtonOffsetSmall};
-
-  @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
-    top: ${measurementTokens.navButtonOffset};
-    right: ${measurementTokens.navButtonOffset};
-  }
-`
-
-const StyledNav = styled.div`
-  padding: ${measurementTokens.componentMargin.l};
-  padding-top: calc(
-    ${measurementTokens.componentMargin.xl} +
-      ${measurementTokens.navButtonOffset}
-  );
-`
-
-const StyleNavItem = styled.div`
+const StyledNavItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: ${measurementTokens.touchTarget};
 `
 
-const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
+const StyledNav = styled.nav`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`
+
+const StyledScrollLock = createGlobalStyle`
+body {
+  overflow: hidden;
+}
+`
+
+const FlyoutMenu = ({ isOpen, closeHandler, footer, ...props }) => {
   useEffect(() => {
     const handleKeyPress = event => {
       if (event.keyCode === 27 && isOpen) {
@@ -129,10 +144,11 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
     const LinkElement = props.Link
 
     return (
-      <StyledNav>
+      <StyledMain>
+        {isOpen && <StyledScrollLock />}
         {props.items &&
           props.items.map((item, i) => (
-            <StyleNavItem key={`navItem${i}`}>
+            <StyledNavItem key={`navItem${i}`}>
               <A
                 to={item.to}
                 kind="nav"
@@ -141,9 +157,9 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
               >
                 {item.label}
               </A>
-            </StyleNavItem>
+            </StyledNavItem>
           ))}
-      </StyledNav>
+      </StyledMain>
     )
   }
 
@@ -151,17 +167,18 @@ const FlyoutMenu = ({ isOpen, closeHandler, ...props }) => {
     <StyledComponent isOpen={isOpen} tabIndex={isOpen ? false : '-1'}>
       <StyledMask onClick={closeHandler} />
       <StyledMenu isOpen={isOpen}>
-        <StyledClose>
-          <IconButton
-            icon={<IconX />}
-            title="Close"
-            clickHandler={closeHandler}
-          />
-        </StyledClose>
-        <nav role="navigation" aria-label="Main">
+        <StyledNav role="navigation" aria-label="Main">
+          <StyledClose>
+            <IconButton
+              icon={<IconX />}
+              title="Close"
+              clickHandler={closeHandler}
+            />
+          </StyledClose>
           {renderItems()}
           {props.children}
-        </nav>
+          {footer && <StyledFooter>{footer}</StyledFooter>}
+        </StyledNav>
       </StyledMenu>
     </StyledComponent>
   )
@@ -178,6 +195,7 @@ FlyoutMenu.propTypes = {
   isOpen: PropTypes.bool,
   closeHandler: PropTypes.func.isRequired,
   children: PropTypes.node,
+  footer: PropTypes.node,
 }
 
 FlyoutMenu.defaultProps = {
