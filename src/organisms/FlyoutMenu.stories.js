@@ -44,7 +44,12 @@ const FlyoutMenuExample = () => {
     <div>
       <Button onClick={handleOpen}>Open Menu</Button>
       <Text>{graph}</Text>
-      <FlyoutMenu items={items} isOpen={isOpen} closeHandler={handleClose} />
+      <FlyoutMenu
+        items={items}
+        isOpen={isOpen}
+        closeHandler={handleClose}
+        footer={<div>This is the footer</div>}
+      />
     </div>
   )
 }
