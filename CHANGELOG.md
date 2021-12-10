@@ -1,3 +1,17 @@
+# v2.0.4
+
+## What's Changed
+
+- Release v2.0.3 by @ebinion in https://github.com/ebinion/zeke-design-system/pull/87
+- feat: column order won’t affect stacking by @ebinion in https://github.com/ebinion/zeke-design-system/pull/89
+- fix: make animations work again by @ebinion in https://github.com/ebinion/zeke-design-system/pull/88
+
+**Full Changelog**: https://github.com/ebinion/zeke-design-system/compare/v2.0.3...v2.0.4
+
+#### Authors: 1
+
+- Zeke Binion ([@ebinion](https://github.com/ebinion))
+
 # v2.0.3 (Thu Dec 02 2021)
 
 #### 🐛 Bug Fix
