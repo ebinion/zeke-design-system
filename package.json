@@ -7,7 +7,7 @@
     "npm": ">=8.0.0"
   },
   "main": "dist/index.js",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "dependencies": {
     "@babel/core": "7.x",
     "@babel/runtime": "7.x",
@@ -26,6 +26,7 @@
     "@storybook/addon-a11y": "^6.4.4",
     "@storybook/addon-actions": "^6.4.4",
     "@storybook/addon-docs": "^6.4.4",
+    "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-knobs": "^6.4.0",
     "@storybook/addon-links": "^6.4.4",
     "@storybook/addon-viewport": "^6.4.4",

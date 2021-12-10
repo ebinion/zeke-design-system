@@ -10,6 +10,7 @@ const StyledColumns = styled.div`
 
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
     grid-template-columns: repeat(${props => props.columnCount}, 1fr);
+    grid-template-rows: 1fr;
   }
 `
 

@@ -14,54 +14,54 @@ const animationNames = {
 
 const animationKeyframes = {
   fadeIn: keyframes`
-    0% {
+    from {
       opacity: 0;
     }
 
-    100% {
+    to {
       opacity: 1;
     }
   `,
   fadeInFromLeft: keyframes`
-    0% {
+    from {
       opacity: 0;
       transform: translateX(-${animationTokens.slideDistance.normal})
     }
 
-    100% {
+    to {
       opacity: 1;
       transform: translateX(0)
     }
   `,
   fadeInFromRight: keyframes`
-    0% {
+    from {
       opacity: 0;
       transform: translateX(${animationTokens.slideDistance.normal})
     }
 
-    100% {
+    to {
       opacity: 1;
       transform: translateX(0)
     }
   `,
   fadeInFromTop: keyframes`
-    0% {
+    from {
       opacity: 0;
       transform: translateY(-${animationTokens.slideDistance.normal})
     }
 
-    100% {
+    to {
       opacity: 1;
       transform: translateY(0)
     }
   `,
   fadeInFromBottom: keyframes`
-    0% {
+    from {
       opacity: 0;
       transform: translateY(${animationTokens.slideDistance.normal})
     }
 
-    100% {
+    to {
       opacity: 1;
       transform: translateY(0)
     }
@@ -71,7 +71,7 @@ const animationKeyframes = {
 const StyledAnimate = styled.div`
   animation-name: ${props => animationKeyframes[props.kind]};
   animation-delay: ${props => props.delay};
-  animation-direction: ${props => props.direction}
+  animation-direction: ${props => props.direction};
   animation-duration: ${props => props.duration};
   animation-fill-mode: both;
   animation-play-state: ${props => (props.isPlaying ? 'running' : 'paused')};
@@ -81,7 +81,7 @@ const StyledAnimate = styled.div`
 const Animate = props => <StyledAnimate {...props} />
 
 Animate.propTypes = {
-  as: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  as: PropTypes.node,
   children: PropTypes.node,
   kind: PropTypes.oneOf(Object.values(animationNames)),
   isPlaying: PropTypes.bool,
