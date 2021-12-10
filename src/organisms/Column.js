@@ -6,6 +6,7 @@ import { measurementTokens } from '..'
 
 const StyledColumn = styled.div`
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+    grid-row-start: 1;
     ${props =>
       props.alignSelf &&
       css`
