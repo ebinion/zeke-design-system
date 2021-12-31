@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { measurementTokens } from '../'
 
 const StyledComponent = styled.figure`
-  align-items: center;
+  align-items: top;
   display: grid;
   grid-gap: ${measurementTokens.componentMargin.m};
   grid-template-areas:
@@ -50,8 +50,8 @@ const Figure = ({ figure, figurePosition, children }) => {
   }
 
   const getGridColumns = () => {
-    const figureSize = '55fr'
-    const captionSize = '45fr'
+    const figureSize = '2fr'
+    const captionSize = '1fr'
 
     switch (figurePosition) {
       case 'right':
