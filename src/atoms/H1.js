@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Text from './Text'
 
-const H1 = props => <Text kind={props.kind} {...props} />
+const H1 = props => <Text {...props} />
 
 H1.propTypes = {
   as: PropTypes.string,

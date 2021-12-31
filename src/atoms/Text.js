@@ -28,6 +28,13 @@ const StyledP = styled.p`
     `}
 
   ${props =>
+    props.isCentered &&
+    css`
+      margin-left: auto;
+      margin-right: auto;
+    `}
+
+  ${props =>
     props.truncate &&
     css`
       overflow: hidden;
@@ -334,6 +341,7 @@ Text.propTypes = {
     'warning',
   ]),
   constrain: PropTypes.bool,
+  isCentered: PropTypes.bool,
   isUppercased: PropTypes.bool,
   kind: PropTypes.oneOf(['normal', 'heading', 'decorative', 'code']),
   lineHeight: PropTypes.oneOf(['normal', 'tight']),
