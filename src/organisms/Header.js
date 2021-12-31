@@ -17,6 +17,7 @@ const StyledComponent = styled.header`
     props.isFloated &&
     css`
       position: absolute;
+      width: 100%;
       z-index: ${measurementTokens.zIndex.header};
     `}
 `
