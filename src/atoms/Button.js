@@ -21,9 +21,8 @@ const StyledButton = styled.button`
   min-height: ${props => props.height};
   padding: ${props =>
     `${props.paddingTop} ${props.paddingRight} ${props.paddingBottom} ${props.paddingLeft}`};
+  transition: all ${animationTokens.duration.short} ${animationTokens.easing};
   transition-property: background-color, box-shadow, color;
-  transition-duration: ${props => props.transitionDuration};
-  transition-timing-function: ${props => props.easing};
   width: ${props => props.width};
 
   &:hover {
@@ -33,67 +32,79 @@ const StyledButton = styled.button`
   }
 `
 
-export default class Button extends React.Component {
-  static propTypes = {
-    kind: PropTypes.oneOf(['primary', 'secondary']),
-    fullWidth: PropTypes.bool,
-    type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  }
+const primaryStyles = {
+  backgroundColor: colorTokens.backgrounds['button-primary'],
+  borderSize: measurementTokens['button-border'],
+  borderColor: colorTokens.borders['button-primary'],
+  color: colorTokens.text['button-primary'],
+  fontSize: textTokens.sizes.m.size,
+  height: measurementTokens['touchTarget'],
+  paddingTop: measurementTokens['button-padding-top'],
+  paddingRight: measurementTokens['button-padding-right'],
+  paddingBottom: measurementTokens['button-padding-bottom'],
+  paddingLeft: measurementTokens['button-padding-left'],
+  hover: {
+    color: colorTokens.text['button-primary-highlight'],
+    backgroundColor: colorTokens.backgrounds['button-primary-highlight'],
+    borderColor: colorTokens.borders['button-primary-highlight'],
+  },
+}
 
-  static defaultProps = {
-    kind: 'primary',
-    fullWidth: false,
-    type: 'button',
-  }
+const secondaryStyles = {
+  color: colorTokens.text['button-secondary'],
+  backgroundColor: colorTokens.backgrounds['button-secondary'],
+  borderColor: colorTokens.borders['button-secondary'],
+  hover: {
+    color: colorTokens.text['button-secondary-highlight'],
+    backgroundColor: colorTokens.backgrounds['button-secondary-highlight'],
+    borderColor: colorTokens.borders['button-secondary-highlight'],
+  },
+}
 
-  getStyles() {
-    const primaryStyles = {
-      backgroundColor: colorTokens.backgrounds['button-primary'],
-      borderSize: measurementTokens['button-border'],
-      borderColor: colorTokens.borders['button-primary'],
-      transitionDuration: animationTokens['transition-duration'],
-      easing: animationTokens['transition-easing'],
-      color: colorTokens.text['button-primary'],
-      fontSize: textTokens.sizes.m.size,
-      height: measurementTokens['touchTarget'],
-      paddingTop: measurementTokens['button-padding-top'],
-      paddingRight: measurementTokens['button-padding-right'],
-      paddingBottom: measurementTokens['button-padding-bottom'],
-      paddingLeft: measurementTokens['button-padding-left'],
-      hover: {
-        color: colorTokens.text['button-primary-highlight'],
-        backgroundColor: colorTokens.backgrounds['button-primary-highlight'],
-        borderColor: colorTokens.borders['button-primary-highlight'],
-      },
-    }
+const tertiaryStyles = {
+  backgroundColor: colorTokens.backgrounds['button-tertiary'],
+  borderColor: colorTokens.backgrounds['button-tertiary'],
+  color: colorTokens.text['button-tertiary'],
+  hover: {
+    backgroundColor: colorTokens.backgrounds['button-tertiary-highlight'],
+    borderColor: colorTokens.backgrounds['button-tertiary-highlight'],
+    color: colorTokens.text['button-tertiary-highlight'],
+  },
+}
 
-    switch (this.props.kind) {
-      case 'secondary':
-        return Object.assign(primaryStyles, {
-          color: colorTokens.text['button-secondary'],
-          backgroundColor: colorTokens.backgrounds['button-secondary'],
-          borderColor: colorTokens.borders['button-secondary'],
-          hover: {
-            color: colorTokens.text['button-secondary-highlight'],
-            backgroundColor:
-              colorTokens.backgrounds['button-secondary-highlight'],
-            borderColor: colorTokens.borders['button-secondary-highlight'],
-          },
-        })
-      default:
-        return primaryStyles
-    }
-  }
-
-  render() {
-    return (
-      <StyledButton
-        {...this.props}
-        width={this.props.fullWidth ? '100%' : 'auto'}
-        {...this.getStyles()}
-      >
-        {this.props.children}
-      </StyledButton>
-    )
+const getStyles = kind => {
+  switch (kind) {
+    case 'secondary':
+      return Object.assign({}, primaryStyles, secondaryStyles)
+    case 'tertiary':
+      return Object.assign({}, primaryStyles, tertiaryStyles)
+    default:
+      return primaryStyles
   }
 }
+
+const Button = props => {
+  return (
+    <StyledButton
+      {...props}
+      width={props.fullWidth ? '100%' : 'auto'}
+      {...getStyles(props.kind)}
+    >
+      {props.children}
+    </StyledButton>
+  )
+}
+
+Button.propTypes = {
+  kind: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
+  fullWidth: PropTypes.bool,
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+}
+
+Button.defaultProps = {
+  kind: 'primary',
+  fullWidth: false,
+  type: 'button',
+}
+
+export default Button
