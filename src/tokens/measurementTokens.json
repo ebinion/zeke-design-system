@@ -55,9 +55,9 @@
   "navButtonOffsetSmall": "12px",
   "sitePadding": {
     "s": "16px",
-    "m": "32px",
-    "l": "60px",
-    "xl": "72px"
+    "m": "64px",
+    "l": "96px",
+    "xl": "96px"
   },
   "sectionHeadingBorder": "3px",
   "shadowDistance": {
