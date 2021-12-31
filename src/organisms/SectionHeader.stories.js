@@ -8,19 +8,13 @@ const story = {
   title: 'Organisms/Section Header',
   component: SectionHeader,
 }
-
-const knockedOutKnob = () => boolean('Is Knocked Out?', false)
-
-export const sectionHeader = () => {
-  return (
-    <SectionHeader
-      title={lorem.generateWords(10)}
-      superTitle={lorem.generateWords(3)}
-      isKnockedout={knockedOutKnob()}
-    >
-      {lorem.generateSentences(2)}
-    </SectionHeader>
-  )
-}
-
 export default story
+
+const Template = args => <SectionHeader {...args} />
+
+export const sectionHeader = Template.bind({})
+sectionHeader.args = {
+  children: lorem.generateSentences(2),
+  superTitle: lorem.generateWords(3),
+  title: lorem.generateWords(10),
+}

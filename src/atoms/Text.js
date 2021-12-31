@@ -335,6 +335,7 @@ Text.propTypes = {
     'normal',
     'light',
     'xLight',
+    'gold',
     'knockout',
     'success',
     'error',

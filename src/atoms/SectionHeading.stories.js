@@ -1,5 +1,4 @@
 import React from 'react'
-import { boolean, select } from '@storybook/addon-knobs'
 
 import { SectionHeading } from '../'
 
@@ -9,12 +8,9 @@ const story = {
 }
 export default story
 
-const isKnockedoutKnob = () => boolean('Is knocked out?', false)
-const alignKnob = () =>
-  select('Align heading', ['left', 'center', 'right'], 'center')
+const Template = args => <SectionHeading {...args} />
 
-export const sectionHeading = () => (
-  <SectionHeading isKnockedOut={isKnockedoutKnob()} align={alignKnob()}>
-    Example Content
-  </SectionHeading>
-)
+export const sectionHeading = Template.bind({})
+sectionHeading.args = {
+  children: 'Example Content',
+}

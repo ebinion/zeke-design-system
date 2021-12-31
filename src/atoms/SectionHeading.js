@@ -1,84 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
 
-import { colorTokens, measurementTokens, Text } from '../'
-
-const StyledComponent = styled.div`
-  &::after {
-    content: '';
-    display: block;
-    border-bottom: ${measurementTokens.sectionHeadingBorder} solid
-      ${props =>
-        props.isKnockedOut
-          ? colorTokens.text.knockout
-          : colorTokens.text.heading};
-    margin-top: ${measurementTokens.componentPadding.s};
-    margin-bottom: ${measurementTokens.componentMargin.s};
-    ${props => props.align}
-    width: 50px;
-
-    @media (min-width: ${measurementTokens.breakpoints.horizontal.s}) {
-      ${props => props.alignSmallUp}
-    }
-    @media (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
-      ${props => props.alignMediumUp}
-    }
-    @media (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
-      ${props => props.alignLargeUp}
-    }
-  }
-`
+import { Text } from '../'
 
 const SectionHeading = ({ as, children, isKnockedOut, ...props }) => {
-  const getAlignmentCss = align => {
-    switch (align) {
-      case 'left':
-        return css`
-          margin-left: 0;
-          margin-right: 0;
-        `
-      case 'right':
-        return css`
-          margin-left: auto;
-          margin-right: 0;
-        `
-      default:
-        return css`
-          margin-left: auto;
-          margin-right: auto;
-        `
-    }
-  }
-
   return (
-    <StyledComponent
-      align={getAlignmentCss(props.align)}
-      alignSmallUp={
-        props.alignSmallUp ? getAlignmentCss(props.alignSmallUp) : null
-      }
-      alignMediumUp={
-        props.alignMediumUp ? getAlignmentCss(props.alignMediumUp) : null
-      }
-      alignLargeUp={
-        props.alignLargeUp ? getAlignmentCss(props.alignLargeUp) : null
-      }
-      isKnockedOut={isKnockedOut}
+    <Text
+      as={as}
+      align={props.align}
+      alignSmallUp={props.alignSmallUp}
+      alignMediumUp={props.alignMediumUp}
+      alignLargeUp={props.alignLargeUp}
+      bold
+      color={isKnockedOut ? 'knockout' : 'gold'}
+      constrain={false}
+      margin="none"
     >
-      <Text
-        as={as}
-        align={props.align}
-        alignSmallUp={props.alignSmallUp}
-        alignMediumUp={props.alignMediumUp}
-        alignLargeUp={props.alignLargeUp}
-        bold
-        color={isKnockedOut ? 'knockout' : 'normal'}
-        constrain={false}
-        isUppercased
-      >
-        {children}
-      </Text>
-    </StyledComponent>
+      {children}
+    </Text>
   )
 }
 
@@ -93,7 +32,6 @@ SectionHeading.propTypes = {
 
 SectionHeading.defaultProps = {
   as: 'h2',
-  align: 'center',
 }
 
 export default SectionHeading

@@ -82,6 +82,7 @@
     "button-tertiary": "var(--c-white)",
     "code": "var(--c-pink)",
     "error": "var(--c-red)",
+    "gold": "var(--c-gold)",
     "heading": "var(--c-black)",
     "headingLight": "var(--c-black-xx-light)",
     "knockout": "var(--c-white-dark)",
