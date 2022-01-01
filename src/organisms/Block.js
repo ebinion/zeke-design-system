@@ -2,10 +2,22 @@ import React from 'react'
 import PropType from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { colorTokens } from '../'
+import { colorTokens, measurementTokens } from '../'
 
 const StyledComponent = styled.div`
   background: ${props => props.bgColor};
+
+  ${props => {
+    if (props.constrain === 'text') {
+      return css`
+        max-width: ${measurementTokens.maxTextWidth};
+      `
+    } else if (props.constrain === 'site') {
+      return css`
+        max-width: ${measurementTokens.maxSiteWidth};
+      `
+    }
+  }}
 
   ${props =>
     props.padding === 'none' &&
@@ -78,6 +90,7 @@ const Block = ({ children, color, ...props }) => {
 Block.propTypes = {
   as: PropType.string,
   color: PropType.oneOf(Object.keys(colorTokens.backgrounds.block)),
+  constrain: PropType.oneOf(['text', 'site', 'none']),
   isFullScreen: PropType.bool,
   isInset: PropType.bool,
   isPositioned: PropType.bool,
@@ -90,6 +103,7 @@ Block.propTypes = {
 Block.defaultProps = {
   as: 'div',
   color: 'transparent',
+  constrain: 'none',
   isInset: false,
   isPositioned: false,
   padding: 'm',
