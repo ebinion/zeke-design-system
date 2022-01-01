@@ -16,17 +16,22 @@ const StyledColumns = styled.div`
 
 const Columns = props => {
   return (
-    <StyledColumns columnCount={props.base}>{props.children}</StyledColumns>
+    <StyledColumns as={props.as} columnCount={props.base}>
+      {props.children}
+    </StyledColumns>
   )
 }
 
 Columns.propTypes = {
+  as: PropTypes.string,
   /**
    * Sets the number of columns the grid system is based on
    */
   base: PropTypes.number.isRequired,
 }
 
-Columns.defaultProps = {}
+Columns.defaultProps = {
+  as: 'div',
+}
 
 export default Columns

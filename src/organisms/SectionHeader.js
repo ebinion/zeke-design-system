@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Block, SectionHeading, H2, Text } from '../'
+import { Block, Columns, Column, SectionHeading, H2, Text } from '../'
 
 const SectionHeader = ({
   as,
@@ -20,7 +20,7 @@ const SectionHeader = ({
   const renderLead = () => {
     if (typeof composedLead === 'string') {
       return (
-        <Text align="center" size="l" color={getColor()} noMargin>
+        <Text size="l" color={getColor()} noMargin>
           {composedLead}
         </Text>
       )
@@ -30,26 +30,20 @@ const SectionHeader = ({
   }
 
   return (
-    <Block as={as} constrain="text" padding="xl">
-      {superTitle && (
-        <SectionHeading isKnockedOut={isKnockedout}>
-          {superTitle}
-        </SectionHeading>
-      )}
-      <div>
-        {title && (
-          <H2
-            as="h3"
-            align="center"
-            color={getColor()}
-            lineHeight="normal"
-            noMargin
-          >
-            {title}
-          </H2>
-        )}
-        {composedLead && renderLead()}
-      </div>
+    <Block as={as} isInset padding="none">
+      {superTitle && <SectionHeading>{superTitle}</SectionHeading>}
+      <Columns base={10}>
+        <Column start={1} span={4}>
+          {title && (
+            <H2 as="h3" color={getColor()} noMargin>
+              {title}
+            </H2>
+          )}
+        </Column>
+        <Column start={5} span={6}>
+          {composedLead && renderLead()}
+        </Column>
+      </Columns>
     </Block>
   )
 }
@@ -63,7 +57,7 @@ SectionHeader.propTypes = {
 }
 
 SectionHeader.defaultProps = {
-  as: 'div',
+  as: 'header',
 }
 
 export default SectionHeader
