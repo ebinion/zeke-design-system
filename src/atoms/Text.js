@@ -24,6 +24,8 @@ const StyledP = styled.p`
   ${props =>
     props.constrain &&
     css`
+      padding-left: var(--site-padding);
+      padding-right: var(--site-padding);
       max-width: ${measurementTokens.maxTextWidth};
     `}
 
