@@ -77,6 +77,14 @@ const StyledComponent = styled.div`
       display: flex;
       flex-direction: column;
     `}
+
+  ${props =>
+    props.isCentered &&
+    css`
+      margin-left: auto;
+      margin-right: auto;
+    `}
+
 `
 
 const Block = ({ children, color, ...props }) => {
@@ -91,6 +99,7 @@ Block.propTypes = {
   as: PropType.string,
   color: PropType.oneOf(Object.keys(colorTokens.backgrounds.block)),
   constrain: PropType.oneOf(['text', 'site', 'none']),
+  isCentered: PropType.bool,
   isFullScreen: PropType.bool,
   isInset: PropType.bool,
   isPositioned: PropType.bool,
