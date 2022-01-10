@@ -3,52 +3,59 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 const StyledRow = styled.div`
-  > * {
-    ${props => {
-      switch (props.spacing) {
-        case 'xl':
-          return css`
-            margin: var(--component-padding-xl) 0;
-          `
-        case 'l':
-          return css`
-            margin: var(--component-padding-l) 0;
-          `
-        default:
-          return css`
-            margin: var(--component-padding) 0;
-          `
-      }
-    }}
+  display: flex;
+  flex-direction: column;
 
-    ${props =>
-      props.forceDisplay &&
-      css`
-        display: block;
-      `}
-  }
+  ${props => {
+    switch (props.spacing) {
+      case 'xl':
+        return css`
+          gap: var(--component-padding-xl);
+        `
+      case 'l':
+        return css`
+          gap: var(--component-padding-l);
+        `
+      default:
+        return css`
+          gap: var(--component-padding);
+        `
+    }
+  }}
 
-  > *:last-child {
-    margin-bottom: 0;
-  }
-
-  > *:first-child {
-    margin-top: 0;
-  }
+  ${props => {
+    switch (props.align) {
+      case 'center':
+        return css`
+          align-items: center;
+        `
+      case 'leading':
+        return css`
+          align-items: start;
+        `
+      case 'trailing':
+        return css`
+          align-items: end;
+        `
+      default:
+        break
+    }
+  }}
 `
 
 const Rows = props => (
-  <StyledRow forceDisplay={props.forceDisplay} spacing={props.spacing}>
+  <StyledRow
+    align={props.align}
+    forceDisplay={props.forceDisplay}
+    spacing={props.spacing}
+  >
     {props.children}
   </StyledRow>
 )
 
 Rows.propTypes = {
+  align: PropTypes.oneOf(['leading', 'center', 'trailing']),
   children: PropTypes.node,
-  /**
-   * Set to `true` to force `display: block` on children
-   */
-  forceDisplay: PropTypes.bool,
   spacing: PropTypes.oneOf(['m', 'l', 'xl']),
 }
 
