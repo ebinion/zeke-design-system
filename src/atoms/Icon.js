@@ -5,9 +5,10 @@ import styled, { css } from 'styled-components'
 import { animationTokens, colorTokens, measurementTokens } from '../'
 
 const StyledIcon = styled.svg`
-  fill: ${props => colorTokens.icons[props.color]};
+  color: ${props => colorTokens.icons[props.color]};
+  fill: currentColor;
   height: auto;
-  transition-property: fill;
+  transition-property: color, fill;
   transition-duration: ${animationTokens.duration.normal};
   transition-timing-function: ${animationTokens.easing};
   width: ${props => measurementTokens.icons[props.size]};
@@ -21,7 +22,7 @@ const StyledIcon = styled.svg`
             button:hover &,
             a:active &,
             a:hover & {
-              fill: ${colorTokens.icons.goldHighlight};
+              color: ${colorTokens.icons.goldHighlight};
             }
           `
         default:
@@ -30,26 +31,30 @@ const StyledIcon = styled.svg`
             button:hover &,
             a:active &,
             a:hover & {
-              fill: ${colorTokens.icons.blackHighlight};
+              color: ${colorTokens.icons.blackHighlight};
             }
           `
       }
     }
   }}
 
+  .duotone { 
+    fill: currentColor;
+  }
+
   ${props => {
     switch (props.color) {
       case 'knockout':
         return css`
             .duotone {
-              fill: ${colorTokens.icons.black};
+              color: ${colorTokens.icons.black};
             }
           }
         `
       default:
         return css`
           .duotone {
-            fill: ${colorTokens.icons.knockout};
+            color: ${colorTokens.icons.knockout};
           }
         `
     }

@@ -13,7 +13,7 @@ import {
 const story = {
   title: 'Atoms/Icon',
   component: Icon,
-  subcomponents: [
+  subcomponents: {
     IconDribbble,
     IconEllipsis,
     IconGithub,
@@ -22,7 +22,7 @@ const story = {
     IconMenu,
     IconTwitter,
     IconX,
-  ],
+  },
 }
 export default story
 
