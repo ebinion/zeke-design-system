@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 const StyledImg = styled.img`
+  max-height: 100%;
   max-width: 100%;
+
   ${props =>
     props.objectFit &&
     css`

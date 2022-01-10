@@ -11,7 +11,7 @@ const StyledComponent = styled.header`
   grid-gap: var(--component-padding);
   grid-template-columns: auto auto 1fr auto;
   grid-template-areas: 'button logo . cta';
-  padding: var(--site-padding);
+  padding: var(--component-padding-l) var(--site-padding);
 
   ${props =>
     props.isFloated &&

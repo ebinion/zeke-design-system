@@ -110,20 +110,29 @@ const StyledGallery = styled.ul`
 const Figure = styled.figure`
   display: grid;
   grid-gap: ${measurementTokens.componentMargin.m};
-  padding: 0;
+  padding: 0 var(--site-padding) var(--component-padding);
   margin: 0;
 
   @media (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
+    box-sizing: border-box;
     grid-gap: ${measurementTokens.componentMargin.xl};
     grid-template-columns: 66fr 34fr;
+    min-height: 100vh;
   }
 
   @media (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
     grid-template-columns: 1fr 320px;
   }
 `
-const FigureContent = styled.figcaption``
-const FigureImage = styled.div``
+
+const FigureContent = styled.figcaption`
+  padding: var(--site-padding) 0;
+`
+
+const FigureImage = styled.div`
+  overflow: hidden;
+  padding: var(--site-padding) 0;
+`
 
 const ModalComponent = ({ item, isOpen, handleClose, portalTarget }) => {
   return (
@@ -132,12 +141,10 @@ const ModalComponent = ({ item, isOpen, handleClose, portalTarget }) => {
       handleClose={handleClose}
       portalTarget={portalTarget}
     >
-      <Block>
-        <Figure>
-          <FigureImage>{item.image}</FigureImage>
-          <FigureContent>{item.description}</FigureContent>
-        </Figure>
-      </Block>
+      <Figure>
+        <FigureImage>{item.image}</FigureImage>
+        <FigureContent>{item.description}</FigureContent>
+      </Figure>
     </Modal>
   )
 }
