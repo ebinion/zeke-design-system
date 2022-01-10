@@ -94,7 +94,14 @@ const Icon = ({ children, title, viewbox, ...props }) => {
 
 Icon.propTypes = {
   children: PropTypes.node.isRequired,
-  color: PropTypes.oneOf(Object.keys(colorTokens.icons)).isRequired,
+  color: PropTypes.oneOf([
+    'black',
+    'blackHighlight',
+    'gold',
+    'goldHighlight',
+    'inherit',
+    'knockout',
+  ]).isRequired,
   respondToHover: PropTypes.bool,
   size: PropTypes.oneOf(Object.keys(measurementTokens.icons)).isRequired,
   sizeSmallAndAbove: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
