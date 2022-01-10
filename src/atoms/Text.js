@@ -24,9 +24,11 @@ const StyledP = styled.p`
   ${props =>
     props.constrain &&
     css`
+      box-sizing: border-box;
       padding-left: var(--site-padding);
       padding-right: var(--site-padding);
       max-width: ${measurementTokens.maxTextWidth};
+      width: 100%;
     `}
 
   ${props =>
