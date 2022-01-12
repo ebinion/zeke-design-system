@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Text from './Text'
 
-const H3 = props => <Text kind={props.kind} {...props} />
+const H3 = props => <Text {...props} />
 
 H3.propTypes = {
   as: PropTypes.string,
@@ -16,7 +16,6 @@ H3.propTypes = {
 H3.defaultProps = {
   as: 'h3',
   bold: true,
-  kind: 'heading',
   lineHeight: 'tight',
   size: 'l',
 }

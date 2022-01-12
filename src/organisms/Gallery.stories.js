@@ -10,22 +10,22 @@ const story = {
 
 const items = [
   {
-    image: <Img src="https://via.placeholder.com/1200x700" />,
+    image: <Img src="https://via.placeholder.com/1200x2000" />,
     description: <P>{lorem.generateParagraphs(1)}</P>,
     title: lorem.generateWords(8),
   },
   {
-    image: <Img src="https://via.placeholder.com/1200x700" />,
+    image: <Img src="https://via.placeholder.com/1200x2000" />,
     description: <P>{lorem.generateParagraphs(1)}</P>,
     title: lorem.generateWords(8),
   },
   {
-    image: <Img src="https://via.placeholder.com/1200x700" />,
+    image: <Img src="https://via.placeholder.com/1200x2000" />,
     description: <P>{lorem.generateParagraphs(1)}</P>,
     title: lorem.generateWords(8),
   },
   {
-    image: <Img src="https://via.placeholder.com/1200x700" />,
+    image: <Img src="https://via.placeholder.com/1200x2000" />,
     description: <P>{lorem.generateParagraphs(1)}</P>,
     title: lorem.generateWords(8),
   },

@@ -93,16 +93,10 @@ const StyledModal = styled.div`
 `
 
 const StyledModalClose = styled.div`
+  position: fixed;
+  right: 0;
   text-align: right;
   padding: var(--component-padding);
-
-  ${props =>
-    props.size === 'full' &&
-    css`
-      padding-left: var(--site-padding);
-      padding-right: var(--site-padding);
-      padding-top: var(--site-padding);
-    `}
 `
 
 const BodyStyle = createGlobalStyle`

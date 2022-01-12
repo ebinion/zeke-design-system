@@ -24,7 +24,16 @@ const StyledP = styled.p`
   ${props =>
     props.constrain &&
     css`
+      padding-left: var(--site-padding);
+      padding-right: var(--site-padding);
       max-width: ${measurementTokens.maxTextWidth};
+    `}
+
+  ${props =>
+    props.isCentered &&
+    css`
+      margin-left: auto;
+      margin-right: auto;
     `}
 
   ${props =>
@@ -328,12 +337,14 @@ Text.propTypes = {
     'normal',
     'light',
     'xLight',
+    'gold',
     'knockout',
     'success',
     'error',
     'warning',
   ]),
   constrain: PropTypes.bool,
+  isCentered: PropTypes.bool,
   isUppercased: PropTypes.bool,
   kind: PropTypes.oneOf(['normal', 'heading', 'decorative', 'code']),
   lineHeight: PropTypes.oneOf(['normal', 'tight']),

@@ -1,40 +1,24 @@
 import React from 'react'
-import { select, boolean } from '@storybook/addon-knobs'
 
-import { Block, colorTokens, measurementTokens, Text } from '../'
-
-const constrainKnobs = () =>
-  select('Constrain', ['none', 'text', 'site'], 'site')
-const colorKnobs = () =>
-  select('Color', Object.keys(colorTokens.backgrounds.block), 'transparent')
-const hasChildrenCenterYKnob = () =>
-  boolean('Vertically center children?', false)
-const isInsetKnob = () => boolean('Is inset?', false)
-const isPositionedKnob = () => boolean('Is positioned?', false)
-const isFullScreenKnob = () => boolean('Is full screen?', false)
-const paddingKnobs = () =>
-  select('Padding', Object.keys(measurementTokens.componentPadding), 'm')
+import { Block, Text } from '../'
 
 const story = {
   title: 'Organisms/Layout/Block',
   component: Block,
+  parameters: {
+    layout: 'fullscreen',
+  },
 }
+export default story
 
-export const block = () => {
-  return (
-    <Block
-      color={colorKnobs()}
-      constain={constrainKnobs()}
-      hasChildrenCenterY={hasChildrenCenterYKnob()}
-      isFullScreen={isFullScreenKnob()}
-      isInset={isInsetKnob()}
-      isPositioned={isPositionedKnob()}
-      padding={paddingKnobs()}
-    >
+const Template = args => <Block {...args} />
+
+export const block = Template.bind({})
+block.args = {
+  children: (
+    <>
       <Text>Testing</Text>
       <Text color="knockout">Testing</Text>
-    </Block>
-  )
+    </>
+  ),
 }
-
-export default story
