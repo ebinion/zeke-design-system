@@ -1,5 +1,4 @@
 import React from 'react'
-import { text, boolean } from '@storybook/addon-knobs'
 
 import { Section } from '../'
 import lorem from '../helpers/lorem'
@@ -9,22 +8,16 @@ const story = {
   component: Section,
 }
 
-const superTitleKnob = () => text('Super Title', lorem.generateWords(3))
-const titleKnob = () => text('Title', lorem.generateWords(10))
-const leadKnob = () => text('Lead', lorem.generateSentences(2))
-const isDarkKnob = () => boolean('Is dark?', false)
+const sentences = lorem.generateSentences(2)
 
-export const section = () => {
-  return (
-    <Section
-      superTitle={superTitleKnob()}
-      title={titleKnob()}
-      lead={leadKnob()}
-      isDark={isDarkKnob()}
-    >
-      Section Content
-    </Section>
-  )
+const Template = args => <Section {...args} />
+
+export const section = Template.bind({})
+section.args = {
+  superTitle: 'Super Title',
+  title: 'Title',
+  lead: sentences,
+  children: 'Body of section appears here',
 }
 
 export default story
