@@ -16,7 +16,6 @@ const Section = ({ superTitle, title, lead, children, isDark }) => {
           title={title}
           superTitle={superTitle}
           isKnockedout={isDark}
-          as="header"
         >
           {lead}
         </SectionHeader>
@@ -29,7 +28,7 @@ const Section = ({ superTitle, title, lead, children, isDark }) => {
 Section.propTypes = {
   superTitle: PropTypes.string,
   title: PropTypes.string,
-  lead: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
+  lead: PropTypes.node,
   isDark: PropTypes.bool,
 }
 
