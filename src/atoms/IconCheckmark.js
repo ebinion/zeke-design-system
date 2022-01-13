@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Icon from './Icon'
 
-const IconDribbble = props => {
+const IconCheckmark = props => {
   return (
     <Icon {...props} viewbox="0 0 32 32">
       <path
@@ -13,10 +14,32 @@ const IconDribbble = props => {
   )
 }
 
-IconDribbble.propTypes = { ...Icon.propTypes }
+/** Sizes are referenced from `measurementTokens.icons` */
+const sizes = ['s', 'm', 'l', 'xl']
 
-IconDribbble.defaultProps = {
+/** Colors are referenced from `colorTokens.icons` */
+const colors = [
+  'black',
+  'blackHighlight',
+  'gold',
+  'goldHighlight',
+  'inherit',
+  'knockout',
+]
+
+IconCheckmark.propTypes = {
+  children: PropTypes.node.isRequired,
+  color: PropTypes.oneOf(colors).isRequired,
+  respondToHover: PropTypes.bool,
+  size: PropTypes.oneOf(sizes).isRequired,
+  sizeSmallAndAbove: PropTypes.oneOf(sizes),
+  sizeMediumAndAbove: PropTypes.oneOf(sizes),
+  sizeLargeAndAbove: PropTypes.oneOf(sizes),
+  title: PropTypes.string,
+}
+
+IconCheckmark.defaultProps = {
   title: 'Checkmark',
 }
 
-export default IconDribbble
+export default IconCheckmark

@@ -15,6 +15,7 @@ const story = {
   title: 'Atoms/Icon',
   component: Icon,
   subcomponents: {
+    IconCheckmark,
     IconDribbble,
     IconEllipsis,
     IconGithub,

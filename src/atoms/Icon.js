@@ -97,21 +97,27 @@ const Icon = ({ children, title, viewbox, ...props }) => {
   )
 }
 
+/** Sizes are referenced from `measurementTokens.icons` */
+export const sizes = ['s', 'm', 'l', 'xl']
+
+/** Colors are referenced from `colorTokens.icons` */
+export const colors = [
+  'black',
+  'blackHighlight',
+  'gold',
+  'goldHighlight',
+  'inherit',
+  'knockout',
+]
+
 Icon.propTypes = {
   children: PropTypes.node.isRequired,
-  color: PropTypes.oneOf([
-    'black',
-    'blackHighlight',
-    'gold',
-    'goldHighlight',
-    'inherit',
-    'knockout',
-  ]).isRequired,
+  color: PropTypes.oneOf(colors).isRequired,
   respondToHover: PropTypes.bool,
-  size: PropTypes.oneOf(Object.keys(measurementTokens.icons)).isRequired,
-  sizeSmallAndAbove: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
-  sizeMediumAndAbove: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
-  sizeLargeAndAbove: PropTypes.oneOf(Object.keys(measurementTokens.icons)),
+  size: PropTypes.oneOf(sizes).isRequired,
+  sizeSmallAndAbove: PropTypes.oneOf(sizes),
+  sizeMediumAndAbove: PropTypes.oneOf(sizes),
+  sizeLargeAndAbove: PropTypes.oneOf(sizes),
   title: PropTypes.string.isRequired,
   viewbox: PropTypes.string.isRequired,
 }
