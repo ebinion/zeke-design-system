@@ -3,15 +3,26 @@ import PropTypes from 'prop-types'
 
 import { Block, SectionHeader } from '../'
 
-const Section = ({ superTitle, title, lead, children, isDark }) => {
+const getPaddingVar = padding => {
+  switch (padding) {
+    case 'xl':
+      return 'var(--component-margin-xl)'
+    case 'l':
+      return 'var(--component-margin-l)'
+    default:
+      return 'var(--component-margin)'
+  }
+}
+
+const Section = ({ superTitle, title, lead, children, isDark, padding }) => {
   return (
     <Block
       as="section"
       color={isDark ? 'dark' : 'white'}
       padding="none"
-      paddingBottom="var(--component-padding-xl)"
+      paddingBottom={getPaddingVar(padding)}
     >
-      <Block padding="xl" constrain="text" isCentered>
+      <Block padding={padding} constrain="text" isCentered>
         <SectionHeader
           title={title}
           superTitle={superTitle}
@@ -30,6 +41,11 @@ Section.propTypes = {
   title: PropTypes.string,
   lead: PropTypes.node,
   isDark: PropTypes.bool,
+  padding: PropTypes.oneOf(['m', 'l', 'xl']),
+}
+
+Section.defaultProps = {
+  padding: 'xl',
 }
 
 export default Section
