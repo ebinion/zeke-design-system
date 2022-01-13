@@ -22,7 +22,7 @@ const StyledComponent = styled.div`
   ${props =>
     props.padding === 'none' &&
     css`
-      padding: '0';
+      padding: 0;
     `}
   ${props =>
     props.padding === 'm' &&
