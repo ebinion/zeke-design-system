@@ -7,7 +7,7 @@
     "npm": ">=8.0.0"
   },
   "main": "dist/index.js",
-  "version": "2.2.1",
+  "version": "2.2.3",
   "dependencies": {
     "@babel/core": "7.x",
     "@babel/runtime": "7.x",
