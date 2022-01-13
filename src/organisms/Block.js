@@ -27,17 +27,17 @@ const StyledComponent = styled.div`
   ${props =>
     props.padding === 'm' &&
     css`
-      padding: var(--component-padding) var(--site-padding);
+      padding: var(--component-margin) var(--site-padding);
     `}
   ${props =>
     props.padding === 'l' &&
     css`
-      padding: var(--component-padding-l) var(--site-padding);
+      padding: var(--component-margin-l) var(--site-padding);
     `}
   ${props =>
     props.padding === 'xl' &&
     css`
-      padding: var(--component-padding-xl) var(--site-padding);
+      padding: var(--component-margin-xl) var(--site-padding);
     `}
 
   ${props =>
