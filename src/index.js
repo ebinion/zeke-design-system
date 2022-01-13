@@ -14,6 +14,7 @@ import H4 from './atoms/H4'
 import H5 from './atoms/H5'
 import H6 from './atoms/H6'
 import Icon from './atoms/Icon'
+import IconCheckmark from './atoms/IconCheckmark'
 import IconDribbble from './atoms/IconDribbble'
 import IconEllipsis from './atoms/IconEllipsis'
 import IconGithub from './atoms/IconGithub'
@@ -87,6 +88,7 @@ export {
   H5,
   H6,
   Icon,
+  IconCheckmark,
   IconDribbble,
   IconEllipsis,
   IconGithub,
