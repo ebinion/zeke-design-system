@@ -97,7 +97,7 @@ const Block = ({ children, color, ...props }) => {
 
 Block.propTypes = {
   as: PropType.string,
-  color: PropType.oneOf(Object.keys(colorTokens.backgrounds.block)),
+  color: PropType.oneOf(['dark', 'transparent', 'white']),
   constrain: PropType.oneOf(['text', 'site', 'none']),
   isCentered: PropType.bool,
   isFullScreen: PropType.bool,
