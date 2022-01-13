@@ -19,8 +19,20 @@
   "componentMargin": {
     "s": "16px",
     "m": "32px",
-    "l": "60px",
-    "xl": "72px"
+    "l": "48px",
+    "xl": "64px"
+  },
+  "componentMarginL": {
+    "s": "24px",
+    "m": "48px",
+    "l": "72px",
+    "xl": "96px"
+  },
+  "componentMarginXL": {
+    "s": "32px",
+    "m": "64px",
+    "l": "96px",
+    "xl": "120px"
   },
   "componentPadding": {
     "none": "0",
