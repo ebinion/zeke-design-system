@@ -6,6 +6,8 @@ import { colorTokens, measurementTokens, textTokens } from '..'
 const GlobalWrapper = createGlobalStyle`
   :root {
     --component-margin: ${measurementTokens.componentMargin.s};
+    --component-margin-l: ${measurementTokens.componentMarginL.s};
+    --component-margin-xl: ${measurementTokens.componentMarginXL.s};
     --component-padding: ${measurementTokens.componentPadding.s};
     --component-padding-l: ${measurementTokens.componentPaddingL.s};
     --component-padding-xl: ${measurementTokens.componentPaddingXl.s};
