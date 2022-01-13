@@ -38,6 +38,8 @@ const GlobalWrapper = createGlobalStyle`
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.m}) {
     :root {
       --component-margin: ${measurementTokens.componentMargin.m};
+      --component-margin-l: ${measurementTokens.componentMarginL.m};
+      --component-margin-xl: ${measurementTokens.componentMarginXL.m};
       --component-padding: ${measurementTokens.componentPadding.m};
       --component-padding-l: ${measurementTokens.componentPaddingL.m};
       --component-padding-xl: ${measurementTokens.componentPaddingXl.m};
@@ -48,6 +50,8 @@ const GlobalWrapper = createGlobalStyle`
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.l}) {
     :root {
       --component-margin: ${measurementTokens.componentMargin.l};
+      --component-margin-l: ${measurementTokens.componentMarginL.l};
+      --component-margin-xl: ${measurementTokens.componentMarginXL.l};
       --component-padding: ${measurementTokens.componentPadding.l};
       --component-padding-l: ${measurementTokens.componentPaddingL.l};
       --component-padding-xl: ${measurementTokens.componentPaddingXl.l};
@@ -58,6 +62,8 @@ const GlobalWrapper = createGlobalStyle`
   @media screen and (min-width: ${measurementTokens.breakpoints.horizontal.xl}) {
     :root {
       --component-margin: ${measurementTokens.componentMargin.xl};
+      --component-margin-l: ${measurementTokens.componentMarginL.xl};
+      --component-margin-xl: ${measurementTokens.componentMarginXL.xl};
       --component-padding: ${measurementTokens.componentPadding.xl};
       --component-padding-l: ${measurementTokens.componentPaddingL.xl};
       --component-padding-xl: ${measurementTokens.componentPaddingXl.xl};
