@@ -106,7 +106,7 @@ const A = ({ onClick, ...props }) => {
 }
 
 A.propTypes = {
-  as: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   href: PropTypes.string,
   keyboardOnly: PropTypes.bool,
   kind: PropTypes.oneOf(['normal', 'incognito', 'nav']),
