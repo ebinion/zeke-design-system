@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import styled, { createGlobalStyle, css } from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -125,7 +126,16 @@ body {
 }
 `
 
-const FlyoutMenu = ({ isOpen, closeHandler, footer, ...props }) => {
+const FlyoutMenu = ({
+  isOpen,
+  closeHandler,
+  footer,
+  portalQuery,
+  ...props
+}) => {
+  const [portalElement, setPortalElement] = useState()
+  let [portalRoot, setPortalRoot] = useState()
+
   useEffect(() => {
     const handleKeyPress = event => {
       if (event.keyCode === 27 && isOpen) {
@@ -139,6 +149,27 @@ const FlyoutMenu = ({ isOpen, closeHandler, footer, ...props }) => {
       document.removeEventListener('keyup', handleKeyPress)
     }
   }, [closeHandler, isOpen])
+
+  useEffect(
+    () => {
+      if (portalQuery) {
+        const _portalRoot = document.querySelector(portalQuery)
+        const _portalElement = document.createElement('div')
+        _portalRoot.appendChild(_portalElement)
+
+        setPortalRoot(_portalRoot)
+        setPortalElement(_portalElement)
+      }
+
+      return () => {
+        if (portalRoot) {
+          portalRoot.removeChild(portalElement)
+        }
+      }
+    },
+    // eslint-disable-next-line
+    []
+  )
 
   const renderItems = () => {
     const LinkElement = props.Link
@@ -163,8 +194,8 @@ const FlyoutMenu = ({ isOpen, closeHandler, footer, ...props }) => {
     )
   }
 
-  return (
-    <StyledComponent isOpen={isOpen} tabIndex={isOpen ? false : '-1'}>
+  const renderFlyout = () => (
+    <StyledComponent isOpen={isOpen} tabIndex={isOpen ? undefined : '-1'}>
       <StyledMask onClick={closeHandler} />
       <StyledMenu isOpen={isOpen}>
         <StyledNav role="navigation" aria-label="Main">
@@ -182,9 +213,19 @@ const FlyoutMenu = ({ isOpen, closeHandler, footer, ...props }) => {
       </StyledMenu>
     </StyledComponent>
   )
+
+  if (portalElement) {
+    return createPortal(renderFlyout(), portalElement)
+  } else {
+    return renderFlyout()
+  }
 }
 
 FlyoutMenu.propTypes = {
+  children: PropTypes.node,
+  closeHandler: PropTypes.func.isRequired,
+  footer: PropTypes.node,
+  isOpen: PropTypes.bool,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       to: PropTypes.string.isRequired,
@@ -192,10 +233,7 @@ FlyoutMenu.propTypes = {
       linkElement: PropTypes.element,
     })
   ).isRequired,
-  isOpen: PropTypes.bool,
-  closeHandler: PropTypes.func.isRequired,
-  children: PropTypes.node,
-  footer: PropTypes.node,
+  portalQuery: PropTypes.string,
 }
 
 FlyoutMenu.defaultProps = {
