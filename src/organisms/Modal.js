@@ -18,9 +18,6 @@ const StyledWrapper = styled.div`
   pointer-events: none;
   position: fixed;
   top: 0;
-  transition-duration: ${animationTokens.duration.normal};
-  transition-property: backdrop-filter, opacity;
-  transition-timing-function: ${animationTokens.easing};
   width: 100vw;
   z-index: ${measurementTokens.zIndex.modal};
 

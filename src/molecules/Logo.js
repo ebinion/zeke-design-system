@@ -18,7 +18,8 @@ const StyledText = styled.div`
 `
 
 const Logo = props => {
-  const isLink = () => (props.href || props.linkElement ? true : false)
+  const isLink = () =>
+    props.href || props.to || props.linkElement ? true : false
 
   const renderLink = () => {
     return (
@@ -42,7 +43,8 @@ const Logo = props => {
     <StyledComponent>
       <StyledLogo
         as={isLink() ? props.linkElement || 'a' : false}
-        href={props.href}
+        href={isLink() && props.href}
+        to={isLink() && props.to}
       >
         <IconLogo
           color={props.color}
@@ -57,14 +59,15 @@ const Logo = props => {
 }
 
 Logo.propTypes = {
-  children: PropTypes.element,
-  color: PropTypes.oneOf(['black', 'knockout']),
-  linkElement: PropTypes.node,
+  children: PropTypes.string,
+  color: PropTypes.oneOf(['normal', 'knockout']),
+  linkElement: PropTypes.elementType,
   href: PropTypes.string,
+  to: PropTypes.string,
 }
 
 Logo.defaultProps = {
-  color: 'black',
+  color: 'normal',
 }
 
 export default Logo

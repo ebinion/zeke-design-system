@@ -1,5 +1,6 @@
 import Icon from './Icon'
 import {
+  IconCheckmark,
   IconDribbble,
   IconEllipsis,
   IconGithub,
@@ -14,6 +15,7 @@ const story = {
   title: 'Atoms/Icon',
   component: Icon,
   subcomponents: {
+    IconCheckmark,
     IconDribbble,
     IconEllipsis,
     IconGithub,
@@ -35,6 +37,7 @@ icon.args = {
   viewbox: '0 0 77 77',
 }
 
+export const checkmark = IconCheckmark
 export const dribbble = IconDribbble
 export const ellipsis = IconEllipsis
 export const github = IconGithub

@@ -22,7 +22,7 @@ const StyledComponent = styled.div`
   ${props =>
     props.padding === 'none' &&
     css`
-      padding: '0';
+      padding: 0;
     `}
   ${props =>
     props.padding === 'm' &&
@@ -97,7 +97,7 @@ const Block = ({ children, color, ...props }) => {
 
 Block.propTypes = {
   as: PropType.string,
-  color: PropType.oneOf(Object.keys(colorTokens.backgrounds.block)),
+  color: PropType.oneOf(['dark', 'transparent', 'white']),
   constrain: PropType.oneOf(['text', 'site', 'none']),
   isCentered: PropType.bool,
   isFullScreen: PropType.bool,

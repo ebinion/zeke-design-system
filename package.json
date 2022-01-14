@@ -7,17 +7,19 @@
     "npm": ">=8.0.0"
   },
   "main": "dist/index.js",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "dependencies": {
     "@babel/core": "7.x",
     "@babel/runtime": "7.x",
     "lorem-ipsum": "2.x",
     "prop-types": "15.x",
-    "react": "^17.x",
-    "react-dom": "^17.x",
     "react-waypoint": "10.x",
     "styled-components": "5.x",
     "underscore": "1.x"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -38,8 +40,10 @@
     "cross-env": "^7.0.3",
     "git-tag": "^0.2.0",
     "prettier": "^1.19.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
-    "react-test-renderer": "^16.14.0"
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "build": "cross-env BABEL_ENV=production babel src -d dist --copy-files",

@@ -87,9 +87,9 @@ Header.propTypes = {
   ctaHiddenBelow: PropTypes.oneOf(['small', 'medium']),
   isFloated: PropTypes.bool,
   logoHref: PropTypes.string,
-  logoLinkElement: PropTypes.node,
+  logoLinkElement: PropTypes.elementType,
   menuClickHandler: PropTypes.func,
-  siteTitle: PropTypes.element,
+  siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
