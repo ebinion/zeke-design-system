@@ -1,5 +1,4 @@
 import React from 'react'
-import { select, boolean } from '@storybook/addon-knobs'
 
 import lorem from '../helpers/lorem'
 import { A } from '../'
@@ -13,32 +12,39 @@ const story = {
   },
 }
 
-const kindKnob = () => select('Kind', ['normal', 'incognito', 'nav'], 'normal')
-const keyboardOnlyKnob = () => boolean('Visible to keyboards only', false)
-const inheritedFontKnob = () => boolean('Use inherited font?', false)
+const words = lorem.generateWords(2)
 
-export const a = () => (
-  <A
-    kind={kindKnob()}
-    keyboardOnly={keyboardOnlyKnob()}
-    useInheritedFont={inheritedFontKnob()}
-    href="http://example.com"
-  >
-    {lorem.generateWords(2)}
-  </A>
-)
+const Template = args => <A {...args} />
 
-export const asNormal = () => <A>{lorem.generateWords(2)}</A>
-export const asNav = () => <A kind="nav">{lorem.generateWords(2)}</A>
-export const asIncognito = () => (
-  <A kind="incognito" href="#">
-    {lorem.generateWords(2)}
-  </A>
-)
-export const asKeyboardOnly = () => (
-  <A href="#" keyboardOnly>
-    {lorem.generateWords(2)}
-  </A>
-)
+export const a = Template.bind({})
+a.args = {
+  children: words,
+  href: '#',
+  onClick: event => event.preventDefault(),
+}
+
+export const kindNav = Template.bind({})
+kindNav.args = {
+  children: words,
+  href: '#',
+  kind: 'nav',
+  onClick: event => event.preventDefault(),
+}
+
+export const kindIncognito = Template.bind({})
+kindIncognito.args = {
+  children: words,
+  href: '#',
+  kind: 'incognito',
+  onClick: event => event.preventDefault(),
+}
+
+export const keyboardOnly = Template.bind({})
+keyboardOnly.args = {
+  children: words,
+  href: '#',
+  keyboardOnly: true,
+  onClick: event => event.preventDefault(),
+}
 
 export default story

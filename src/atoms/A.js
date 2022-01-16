@@ -74,7 +74,7 @@ const StyledA = styled.a`
       left: 50%;
       width: 1px;
 
-      &:focus {
+      &:focus-visible {
         clip: auto;
         height: auto;
         margin: auto;
