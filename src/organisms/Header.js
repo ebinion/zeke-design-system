@@ -55,45 +55,68 @@ const StyledCta = styled.div`
 `
 
 const Header = props => {
+  const {
+    children,
+    color,
+    ctaHiddenBelow,
+    isFloated,
+    href,
+    logoHref,
+    logoLinkElement,
+    logoTo,
+    menuClickHandler,
+    siteTitle,
+  } = props
+
   return (
-    <StyledComponent role="banner" isFloated={props.isFloated}>
+    <StyledComponent role="banner" isFloated={isFloated}>
       <StyledButton>
         <IconButton
-          icon={<IconMenu size="l" color={props.color} />}
+          icon={<IconMenu size="l" color={color} />}
           title="Menu"
-          clickHandler={props.menuClickHandler}
+          clickHandler={menuClickHandler}
         />
       </StyledButton>
       <StyledLogo>
         <Logo
-          color={props.color}
-          href={props.logoHref}
-          linkElement={props.logoLinkElement}
-          isLink={props.href ? true : false}
+          color={color}
+          href={logoHref}
+          isLink={href ? true : false}
+          linkElement={logoLinkElement}
+          to={logoTo}
         >
-          {props.siteTitle}
+          {siteTitle}
         </Logo>
       </StyledLogo>
-      <StyledCta ctaHiddenBelow={props.ctaHiddenBelow}>
-        {props.children}
-      </StyledCta>
+      {children && (
+        <StyledCta ctaHiddenBelow={ctaHiddenBelow}>{children}</StyledCta>
+      )}
     </StyledComponent>
   )
 }
 
 Header.propTypes = {
   children: PropTypes.node,
-  color: PropTypes.oneOf(['black', 'knockout']),
+  color: PropTypes.oneOf(['normal', 'knockout']),
   ctaHiddenBelow: PropTypes.oneOf(['small', 'medium']),
   isFloated: PropTypes.bool,
   logoHref: PropTypes.string,
+  logoTo: PropTypes.string,
   logoLinkElement: PropTypes.elementType,
   menuClickHandler: PropTypes.func,
   siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  color: 'black',
+  children: null,
+  color: 'normal',
+  ctaHiddenBelow: null,
+  isFloated: false,
+  logoHref: null,
+  logoTo: null,
+  logoLinkElement: null,
+  menuClickHandler: null,
+  siteTitle: null,
 }
 
 export default Header
