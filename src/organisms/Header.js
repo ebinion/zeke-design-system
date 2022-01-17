@@ -63,6 +63,7 @@ const Header = props => {
     href,
     logoHref,
     logoLinkElement,
+    logoTo,
     menuClickHandler,
     siteTitle,
   } = props
@@ -80,13 +81,16 @@ const Header = props => {
         <Logo
           color={color}
           href={logoHref}
-          linkElement={logoLinkElement}
           isLink={href ? true : false}
+          linkElement={logoLinkElement}
+          to={logoTo}
         >
           {siteTitle}
         </Logo>
       </StyledLogo>
-      <StyledCta ctaHiddenBelow={ctaHiddenBelow}>{children}</StyledCta>
+      {children && (
+        <StyledCta ctaHiddenBelow={ctaHiddenBelow}>{children}</StyledCta>
+      )}
     </StyledComponent>
   )
 }
@@ -97,13 +101,22 @@ Header.propTypes = {
   ctaHiddenBelow: PropTypes.oneOf(['small', 'medium']),
   isFloated: PropTypes.bool,
   logoHref: PropTypes.string,
+  logoTo: PropTypes.string,
   logoLinkElement: PropTypes.elementType,
   menuClickHandler: PropTypes.func,
   siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
+  children: null,
   color: 'normal',
+  ctaHiddenBelow: null,
+  isFloated: false,
+  logoHref: null,
+  logoTo: null,
+  logoLinkElement: null,
+  menuClickHandler: null,
+  siteTitle: null,
 }
 
 export default Header
