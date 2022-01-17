@@ -55,35 +55,45 @@ const StyledCta = styled.div`
 `
 
 const Header = props => {
+  const {
+    children,
+    color,
+    ctaHiddenBelow,
+    isFloated,
+    href,
+    logoHref,
+    logoLinkElement,
+    menuClickHandler,
+    siteTitle,
+  } = props
+
   return (
-    <StyledComponent role="banner" isFloated={props.isFloated}>
+    <StyledComponent role="banner" isFloated={isFloated}>
       <StyledButton>
         <IconButton
-          icon={<IconMenu size="l" color={props.color} />}
+          icon={<IconMenu size="l" color={color} />}
           title="Menu"
-          clickHandler={props.menuClickHandler}
+          clickHandler={menuClickHandler}
         />
       </StyledButton>
       <StyledLogo>
         <Logo
-          color={props.color}
-          href={props.logoHref}
-          linkElement={props.logoLinkElement}
-          isLink={props.href ? true : false}
+          color={color}
+          href={logoHref}
+          linkElement={logoLinkElement}
+          isLink={href ? true : false}
         >
-          {props.siteTitle}
+          {siteTitle}
         </Logo>
       </StyledLogo>
-      <StyledCta ctaHiddenBelow={props.ctaHiddenBelow}>
-        {props.children}
-      </StyledCta>
+      <StyledCta ctaHiddenBelow={ctaHiddenBelow}>{children}</StyledCta>
     </StyledComponent>
   )
 }
 
 Header.propTypes = {
   children: PropTypes.node,
-  color: PropTypes.oneOf(['black', 'knockout']),
+  color: PropTypes.oneOf(['normal', 'knockout']),
   ctaHiddenBelow: PropTypes.oneOf(['small', 'medium']),
   isFloated: PropTypes.bool,
   logoHref: PropTypes.string,
@@ -93,7 +103,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  color: 'black',
+  color: 'normal',
 }
 
 export default Header
