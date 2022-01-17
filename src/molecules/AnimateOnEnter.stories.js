@@ -1,7 +1,13 @@
 import React from 'react'
 import { select } from '@storybook/addon-knobs'
+import styled from 'styled-components'
 
 import { AnimateOnEnter } from '..'
+import ExampleBlock from '../helpers/ExampleBlock'
+
+const TallBox = styled.div`
+  height: 120vh;
+`
 
 const story = {
   title: 'Molecules/Animate On Enter',
@@ -23,9 +29,13 @@ const animationKnob = () =>
 
 export const animateOnEnter = () => {
   return (
-    <AnimateOnEnter kind={animationKnob()}>
-      <div>Animation Example</div>
-    </AnimateOnEnter>
+    <>
+      <TallBox>Scroll to see animation below</TallBox>
+      <AnimateOnEnter kind={animationKnob()}>
+        <ExampleBlock>Animation Example</ExampleBlock>
+      </AnimateOnEnter>
+      <TallBox />
+    </>
   )
 }
 

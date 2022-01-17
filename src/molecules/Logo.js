@@ -18,13 +18,14 @@ const StyledText = styled.div`
 `
 
 const Logo = props => {
-  const isLink = () =>
-    props.href || props.to || props.linkElement ? true : false
+  const { children, color, linkElement, href, to } = props
+
+  const isLink = () => (href || to || linkElement ? true : false)
 
   const renderLink = () => {
     return (
-      <A as={props.linkElement} href={props.href} kind="incognito">
-        {props.children}
+      <A as={linkElement} href={href} kind="incognito">
+        {children}
       </A>
     )
   }
@@ -32,8 +33,8 @@ const Logo = props => {
   const renderText = () => {
     return (
       <StyledText>
-        <Text color={props.color} size="xl">
-          {isLink() ? renderLink() : props.children}
+        <Text color={color} size="xl">
+          {isLink() ? renderLink() : children}
         </Text>
       </StyledText>
     )
@@ -42,12 +43,12 @@ const Logo = props => {
   return (
     <StyledComponent>
       <StyledLogo
-        as={isLink() ? props.linkElement || 'a' : false}
-        href={isLink() && props.href}
-        to={isLink() && props.to}
+        as={isLink() ? linkElement || 'a' : false}
+        href={isLink() && href}
+        to={isLink() && to}
       >
         <IconLogo
-          color={props.color}
+          color={color === 'normal' ? 'black' : color}
           size="xl"
           sizeMediumAndAbove="xl"
           respondToHover={isLink()}

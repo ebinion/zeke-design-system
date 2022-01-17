@@ -11,7 +11,7 @@ const AnimateOnEnter = props => {
 
   return (
     <Animate {...animateProps} isPlaying={isPlaying}>
-      <Waypoint onEnter={handleEnter} />
+      <Waypoint onEnter={handleEnter} topOffset="20%" bottomOffset="20%" />
       {children}
     </Animate>
   )
@@ -20,7 +20,7 @@ const AnimateOnEnter = props => {
 AnimateOnEnter.propTypes = Animate.propTypes
 
 AnimateOnEnter.defaultProps = {
-  delay: '50ms',
+  delay: '0',
 }
 
 export default AnimateOnEnter

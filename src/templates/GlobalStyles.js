@@ -89,8 +89,9 @@ const GlobalWrapper = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  :focus {
-    outline: 4px solid ${colorTokens.borders.link};
+  :focus-visible {
+    outline: 4px dotted ${colorTokens.borders.link};
+    outline-offset: 8px;
   }
 `
 

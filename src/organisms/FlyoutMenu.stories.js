@@ -49,6 +49,7 @@ const FlyoutMenuExample = () => {
         isOpen={isOpen}
         closeHandler={handleClose}
         footer={<div>This is the footer</div>}
+        portalQuery="#portal"
       />
     </div>
   )

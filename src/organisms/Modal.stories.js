@@ -24,7 +24,12 @@ const ModalComponent = () => {
   return (
     <div>
       <Button onClick={handleOpen}>Open Modal</Button>
-      <Modal isOpen={isOpen} size={sizeKnob()} handleClose={handleClose}>
+      <Modal
+        isOpen={isOpen}
+        size={sizeKnob()}
+        handleClose={handleClose}
+        portalQuery="#portal"
+      >
         Modal content goes here
       </Modal>
     </div>

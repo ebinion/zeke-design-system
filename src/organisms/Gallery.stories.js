@@ -67,7 +67,7 @@ const items = [
 ]
 
 export const gallery = () => {
-  return <Gallery items={items} />
+  return <Gallery items={items} portalTarget="#portal" />
 }
 
 export default story
