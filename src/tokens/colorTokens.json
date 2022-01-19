@@ -66,7 +66,8 @@
     "gold": "var(--c-gold)",
     "goldHighlight": "var(--c-gold-dark)",
     "inherit": "currentColor",
-    "knockout": "var(--c-white-dark)"
+    "knockout": "var(--c-white-dark)",
+    "normal": "var(--c-black)"
   },
   "shadows": {
     "light": "var(--c-black-transparent)",
