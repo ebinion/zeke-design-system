@@ -2,7 +2,7 @@ import React from 'react'
 import PropType from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { colorTokens, measurementTokens } from '../'
+import { colorTokens, measurementTokens, textTokens } from '../'
 
 const StyledComponent = styled.div`
   background: ${props => props.bgColor};
@@ -38,6 +38,13 @@ const StyledComponent = styled.div`
     props.padding === 'xl' &&
     css`
       padding: var(--component-margin-xl) var(--site-padding);
+    `}
+
+  ${props =>
+    props.padding === 'text' &&
+    css`
+      padding: 0 var(--site-padding);
+      margin-bottom: ${textTokens.sizes.m.spacing};
     `}
 
   ${props =>
@@ -103,7 +110,7 @@ Block.propTypes = {
   isFullScreen: PropType.bool,
   isInset: PropType.bool,
   isPositioned: PropType.bool,
-  padding: PropType.oneOf(['none', 'm', 'l', 'xl']),
+  padding: PropType.oneOf(['none', 'm', 'l', 'xl', 'text']),
   paddingBottom: PropType.string,
   paddingTop: PropType.string,
   hasChildrenCenterY: PropType.bool,
