@@ -22,7 +22,7 @@ const Section = ({ superTitle, title, lead, children, isDark, padding }) => {
       padding="none"
       paddingBottom={getPaddingVar(padding)}
     >
-      <Block padding={padding} constrain="text" isCentered>
+      <Block padding="text" constrain="text" isCentered>
         <SectionHeader
           title={title}
           superTitle={superTitle}
